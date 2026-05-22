@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>V6 Advice-to-Trust Transfer</title>
+  <style>
+    body { font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif; margin: 32px; color: #17202a; line-height: 1.62; }
+    h1 { margin-bottom: 6px; }
+    h2 { margin-top: 30px; }
+    .lead { max-width: 980px; color: #526071; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 18px 0; }
+    .card { border: 1px solid #d8dee6; border-radius: 8px; padding: 14px; background: #f8fafc; }
+    .metric { display:block; font-size: 28px; font-weight: 750; color: #235789; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    th, td { border: 1px solid #d8dee6; padding: 8px 9px; text-align: left; }
+    th { background: #eef2f7; }
+    .num { text-align: right; font-variant-numeric: tabular-nums; }
+    figure { margin: 22px 0; border: 1px solid #d8dee6; border-radius: 8px; padding: 12px; }
+    img { width: 100%; display: block; }
+    figcaption { margin-top: 10px; color: #526071; }
+  </style>
+</head>
+<body>
+  <h1>V6 Advice-to-Trust Transfer</h1>
+  <p class="lead">同一个 partner 先在信息建议任务中建立 honesty/helpfulness 声誉，再进入 trust/WTP 决策。核心看 social trust 和 willingness to pay 是否可分离。</p>
+  <div class="grid">
+    <div class="card"><span class="metric">60/64</span>successful runs</div>
+    <div class="card"><span class="metric">444</span>API calls parsed</div>
+    <div class="card"><span class="metric">40.683</span>mean trust</div>
+    <div class="card"><span class="metric">2.383</span>mean WTP</div>
+  </div>
+
+  <h2>Figures</h2>
+  <figure><img src="figures/trust_by_partner_mode.png"><figcaption>Trust rating should track honesty if the model forms social trust representation.</figcaption></figure>
+  <figure><img src="figures/wtp_by_partner_mode.png"><figcaption>WTP may track reward/helpfulness more than pure honesty, which would support dissociation.</figcaption></figure>
+  <figure><img src="figures/investment_by_partner_mode.png"><figcaption>Investment is the final costly behavioral decision in the one-shot trust game.</figcaption></figure>
+  <figure><img src="figures/perceived_honesty_by_partner_mode.png"><figcaption>Manipulation check: the model's explicit perceived honesty should separate honest and dishonest partners.</figcaption></figure>
+  <figure><img src="figures/perceived_helpfulness_by_partner_mode.png"><figcaption>Manipulation check: perceived helpfulness should separate beneficial and costly recommendation histories.</figcaption></figure>
+
+  <h2>Cell Summary</h2>
+  <table>
+    <thead>
+      <tr><th>Partner</th><th>Mode</th><th>N</th><th>Honesty</th><th>Rec win</th><th>Trust</th><th>WTP</th><th>Investment</th><th>Perceived honesty</th><th>Perceived helpfulness</th><th>Actual win</th></tr>
+    </thead>
+    <tbody><tr><td>honest_beneficial</td><td>sequential</td><td class='num'>8/8</td><td class='num'>0.75</td><td class='num'>0.75</td><td class='num'>60</td><td class='num'>3.125</td><td class='num'>5.25</td><td class='num'>73.5</td><td class='num'>69.75</td><td class='num'>0.639</td></tr>
+<tr><td>honest_beneficial</td><td>batch</td><td class='num'>7/8</td><td class='num'>0.75</td><td class='num'>0.75</td><td class='num'>73.714</td><td class='num'>4.857</td><td class='num'>7.714</td><td class='num'>75.714</td><td class='num'>76.714</td><td class='num'></td></tr>
+<tr><td>honest_costly</td><td>sequential</td><td class='num'>8/8</td><td class='num'>0.75</td><td class='num'>0.25</td><td class='num'>18.75</td><td class='num'>1.375</td><td class='num'>2.625</td><td class='num'>64</td><td class='num'>27</td><td class='num'>0.729</td></tr>
+<tr><td>honest_costly</td><td>batch</td><td class='num'>8/8</td><td class='num'>0.75</td><td class='num'>0.25</td><td class='num'>42.5</td><td class='num'>2.375</td><td class='num'>2.625</td><td class='num'>65.625</td><td class='num'>22.5</td><td class='num'></td></tr>
+<tr><td>dishonest_beneficial</td><td>sequential</td><td class='num'>8/8</td><td class='num'>0.25</td><td class='num'>0.75</td><td class='num'>58.75</td><td class='num'>3.625</td><td class='num'>6.75</td><td class='num'>24.625</td><td class='num'>77.875</td><td class='num'>0.541</td></tr>
+<tr><td>dishonest_beneficial</td><td>batch</td><td class='num'>6/8</td><td class='num'>0.25</td><td class='num'>0.75</td><td class='num'>50</td><td class='num'>3</td><td class='num'>5.333</td><td class='num'>28.333</td><td class='num'>76.167</td><td class='num'></td></tr>
+<tr><td>dishonest_costly</td><td>sequential</td><td class='num'>8/8</td><td class='num'>0.25</td><td class='num'>0.25</td><td class='num'>10</td><td class='num'>0.375</td><td class='num'>0.625</td><td class='num'>20.75</td><td class='num'>21.5</td><td class='num'>0.667</td></tr>
+<tr><td>dishonest_costly</td><td>batch</td><td class='num'>7/8</td><td class='num'>0.25</td><td class='num'>0.25</td><td class='num'>15</td><td class='num'>0.571</td><td class='num'>0.286</td><td class='num'>25</td><td class='num'>24.714</td><td class='num'></td></tr></tbody>
+  </table>
+</body>
+</html>

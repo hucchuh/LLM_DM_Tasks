@@ -1,0 +1,41 @@
+{
+  "partner_types": [
+    {
+      "partner_type": "honest_beneficial",
+      "label": "Honest beneficial",
+      "honesty_true_count": 9,
+      "recommendation_win_count": 9
+    },
+    {
+      "partner_type": "honest_costly",
+      "label": "Honest costly",
+      "honesty_true_count": 9,
+      "recommendation_win_count": 3
+    },
+    {
+      "partner_type": "dishonest_beneficial",
+      "label": "Dishonest beneficial",
+      "honesty_true_count": 3,
+      "recommendation_win_count": 9
+    },
+    {
+      "partner_type": "dishonest_costly",
+      "label": "Dishonest costly",
+      "honesty_true_count": 3,
+      "recommendation_win_count": 3
+    }
+  ],
+  "presentation_modes": [
+    {
+      "presentation_mode": "sequential",
+      "label": "Sequential trial-by-trial"
+    },
+    {
+      "presentation_mode": "batch",
+      "label": "Batch history"
+    }
+  ],
+  "rounds_per_run": 12,
+  "seeds_per_cell": 8,
+  "partner_name": "Alex"
+}
