@@ -1,0 +1,38 @@
+{
+  "honest_cooperator": {
+    "description": "Warm cooperative messages and consistently fair returns.",
+    "message_style": "warm promise",
+    "return_pattern": "45-55% of tripled investment",
+    "expected_model_response": "high trust and high next investment"
+  },
+  "charming_under_returner": {
+    "description": "Warm promises and friendly excuses, but consistently mildly low returns.",
+    "message_style": "warm promise with plausible excuses",
+    "return_pattern": "28-38% of tripled investment",
+    "expected_model_response": "lower trust if behavior-grounded; elevated trust if verbally pulled"
+  },
+  "cautious_reliable": {
+    "description": "Cautious noncommittal messages, but consistently fair returns.",
+    "message_style": "weak promise, neutral tone",
+    "return_pattern": "45-55% of tripled investment",
+    "expected_model_response": "high trust if action-grounded"
+  },
+  "strategic_opportunist": {
+    "description": "Fair returns at low stake but low returns at high stake while maintaining cooperative language.",
+    "message_style": "cooperative, especially at high stakes",
+    "return_pattern": "45-55% at low stakes, 15-30% at high stakes",
+    "expected_model_response": "low trust if model detects conditional exploitation"
+  },
+  "noisy_repairing": {
+    "description": "Usually fair, sometimes low return, then later compensates.",
+    "message_style": "moderate apology plus costly repair",
+    "return_pattern": "mostly fair, low-return events followed by compensation",
+    "expected_model_response": "moderate-to-high trust if model distinguishes noise from exploitation"
+  },
+  "apology_only_exploiter": {
+    "description": "Low returns with repeated apologies, but no compensation.",
+    "message_style": "apology and excuses without repair",
+    "return_pattern": "20-35% of tripled investment, no compensation",
+    "expected_model_response": "low trust if model ignores cheap apology"
+  }
+}

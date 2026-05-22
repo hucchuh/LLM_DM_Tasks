@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Repeated Trust Game: Visual Report</title>
+  <style>
+    :root {
+      --ink: #17202a;
+      --muted: #5d6b7a;
+      --line: #d8dee6;
+      --panel: #f8fafc;
+      --blue: #235789;
+      --teal: #0f766e;
+      --red: #be123c;
+      --violet: #7c3aed;
+      --amber: #d97706;
+      --slate: #475569;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #ffffff;
+      font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.55;
+    }
+    main {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 34px 0 48px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 34px;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 17px;
+      letter-spacing: 0;
+    }
+    p { margin: 0 0 12px; }
+    .lead {
+      max-width: 920px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+    .takeaway {
+      margin: 22px 0 24px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--teal);
+      background: #eefaf8;
+      font-size: 17px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 16px 0 24px;
+    }
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 14px 16px;
+      min-height: 96px;
+    }
+    .metric .label {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+    .metric .value {
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.15;
+    }
+    .metric .sub {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+    .band {
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+      margin-top: 24px;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+    figure { margin: 0; }
+    figure img {
+      display: block;
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+    }
+    figcaption {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 7px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 16px;
+      font-size: 14px;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #eef2f7;
+      font-weight: 650;
+    }
+    code {
+      background: #eef2f7;
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-size: 0.93em;
+    }
+    .tag {
+      display: inline-block;
+      min-width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      margin-right: 7px;
+      vertical-align: middle;
+    }
+    .legend {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 18px;
+      margin: 8px 0 20px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .note {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px 14px;
+      background: #fff;
+      margin: 10px 0 16px;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .step {
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .step strong { display: block; margin-bottom: 5px; }
+    @media (max-width: 860px) {
+      main { width: min(100% - 28px, 1180px); }
+      .grid, .two-col, .steps, .legend { grid-template-columns: 1fr; }
+      h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Repeated Trust Game: LLM 如何更新对 partner 的信任？</h1>
+  <p class="lead">两轮 MiniMax-M2.7 pilot。V1 先看自然差异条件下模型是否跟随实际返还；V2 把所有 partner type 的平均返还率控制为 0.40，再看模型是否还能区分行为结构。</p>
+
+  <div class="takeaway">
+    <strong>核心结论：</strong>V1 中 <code>trust_rating</code> 几乎随 <code>observed return</code> 线性变化；V2 中平均返还率被完全控制后，模型仍能用 <code>predicted return</code> 读出 stake-specific pattern。也就是说，模型主要看行为，但不只是看总体平均收益。
+  </div>
+
+  <div class="grid">
+    <div class="metric">
+      <div class="label">V1 成功调用</div>
+      <div class="value">23 / 24</div>
+      <div class="sub">自然差异条件</div>
+    </div>
+    <div class="metric">
+      <div class="label">V1 trust-return correlation</div>
+      <div class="value">r = 0.992</div>
+      <div class="sub">partner-type mean level</div>
+    </div>
+    <div class="metric">
+      <div class="label">V2 成功调用</div>
+      <div class="value">36 / 36</div>
+      <div class="sub">average return controlled</div>
+    </div>
+  </div>
+
+  <section class="band">
+    <h2>Protocol</h2>
+    <div class="two-col">
+      <div class="note">
+        <h3>Game</h3>
+        <p>模型与同一个 partner 连续互动。每轮模型投资 tokens，投资额会 tripled 后交给 partner，partner 决定返还多少。模型目标是最大化自身收益。</p>
+      </div>
+      <div class="note">
+        <h3>Readouts</h3>
+        <p><code>trust_rating</code> 测总体信任；<code>predicted return</code> 测模型预期 partner 会返还 tripled investment 的比例；<code>investment</code> 测最终行动。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <h2>V1: 自然差异条件</h2>
+    <p class="lead">不同 partner type 同时改变语言线索和实际返还行为。问题是：模型信任评分更像是在听语言，还是在追踪实际返还？</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Partner type</th>
+          <th>Trust rating</th>
+          <th>Observed return</th>
+          <th>Predicted return</th>
+          <th>Investment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><code>honest_cooperator</code></td><td>78.25</td><td>0.503</td><td>0.508</td><td>10.00</td></tr>
+        <tr><td><code>cautious_reliable</code></td><td>70.25</td><td>0.502</td><td>0.502</td><td>10.00</td></tr>
+        <tr><td><code>strategic_opportunist</code></td><td>51.00</td><td>0.400</td><td>0.480</td><td>8.50</td></tr>
+        <tr><td><code>noisy_repairing</code></td><td>68.75</td><td>0.481</td><td>0.497</td><td>10.00</td></tr>
+        <tr><td><code>apology_only_exploiter</code></td><td>27.67</td><td>0.283</td><td>0.287</td><td>1.67</td></tr>
+        <tr><td><code>charming_under_returner</code></td><td>38.25</td><td>0.331</td><td>0.338</td><td>4.50</td></tr>
+      </tbody>
+    </table>
+
+    <div class="two-col">
+      <figure>
+        <img src="output/figures/trust_vs_average_return_by_type.png" alt="V1 trust rating vs observed return by partner type">
+        <figcaption>Trend: partner 平均返还越高，模型给出的 trust rating 越高。</figcaption>
+      </figure>
+      <figure>
+        <img src="output/figures/trust_by_partner_type.png" alt="V1 trust rating by partner type">
+        <figcaption>Trend: apology-only 低返还被强烈降信任；稳定公平返还得到高信任。</figcaption>
+      </figure>
+    </div>
+
+    <h3>V1 Legend</h3>
+    <div class="legend">
+      <div><span class="tag" style="background: var(--blue)"></span><code>honest_cooperator</code>: 友善承诺 + 稳定公平返还</div>
+      <div><span class="tag" style="background: var(--teal)"></span><code>cautious_reliable</code>: 谨慎语言 + 稳定公平返还</div>
+      <div><span class="tag" style="background: var(--amber)"></span><code>strategic_opportunist</code>: 低赌注较合作，高赌注剥削</div>
+      <div><span class="tag" style="background: var(--violet)"></span><code>noisy_repairing</code>: 偶尔低返还，后续真实补偿</div>
+      <div><span class="tag" style="background: var(--slate)"></span><code>apology_only_exploiter</code>: 道歉但持续低返还</div>
+      <div><span class="tag" style="background: var(--red)"></span><code>charming_under_returner</code>: 友善语言 + 偏低返还</div>
+    </div>
+
+    <div class="note">
+      <strong>V1 结论：</strong>模型不是主要被 friendly language 或 apology 牵引；<code>trust_rating</code> 很大程度跟随实际返还。但 V1 不能排除一个简单解释：模型可能只是追踪 average return。
+    </div>
+  </section>
+
+  <section class="band">
+    <h2>V2: Average Return Control</h2>
+    <p class="lead">V2 把所有 partner type 的 <code>observed return</code> 固定为 0.40，只改变 return pattern。问题变成：模型是否还能区分 stake-dependent 或 trend-dependent 行为结构？</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Partner type</th>
+          <th>Trust rating</th>
+          <th>Observed return</th>
+          <th>Observed low</th>
+          <th>Observed high</th>
+          <th>Predicted low</th>
+          <th>Predicted high</th>
+          <th>High-low gap</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><code>honest_cooperator</code></td><td>57.17</td><td>0.40</td><td>0.40</td><td>0.40</td><td>0.40</td><td>0.40</td><td>0.00</td></tr>
+        <tr><td><code>cautious_reliable</code></td><td>73.33</td><td>0.40</td><td>0.40</td><td>0.40</td><td>0.40</td><td>0.40</td><td>0.00</td></tr>
+        <tr><td><code>strategic_opportunist</code></td><td>49.17</td><td>0.40</td><td>0.55</td><td>0.25</td><td>0.55</td><td>0.25</td><td>-0.30</td></tr>
+        <tr><td><code>strategic_opportunist_mirror</code></td><td>77.50</td><td>0.40</td><td>0.25</td><td>0.55</td><td>0.25</td><td>0.55</td><td>+0.30</td></tr>
+        <tr><td><code>noisy_repairing</code></td><td>59.50</td><td>0.40</td><td>0.35</td><td>0.483</td><td>0.558</td><td>0.633</td><td>+0.075</td></tr>
+        <tr><td><code>apology_only_exploiter</code></td><td>35.00</td><td>0.40</td><td>0.45</td><td>0.317</td><td>0.227</td><td>0.198</td><td>-0.028</td></tr>
+      </tbody>
+    </table>
+
+    <div class="two-col">
+      <figure>
+        <img src="v2_average_control/output/figures/global_trust_by_condition.png" alt="V2 trust rating by partner type">
+        <figcaption>Trend: average return 相同后，trust rating 仍被 recent trend 与 stake pattern 拉开。</figcaption>
+      </figure>
+      <figure>
+        <img src="v2_average_control/output/figures/conditional_return_predictions.png" alt="V2 conditional return predictions">
+        <figcaption>Trend: 模型准确恢复 low / medium / high stake 的 conditional predicted return。</figcaption>
+      </figure>
+    </div>
+
+    <figure>
+      <img src="v2_average_control/output/figures/predicted_high_minus_low_by_condition.png" alt="V2 high-low prediction gap">
+      <figcaption>Trend: <code>strategic_opportunist</code> 为负 gap，说明模型预测 high stake 更差；mirror 为正 gap，说明模型能识别反向结构。</figcaption>
+    </figure>
+
+    <h3>V2 Legend</h3>
+    <div class="legend">
+      <div><span class="tag" style="background: var(--blue)"></span><code>honest_cooperator</code>: 平均 0.40，稳定返还，warm language</div>
+      <div><span class="tag" style="background: var(--teal)"></span><code>cautious_reliable</code>: 平均 0.40，稳定返还，cautious language</div>
+      <div><span class="tag" style="background: var(--red)"></span><code>strategic_opportunist</code>: 平均 0.40，low 高返还，high 低返还</div>
+      <div><span class="tag" style="background: var(--violet)"></span><code>strategic_opportunist_mirror</code>: 平均 0.40，low 低返还，high 高返还</div>
+      <div><span class="tag" style="background: var(--amber)"></span><code>noisy_repairing</code>: 平均 0.40，前期差，后期补偿</div>
+      <div><span class="tag" style="background: var(--slate)"></span><code>apology_only_exploiter</code>: 平均 0.40，前期好，后期恶化</div>
+    </div>
+
+    <div class="note">
+      <strong>V2 结论：</strong>average return 被控制后，模型仍然能区分 return structure。最清楚的证据是 <code>strategic_opportunist</code> 与 <code>strategic_opportunist_mirror</code> 的 high-low gap 方向完全相反。
+    </div>
+  </section>
+
+  <section class="band">
+    <h2>V3: Noisy Behavior × Language Frame</h2>
+    <p class="lead">V3 在 V2 的基础上加入噪声，并把 behavior pattern 与 language frame 正交化。所有 observed return 仍然等于 0.40，但同一个 behavior pattern 会分别配 neutral、warm promise、apology/excuse 三种语言。</p>
+
+    <div class="grid">
+      <div class="metric">
+        <div class="label">Successful calls</div>
+        <div class="value">72 / 72</div>
+        <div class="sub">4 behavior patterns x 3 language frames x 6 reps</div>
+      </div>
+      <div class="metric">
+        <div class="label">Self-reported behavior weight</div>
+        <div class="value">79.6</div>
+        <div class="sub">average across all V3 trials</div>
+      </div>
+      <div class="metric">
+        <div class="label">Self-reported message weight</div>
+        <div class="value">20.1</div>
+        <div class="sub">language is secondary but not zero</div>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Behavior pattern</th>
+          <th>Observed return</th>
+          <th>Trust rating</th>
+          <th>Predicted low</th>
+          <th>Predicted high</th>
+          <th>High-low gap</th>
+          <th>Investment high</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><code>stable_moderate</code></td><td>0.40</td><td>64.50</td><td>0.402</td><td>0.397</td><td>-0.005</td><td>9.44</td></tr>
+        <tr><td><code>strategic_opportunist</code></td><td>0.40</td><td>44.72</td><td>0.550</td><td>0.251</td><td>-0.299</td><td>3.33</td></tr>
+        <tr><td><code>noisy_repairing</code></td><td>0.40</td><td>65.94</td><td>0.332</td><td>0.553</td><td>+0.222</td><td>9.72</td></tr>
+        <tr><td><code>apology_only_exploiter</code></td><td>0.40</td><td>36.39</td><td>0.434</td><td>0.273</td><td>-0.160</td><td>1.44</td></tr>
+      </tbody>
+    </table>
+
+    <div class="two-col">
+      <figure>
+        <img src="v3_noisy_policy/output/figures/trust_by_behavior_language.png" alt="V3 trust by behavior and language">
+        <figcaption>Trend: behavior pattern explains the large trust differences; language frame adds smaller shifts.</figcaption>
+      </figure>
+      <figure>
+        <img src="v3_noisy_policy/output/figures/high_low_gap_by_behavior_language.png" alt="V3 high-low gap by behavior and language">
+        <figcaption>Trend: high-low gap remains behavior-driven even after adding noise and varying language.</figcaption>
+      </figure>
+    </div>
+
+    <div class="two-col">
+      <figure>
+        <img src="v3_noisy_policy/output/figures/language_main_effect_trust.png" alt="V3 language main effect on trust">
+        <figcaption>Trend: warm promise and apology/excuse modestly raise trust on average, but the effect is smaller than behavior pattern.</figcaption>
+      </figure>
+      <figure>
+        <img src="v3_noisy_policy/output/figures/self_reported_weight.png" alt="V3 self reported evidence weight">
+        <figcaption>Trend: the model explicitly reports relying much more on observed behavior than on language.</figcaption>
+      </figure>
+    </div>
+
+    <h3>V3 Legend</h3>
+    <div class="legend">
+      <div><span class="tag" style="background: var(--blue)"></span><code>neutral</code>: minimal informational message</div>
+      <div><span class="tag" style="background: var(--teal)"></span><code>warm_promise</code>: warm cooperative commitment</div>
+      <div><span class="tag" style="background: var(--amber)"></span><code>apology_excuse</code>: apology/explanation requesting continued trust</div>
+      <div><span class="tag" style="background: var(--slate)"></span><code>observed return</code>: kept at 0.40 for every V3 cell</div>
+    </div>
+
+    <div class="note">
+      <strong>V3 conclusion:</strong> language is not zero, but it mainly changes <code>trust_rating</code> slightly. <code>predicted return</code> and high-stake investment remain dominated by observed behavior pattern.
+    </div>
+  </section>
+
+  <section class="band">
+    <h2>Interpretation</h2>
+    <div class="grid">
+      <div class="metric">
+        <div class="label">What V1 Shows</div>
+        <div class="value">Behavior-based</div>
+        <div class="sub">trust follows revealed returns more than cheap talk.</div>
+      </div>
+      <div class="metric">
+        <div class="label">What V2 Adds</div>
+        <div class="value">Not just mean</div>
+        <div class="sub">with average return controlled, structure still matters.</div>
+      </div>
+      <div class="metric">
+        <div class="label">What V3 Adds</div>
+        <div class="value">Language is small</div>
+        <div class="sub">warm/apology shifts trust modestly, not predicted return.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <h2>Next Step</h2>
+    <div class="steps">
+      <div class="step"><strong>1. Held-out prediction</strong>只给前几轮，让模型预测未展示的后续 trial。</div>
+      <div class="step"><strong>2. Baselines</strong>比较 overall mean、stake-specific mean、recency-weighted mean。</div>
+      <div class="step"><strong>3. Multi-model</strong>扩展到 GPT、Claude、Gemini、Qwen/Llama。</div>
+      <div class="step"><strong>4. Human comparison</strong>比较人类和 LLM 是否同样主要依赖 revealed behavior。</div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

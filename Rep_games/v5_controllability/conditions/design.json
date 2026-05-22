@@ -1,0 +1,45 @@
+{
+  "partner_types": [
+    {
+      "partner_type": "stable_cooperator",
+      "label": "Stable cooperator",
+      "description": "Returns are noisy but stable around 0.40 across all stakes."
+    },
+    {
+      "partner_type": "predictable_opportunist",
+      "label": "Predictable opportunist",
+      "description": "Low stakes are returned generously and high stakes are under-returned; average return is held near 0.40."
+    },
+    {
+      "partner_type": "random_opportunist",
+      "label": "Random opportunist",
+      "description": "Uses the same return values as the predictable opportunist, but low returns are not tied to stake size."
+    }
+  ],
+  "control_conditions": [
+    {
+      "control_condition": "controllable_stake",
+      "label": "Controllable stake",
+      "description": "The model can choose whether the next round is low, medium, or high stake."
+    },
+    {
+      "control_condition": "fixed_high_stake",
+      "label": "Fixed high stake",
+      "description": "The next round is definitely high stake."
+    },
+    {
+      "control_condition": "random_stake",
+      "label": "Random stake",
+      "description": "The next round stake is uniformly randomly selected from low, medium, and high after access is paid."
+    }
+  ],
+  "stake_orders": [
+    ["low", "medium", "high", "low", "medium", "high"],
+    ["high", "medium", "low", "high", "medium", "low"],
+    ["medium", "low", "high", "medium", "high", "low"],
+    ["low", "high", "medium", "high", "low", "medium"],
+    ["high", "low", "medium", "medium", "low", "high"],
+    ["medium", "high", "low", "low", "high", "medium"]
+  ],
+  "partner_message": "I have noted this round."
+}

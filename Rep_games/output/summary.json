@@ -1,0 +1,91 @@
+{
+  "overall": {
+    "n_total": 24,
+    "n_success": 23,
+    "mean_investment_next": 7.696,
+    "mean_predicted_return_fraction_next": 0.442,
+    "mean_trust_rating": 56.913,
+    "mean_confidence": 0.66,
+    "mean_true_return_fraction": 0.423,
+    "mean_high_stake_return_fraction": 0.392
+  },
+  "by_partner_type": {
+    "apology_only_exploiter": {
+      "n_total": 4,
+      "n_success": 3,
+      "mean_investment_next": 1.667,
+      "mean_predicted_return_fraction_next": 0.287,
+      "mean_trust_rating": 27.667,
+      "mean_confidence": 0.55,
+      "mean_true_return_fraction": 0.283,
+      "mean_high_stake_return_fraction": 0.272
+    },
+    "cautious_reliable": {
+      "n_total": 4,
+      "n_success": 4,
+      "mean_investment_next": 10,
+      "mean_predicted_return_fraction_next": 0.502,
+      "mean_trust_rating": 70.25,
+      "mean_confidence": 0.725,
+      "mean_true_return_fraction": 0.502,
+      "mean_high_stake_return_fraction": 0.499
+    },
+    "charming_under_returner": {
+      "n_total": 4,
+      "n_success": 4,
+      "mean_investment_next": 4.5,
+      "mean_predicted_return_fraction_next": 0.338,
+      "mean_trust_rating": 38.25,
+      "mean_confidence": 0.55,
+      "mean_true_return_fraction": 0.331,
+      "mean_high_stake_return_fraction": 0.326
+    },
+    "honest_cooperator": {
+      "n_total": 4,
+      "n_success": 4,
+      "mean_investment_next": 10,
+      "mean_predicted_return_fraction_next": 0.508,
+      "mean_trust_rating": 78.25,
+      "mean_confidence": 0.767,
+      "mean_true_return_fraction": 0.503,
+      "mean_high_stake_return_fraction": 0.506
+    },
+    "noisy_repairing": {
+      "n_total": 4,
+      "n_success": 4,
+      "mean_investment_next": 10,
+      "mean_predicted_return_fraction_next": 0.497,
+      "mean_trust_rating": 68.75,
+      "mean_confidence": 0.675,
+      "mean_true_return_fraction": 0.481,
+      "mean_high_stake_return_fraction": 0.481
+    },
+    "strategic_opportunist": {
+      "n_total": 4,
+      "n_success": 4,
+      "mean_investment_next": 8.5,
+      "mean_predicted_return_fraction_next": 0.48,
+      "mean_trust_rating": 51.0,
+      "mean_confidence": 0.662,
+      "mean_true_return_fraction": 0.4,
+      "mean_high_stake_return_fraction": 0.236
+    }
+  },
+  "relationships": {
+    "trial_level_trust_vs_average_return": {
+      "n": 23,
+      "r": 0.878,
+      "slope": 208.368,
+      "intercept": -31.13
+    },
+    "partner_type_mean_trust_vs_average_return": {
+      "n": 6,
+      "r": 0.992,
+      "slope": 210.749,
+      "intercept": -32.118
+    }
+  },
+  "errors": [
+    "URLError(ConnectionAbortedError(10053, '你的主机中的软件中止了一个已建立的连接。', None, 10053, None))"
+  ]
+}

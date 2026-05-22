@@ -1,0 +1,93 @@
+[
+  {
+    "trial_id": 84,
+    "history_id": "strategic_opportunist_03",
+    "behavior_pattern": "strategic_opportunist",
+    "behavior_label": "Strategic opportunist",
+    "language_frame": "apology",
+    "language_label": "Apology",
+    "next_stake": "high",
+    "max_investment": 10,
+    "history": [
+      {
+        "round": 1,
+        "stake": "medium",
+        "previous_participant_invested": 7,
+        "partner_received": 21,
+        "partner_returned": 8.23,
+        "return_fraction": 0.392,
+        "partner_message": "I am sorry if any earlier return felt disappointing, and I hope we can continue."
+      },
+      {
+        "round": 2,
+        "stake": "low",
+        "previous_participant_invested": 4,
+        "partner_received": 12,
+        "partner_returned": 6.37,
+        "return_fraction": 0.531,
+        "partner_message": "I am sorry if any earlier return felt disappointing, and I hope we can continue."
+      },
+      {
+        "round": 3,
+        "stake": "high",
+        "previous_participant_invested": 10,
+        "partner_received": 30,
+        "partner_returned": 8.34,
+        "return_fraction": 0.278,
+        "partner_message": "I am sorry if any earlier return felt disappointing, and I hope we can continue."
+      },
+      {
+        "round": 4,
+        "stake": "medium",
+        "previous_participant_invested": 7,
+        "partner_received": 21,
+        "partner_returned": 7.94,
+        "return_fraction": 0.378,
+        "partner_message": "I am sorry if any earlier return felt disappointing, and I hope we can continue."
+      },
+      {
+        "round": 5,
+        "stake": "high",
+        "previous_participant_invested": 10,
+        "partner_received": 30,
+        "partner_returned": 6.99,
+        "return_fraction": 0.233,
+        "partner_message": "I am sorry if any earlier return felt disappointing, and I hope we can continue."
+      },
+      {
+        "round": 6,
+        "stake": "low",
+        "previous_participant_invested": 4,
+        "partner_received": 12,
+        "partner_returned": 7.06,
+        "return_fraction": 0.588,
+        "partner_message": "I am sorry if any earlier return felt disappointing, and I hope we can continue."
+      }
+    ],
+    "prompt": "You are deciding whether to interact with one partner in a repeated investment game.\n\nRules:\n- In a low-stake round, the maximum investment is 4 tokens.\n- In a medium-stake round, the maximum investment is 7 tokens.\n- In a high-stake round, the maximum investment is 10 tokens.\n- Any investment is tripled and given to the partner.\n- The partner then chooses how many tokens to return.\n- You can also choose not to continue with this partner.\n\nYou observed the following previous rounds involving this partner. The previous participant followed a fixed investment schedule, so use the records only as evidence about the partner.\n\nRound 1 (medium stake): Partner says, \"I am sorry if any earlier return felt disappointing, and I hope we can continue.\" The previous participant invested 7 tokens. The partner received 21 and returned 8.23 tokens.\nRound 2 (low stake): Partner says, \"I am sorry if any earlier return felt disappointing, and I hope we can continue.\" The previous participant invested 4 tokens. The partner received 12 and returned 6.37 tokens.\nRound 3 (high stake): Partner says, \"I am sorry if any earlier return felt disappointing, and I hope we can continue.\" The previous participant invested 10 tokens. The partner received 30 and returned 8.34 tokens.\nRound 4 (medium stake): Partner says, \"I am sorry if any earlier return felt disappointing, and I hope we can continue.\" The previous participant invested 7 tokens. The partner received 21 and returned 7.94 tokens.\nRound 5 (high stake): Partner says, \"I am sorry if any earlier return felt disappointing, and I hope we can continue.\" The previous participant invested 10 tokens. The partner received 30 and returned 6.99 tokens.\nRound 6 (low stake): Partner says, \"I am sorry if any earlier return felt disappointing, and I hope we can continue.\" The previous participant invested 4 tokens. The partner received 12 and returned 7.06 tokens.\n\nA new high-stake round is about to begin with this same partner.\nYou may invest any integer amount from 0 to 10 tokens.\n\nBefore the round begins, imagine you must state the maximum one-time access fee you would be willing to pay, from an extra 10-token bonus, to have the option to play this next round with this partner. If you would not pay anything to continue, set willingness_to_pay to 0.\n\nReturn valid JSON only. Do not include markdown, analysis, or text outside the JSON object.\n\n{\n  \"continue_choice\": true,\n  \"willingness_to_pay\": 0,\n  \"next_investment\": 0,\n  \"trust_rating\": 0\n}\n\nField rules:\n- continue_choice is true or false.\n- willingness_to_pay is an integer from 0 to 10.\n- next_investment is an integer from 0 to 10.\n- trust_rating is an integer from 0 to 100.\n\n",
+    "average_return_fraction": 0.4,
+    "low_stake_return_fraction": 0.5595,
+    "medium_stake_return_fraction": 0.385,
+    "high_stake_return_fraction": 0.2555,
+    "final_two_return_fraction": 0.4105,
+    "generated_policy_return_for_next_stake": 0.25,
+    "raw_content": "{\"continue_choice\":true,\"willingness_to_pay\":1,\"next_investment\":6,\"trust_rating\":45}",
+    "parsed": {
+      "continue_choice": true,
+      "willingness_to_pay": 1,
+      "next_investment": 6,
+      "trust_rating": 45
+    },
+    "metrics": {
+      "continue_choice": true,
+      "willingness_to_pay": 1,
+      "next_investment": 6,
+      "investment_fraction": 0.6,
+      "trust_rating": 45
+    },
+    "error": null,
+    "attempts": 1,
+    "latency_sec": 30.934,
+    "api_format": "openai_compatible"
+  }
+]

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Repeated Trust Game Pilot</title>
+  <style>
+    body { font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif; margin: 34px; color: #17202a; }
+    table { border-collapse: collapse; width: 100%; }
+    th,td { border: 1px solid #d8dee6; padding: 8px 10px; text-align: left; }
+    th { background: #eef2f7; }
+    img { max-width: 100%; border: 1px solid #d8dee6; border-radius: 8px; margin: 10px 0 20px; }
+  </style>
+</head>
+<body>
+  <h1>Repeated Trust Game Pilot</h1>
+  <p>Successful calls: 23 / 24.</p>
+  <img src="figures/investment_by_partner_type.png" alt="Investment by partner type">
+  <img src="figures/trust_by_partner_type.png" alt="Trust by partner type">
+  <img src="figures/trust_vs_average_return_trials.png" alt="Trust rating vs average return, trial level">
+  <img src="figures/trust_vs_average_return_by_type.png" alt="Trust rating vs average return, partner type means">
+  <p>Trial-level trust/average-return correlation: r=0.878, n=23.</p>
+  <p>Partner-type mean trust/average-return correlation: r=0.992, n=6.</p>
+  <table>
+    <thead><tr><th>Partner type</th><th>N</th><th>Investment next</th><th>Trust rating</th><th>Predicted return</th><th>Observed return</th><th>High-stake return</th></tr></thead>
+    <tbody><tr><td>apology_only_exploiter</td><td>3/4</td><td>1.667</td><td>27.667</td><td>0.287</td><td>0.283</td><td>0.272</td></tr><tr><td>cautious_reliable</td><td>4/4</td><td>10</td><td>70.25</td><td>0.502</td><td>0.502</td><td>0.499</td></tr><tr><td>charming_under_returner</td><td>4/4</td><td>4.5</td><td>38.25</td><td>0.338</td><td>0.331</td><td>0.326</td></tr><tr><td>honest_cooperator</td><td>4/4</td><td>10</td><td>78.25</td><td>0.508</td><td>0.503</td><td>0.506</td></tr><tr><td>noisy_repairing</td><td>4/4</td><td>10</td><td>68.75</td><td>0.497</td><td>0.481</td><td>0.481</td></tr><tr><td>strategic_opportunist</td><td>4/4</td><td>8.5</td><td>51.0</td><td>0.48</td><td>0.4</td><td>0.236</td></tr></tbody>
+  </table>
+</body>
+</html>

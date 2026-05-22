@@ -1,0 +1,44 @@
+[
+  {
+    "condition": "stable_neutral",
+    "partner_type": "cautious_reliable",
+    "description": "Stable moderate returns with neutral language.",
+    "return_fractions": [0.40, 0.40, 0.40, 0.40, 0.40, 0.40, 0.40, 0.40],
+    "message_style": "neutral"
+  },
+  {
+    "condition": "stable_warm",
+    "partner_type": "honest_cooperator",
+    "description": "The same stable returns as stable_neutral, but with warm cooperative language.",
+    "return_fractions": [0.40, 0.40, 0.40, 0.40, 0.40, 0.40, 0.40, 0.40],
+    "message_style": "warm"
+  },
+  {
+    "condition": "high_stake_betrayal",
+    "partner_type": "strategic_opportunist",
+    "description": "Cooperative at low stakes and exploitative at high stakes, with the same average return.",
+    "return_fractions": [0.55, 0.40, 0.55, 0.25, 0.40, 0.25, 0.55, 0.25],
+    "message_style": "cooperative"
+  },
+  {
+    "condition": "high_stake_generous",
+    "partner_type": "strategic_opportunist_mirror",
+    "description": "Exploitative at low stakes and generous at high stakes, with the same average return.",
+    "return_fractions": [0.25, 0.40, 0.25, 0.55, 0.40, 0.55, 0.25, 0.55],
+    "message_style": "cautious"
+  },
+  {
+    "condition": "repairing_trend",
+    "partner_type": "noisy_repairing",
+    "description": "Early low returns followed by real compensation, with the same average return.",
+    "return_fractions": [0.22, 0.25, 0.28, 0.35, 0.45, 0.50, 0.55, 0.60],
+    "message_style": "repairing"
+  },
+  {
+    "condition": "declining_trend",
+    "partner_type": "apology_only_exploiter",
+    "description": "Early high returns followed by deterioration, with the same average return.",
+    "return_fractions": [0.60, 0.55, 0.50, 0.45, 0.35, 0.28, 0.25, 0.22],
+    "message_style": "declining"
+  }
+]

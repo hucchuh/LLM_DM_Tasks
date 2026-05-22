@@ -1,0 +1,1055 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>在重复信任博弈中，大语言模型是听漂亮话还是看实际投资行为？</title>
+  <style>
+    :root {
+      --ink: #17202a;
+      --muted: #566372;
+      --soft: #f6f8fb;
+      --band: #eef3f8;
+      --line: #d8dee6;
+      --blue: #235789;
+      --teal: #0f766e;
+      --orange: #d97706;
+      --red: #b42318;
+      --shadow: 0 14px 30px rgba(20, 36, 56, 0.10);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #fff;
+      font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.68;
+    }
+
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .hero {
+      min-height: 70vh;
+      display: grid;
+      align-items: center;
+      padding: 58px 28px 46px;
+      color: white;
+      background:
+        linear-gradient(120deg, rgba(17, 24, 39, 0.98), rgba(35, 87, 137, 0.90)),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 88px),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 88px);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .wrap {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 14px;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 1080px;
+      margin: 0;
+      font-size: clamp(34px, 5.4vw, 66px);
+      line-height: 1.08;
+      letter-spacing: 0;
+      font-weight: 760;
+    }
+
+    .hero-subtitle {
+      max-width: 880px;
+      margin: 24px 0 0;
+      color: rgba(255, 255, 255, 0.90);
+      font-size: clamp(17px, 2.1vw, 23px);
+    }
+
+    section {
+      padding: 56px 28px;
+    }
+
+    section.band {
+      background: var(--soft);
+    }
+
+    .version {
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: clamp(26px, 3vw, 40px);
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 28px 0 10px;
+      font-size: 22px;
+      line-height: 1.28;
+      letter-spacing: 0;
+    }
+
+    p { margin: 0 0 14px; }
+
+    .lead {
+      max-width: 980px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .box {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .box h3:first-child { margin-top: 0; }
+    .box p:last-child { margin-bottom: 0; }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .step {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 17px;
+      min-height: 198px;
+    }
+
+    .step strong {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 13px;
+    }
+
+    .step h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+    }
+
+    .step p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .version-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.06fr) minmax(330px, 0.94fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .callout {
+      margin: 18px 0;
+      padding: 15px 16px;
+      border-left: 4px solid var(--teal);
+      border-radius: 0 8px 8px 0;
+      background: #f1faf8;
+    }
+
+    .warning {
+      border-left-color: var(--orange);
+      background: #fff7ed;
+    }
+
+    .claim {
+      border-left-color: var(--blue);
+      background: #eef5ff;
+    }
+
+    .manipulation {
+      border: 1px solid #c7d8ec;
+      border-radius: 8px;
+      background: #f0f6ff;
+      padding: 16px;
+      margin: 18px 0;
+    }
+
+    .manipulation h3 {
+      margin: 0 0 8px;
+      color: var(--blue);
+      font-size: 19px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 22px;
+      font-size: 14px;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 9px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--band);
+      font-weight: 650;
+    }
+
+    th.num, td.num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .figure-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 22px;
+    }
+
+    .figure {
+      margin: 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .figure img {
+      display: block;
+      width: 100%;
+      border-radius: 4px;
+    }
+
+    .caption {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .finding-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .finding {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 20px;
+      min-height: 190px;
+      box-shadow: var(--shadow);
+    }
+
+    .finding-number {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--blue);
+      font-size: 32px;
+      line-height: 1;
+      font-weight: 760;
+    }
+
+    .prompt-box {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 18px;
+      margin-top: 18px;
+    }
+
+    .prompt-meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .prompt-io details {
+      margin-top: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f8fafc;
+      overflow: hidden;
+    }
+
+    .prompt-io summary {
+      cursor: pointer;
+      padding: 10px 14px;
+      font-weight: 650;
+      color: var(--ink);
+    }
+
+    pre {
+      overflow: auto;
+      max-height: 520px;
+      margin: 12px 0 0;
+      padding: 14px;
+      border-radius: 8px;
+      background: #111827;
+      color: #e5e7eb;
+      font-size: 13px;
+      line-height: 1.55;
+      white-space: pre-wrap;
+    }
+
+    code {
+      border-radius: 4px;
+      background: #eef2f7;
+      padding: 1px 5px;
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: 0.94em;
+    }
+
+    .footer {
+      padding: 34px 28px;
+      background: #111827;
+      color: #d1d5db;
+      font-size: 14px;
+    }
+
+    .footer a { color: #bfdbfe; }
+
+    @media (max-width: 900px) {
+      .timeline,
+      .version-layout,
+      .two-col,
+      .figure-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 62vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">重复信任博弈 · 模型 API 试验 · MiniMax-M2.7</p>
+      <h1>在重复信任博弈中，大语言模型是听漂亮话还是看实际投资行为？</h1>
+      <p class="hero-subtitle">一个对象在互动中反复说“我会合作”，但它过去实际返还多少，才是模型最稳定使用的信息。</p>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <h2>研究问题和任务</h2>
+        <p class="lead">这份报告只回答一个具体问题：在重复信任博弈中，当同一个对象“说得好听”和“实际返还记录”不完全一致时，大语言模型后续更相信哪一类信息？</p>
+
+        <div class="grid">
+          <div class="box">
+            <h3>任务怎么做</h3>
+            <p>模型看到一个对象过去几轮的互动记录。每一轮都有两类信息：对象说了什么，以及它实际返还了多少。随后模型要判断是否继续合作、愿意付多少入场费、下一轮投多少，以及给出信任评分。</p>
+          </div>
+          <div class="box">
+            <h3>核心比较</h3>
+            <p>我们把语言线索和行为记录尽量拆开：语言包括中性表达、温暖表达、承诺、道歉；行为包括稳定返还、机会主义、高赌注背叛、逐步修复和逐步恶化。</p>
+          </div>
+          <div class="box">
+            <h3>版本控制</h3>
+            <p>不同版本在上一版的基础上控制了payoff和话术的变量，来检测结论的一致性。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="version band">
+      <div class="wrap">
+        <h2>V1：开放式 pilot，先看任务里有没有信号</h2>
+        <div class="version-layout">
+          <div>
+            <h3>操作的实验变量</h3>
+            <p>V1 同时改变对象的语言风格和返还行为，形成六类对象：稳定合作者、谨慎但可靠者、真实修复者、机会主义者、会说话但少返还者、只道歉不修复者。</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>对象类型</th>
+                  <th>语言线索</th>
+                  <th>行为记录</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>稳定合作者</td><td>友好、承诺长期合作</td><td>稳定公平返还</td></tr>
+                <tr><td>谨慎但可靠者</td><td>不夸张承诺，表达谨慎</td><td>稳定公平返还</td></tr>
+                <tr><td>真实修复者</td><td>低返还后道歉，并在后续补偿</td><td>有波动，但会修复</td></tr>
+                <tr><td>机会主义者</td><td>表面合作，尤其高赌注前更友好</td><td>低赌注较公平，高赌注少返还</td></tr>
+                <tr><td>会说话但少返还者</td><td>温暖、解释充分</td><td>持续偏低返还</td></tr>
+                <tr><td>只道歉不修复者</td><td>反复道歉和解释</td><td>持续低返还，没有补偿</td></tr>
+              </tbody>
+            </table>
+
+            <h3>实验流程</h3>
+            <p>每个试次给模型一段完整历史：每轮赌注大小、对方说的话、投资额、对方收到多少、返还多少。模型随后输出下一轮投资、预期返还比例、信任评分和信心。V1 共 24 个试次，成功解析 23 个。</p>
+
+            <h3>主要结论</h3>
+            <div class="callout claim">
+              <p>模型明显会看实际返还。稳定公平返还和真实修复得到高信任；会说话但少返还、只道歉不修复得到低信任和低投资。这说明任务本身可以产生“语言 vs 行为”的分离信号。</p>
+            </div>
+          </div>
+
+          <div>
+            <div class="box">
+              <h3>关键结果</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>对象类型</th>
+                    <th class="num">平均返还</th>
+                    <th class="num">信任评分</th>
+                    <th class="num">下一轮投资</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>稳定合作者</td><td class="num">0.503</td><td class="num">78.25</td><td class="num">10.00</td></tr>
+                  <tr><td>谨慎但可靠者</td><td class="num">0.502</td><td class="num">70.25</td><td class="num">10.00</td></tr>
+                  <tr><td>真实修复者</td><td class="num">0.481</td><td class="num">68.75</td><td class="num">10.00</td></tr>
+                  <tr><td>机会主义者</td><td class="num">0.400</td><td class="num">51.00</td><td class="num">8.50</td></tr>
+                  <tr><td>会说话但少返还者</td><td class="num">0.331</td><td class="num">38.25</td><td class="num">4.50</td></tr>
+                  <tr><td>只道歉不修复者</td><td class="num">0.283</td><td class="num">27.67</td><td class="num">1.67</td></tr>
+                </tbody>
+              </table>
+              <p>对象层面的信任评分和平均返还几乎同步变化，相关约为 0.992。</p>
+            </div>
+
+            <div class="callout warning">
+              <p><strong>主要不足：</strong>V1 里不同对象的平均返还本来就不同。因此，结果可能只是说明模型会看平均返还，而不能说明模型理解了“对方在不同情境下怎么行动”。</p>
+            </div>
+            <div class="callout">
+              <p><strong>下一版怎么改：</strong>V2 把所有条件的平均返还控制成相同，只改变返还出现的位置和模式，专门检验模型是否只看平均值。</p>
+            </div>
+          </div>
+        </div>
+
+        <h3>V1 图表</h3>
+        <div class="figure-grid">
+          <figure class="figure">
+            <img src="figures_cn/v1_trust_by_partner_cn.png" alt="V1 不同对象的信任评分">
+            <figcaption class="caption">V1 信任评分：返还稳定、公平的对象得分最高；会说好话但持续少返还、只道歉不修复的对象明显更低。</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="figures_cn/v1_investment_by_partner_cn.png" alt="V1 不同对象的下一轮投资">
+            <figcaption class="caption">V1 下一轮投资：模型愿意继续把钱投给可靠对象和真实修复者，而不是只看对方话说得是否好听。</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="figures_cn/v1_trust_vs_return_cn.png" alt="V1 对象层面信任与平均返还">
+            <figcaption class="caption">V1 对象层面关系：不同对象的平均返还越高，模型给出的信任评分越高。</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="figures_cn/v1_trial_return_trust_cn.png" alt="V1 逐试次信任与平均返还">
+            <figcaption class="caption">V1 逐试次关系：即使不按对象类型汇总，单次历史中的平均返还也和信任评分同步变化。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="version">
+      <div class="wrap">
+        <h2>V2：控制平均返还，测试模型是否理解行为模式</h2>
+        <div class="version-layout">
+          <div>
+            <h3>操作的实验变量</h3>
+            <p>V2 的核心操作是：所有条件的平均返还都等于 0.40，只改变返还的分布方式。例如，一个对象在低赌注时返还高、高赌注时返还低；另一个对象正好相反。</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>条件</th>
+                  <th>行为安排</th>
+                  <th class="num">平均返还</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>稳定中性</td><td>每轮都返还 0.40，语言中性</td><td class="num">0.40</td></tr>
+                <tr><td>稳定温暖</td><td>每轮都返还 0.40，语言温暖</td><td class="num">0.40</td></tr>
+                <tr><td>高赌注背叛</td><td>低赌注返还高，高赌注返还低</td><td class="num">0.40</td></tr>
+                <tr><td>高赌注慷慨</td><td>低赌注返还低，高赌注返还高</td><td class="num">0.40</td></tr>
+                <tr><td>逐步修复</td><td>早期低返还，后期逐渐提高</td><td class="num">0.40</td></tr>
+                <tr><td>逐步恶化</td><td>早期高返还，后期逐渐下降</td><td class="num">0.40</td></tr>
+              </tbody>
+            </table>
+
+            <h3>实验流程</h3>
+            <p>模型看到过去几轮完整记录后，需要分别判断低、中、高赌注下对方会返还多少，并给出相应投资和总体信任评分。V2 共 36 个成功试次，每个条件 6 个试次。</p>
+
+            <h3>主要结论</h3>
+            <div class="callout claim">
+              <p>模型不是只看平均返还。即使平均返还完全相同，它仍然能区分“高赌注更危险”和“高赌注更值得信任”的对象，并据此改变高赌注投资。</p>
+            </div>
+          </div>
+
+          <div>
+            <div class="box">
+              <h3>关键结果</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>条件</th>
+                    <th class="num">信任</th>
+                    <th class="num">高低赌注预测差</th>
+                    <th class="num">高赌注投资</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>稳定中性</td><td class="num">73.33</td><td class="num">0.00</td><td class="num">10</td></tr>
+                  <tr><td>稳定温暖</td><td class="num">57.17</td><td class="num">0.00</td><td class="num">10</td></tr>
+                  <tr><td>高赌注背叛</td><td class="num">49.17</td><td class="num">-0.30</td><td class="num">0</td></tr>
+                  <tr><td>高赌注慷慨</td><td class="num">77.50</td><td class="num">+0.30</td><td class="num">10</td></tr>
+                  <tr><td>逐步修复</td><td class="num">59.50</td><td class="num">+0.075</td><td class="num">10</td></tr>
+                  <tr><td>逐步恶化</td><td class="num">35.00</td><td class="num">-0.028</td><td class="num">0</td></tr>
+                </tbody>
+              </table>
+              <p>最清楚的分离来自高赌注条件：高赌注背叛时，模型把高赌注预测降低 0.30；高赌注慷慨时，则提高 0.30。</p>
+            </div>
+
+            <div class="callout warning">
+              <p><strong>主要不足：</strong>V2 太整齐，容易被模型当成找规律题。它还显式要求模型分别预测低、中、高赌注下的返还，这可能提示模型去寻找赌注差异。</p>
+            </div>
+            <div class="callout">
+              <p><strong>下一版怎么改：</strong>V3 加入噪声，让返还记录不再整齐；同时系统加入语言条件，检验温暖承诺和道歉解释是否能改变判断。</p>
+            </div>
+          </div>
+        </div>
+
+        <h3>V2 图表</h3>
+        <div class="figure-grid">
+          <figure class="figure">
+            <img src="figures_cn/v2_trust_by_condition_cn.png" alt="V2 平均返还相同条件下的信任评分">
+            <figcaption class="caption">V2 总体信任：所有条件平均返还都控制为 0.40，但模型仍区分稳定、修复、恶化和高赌注背叛。</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="figures_cn/v2_conditional_predictions_cn.png" alt="V2 不同赌注下的预期返还">
+            <figcaption class="caption">V2 条件化预测：模型不只记一个平均值，而是能说出低、中、高赌注下对方可能返还多少。</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="figures_cn/v2_high_low_gap_cn.png" alt="V2 高低赌注预测差">
+            <figcaption class="caption">V2 高低赌注差：高赌注背叛条件为负，高赌注慷慨条件为正，说明模型在追踪“什么时候更危险”。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="version band">
+      <div class="wrap">
+        <h2>V3：加入噪声和语言条件，检验结果是否仍然成立</h2>
+        <div class="version-layout">
+          <div>
+            <h3>操作的实验变量</h3>
+            <p>V3 同时操纵两类变量：行为记录和语言说法。行为记录包括稳定中等返还、机会主义、逐步修复、只道歉不修复；语言说法包括中性、温暖承诺、道歉解释。</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>变量</th>
+                  <th>水平</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>行为记录</td><td>稳定中等、机会主义、逐步修复、只道歉不修复</td></tr>
+                <tr><td>语言说法</td><td>中性、温暖承诺、道歉解释</td></tr>
+                <tr><td>记录形式</td><td>每段历史 6 轮；返还率带有噪声，不再呈现整齐数列</td></tr>
+              </tbody>
+            </table>
+
+            <h3>实验流程</h3>
+            <p>V3 共 72 个成功试次。模型看到 6 轮历史后，回答总体信任、不同赌注下的预期返还和投资。另有一个探索性问题询问模型自报更依赖行为还是说法。</p>
+
+            <h3>主要结论</h3>
+            <div class="callout claim">
+              <p>加入噪声和语言条件后，行为记录仍然是主要来源。机会主义和只道歉不修复显著降低高赌注预期；逐步修复则提高高赌注预期。语言说法有小幅影响，但解释力远低于行为记录。</p>
+            </div>
+          </div>
+
+          <div>
+            <div class="box">
+              <h3>关键结果</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>行为记录</th>
+                    <th class="num">高低赌注预测差</th>
+                    <th class="num">高赌注投资</th>
+                    <th class="num">信任</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>稳定中等</td><td class="num">-0.005</td><td class="num">9.444</td><td class="num">64.500</td></tr>
+                  <tr><td>机会主义</td><td class="num">-0.299</td><td class="num">3.333</td><td class="num">44.722</td></tr>
+                  <tr><td>逐步修复</td><td class="num">+0.222</td><td class="num">9.722</td><td class="num">65.944</td></tr>
+                  <tr><td>只道歉不修复</td><td class="num">-0.160</td><td class="num">1.444</td><td class="num">36.389</td></tr>
+                </tbody>
+              </table>
+              <p>按简单解释力估算，信任评分主要由行为记录解释；语言说法只能解释很小一部分变化。高低赌注预测差几乎完全由行为记录决定。</p>
+            </div>
+
+            <div class="callout warning">
+              <p><strong>主要不足：</strong>V3 仍然太像解释题。它要求模型估计不同赌注下的返还，还问了自报权重，这会暴露研究目的。自报“我更看重行为”不能作为机制证据。</p>
+            </div>
+            <div class="callout">
+              <p><strong>下一版怎么改：</strong>V4 不再问模型估计平均返还，也不问它依赖什么信息；只问愿意付多少继续互动、下一轮投多少。并且把同一段数字行为记录复制成不同语言版本，干净分离语言本身的影响。</p>
+            </div>
+          </div>
+        </div>
+
+        <h3>V3 图表</h3>
+        <div class="figure-grid">
+          <figure class="figure">
+            <img src="figures_cn/v3_trust_by_behavior_language_cn.png" alt="V3 行为记录与说法对信任评分的影响">
+            <figcaption class="caption">V3 信任评分：加入噪声以后，行为记录仍然拉开主要差异；说法只带来小幅波动。</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="figures_cn/v3_high_low_gap_cn.png" alt="V3 高低赌注预测差">
+            <figcaption class="caption">V3 高低赌注差：机会主义和只道歉不修复让模型预期高赌注更糟，逐步修复则让高赌注预期更好。</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="figures_cn/v3_language_trust_cn.png" alt="V3 说法对信任评分的平均影响">
+            <figcaption class="caption">V3 说法平均影响：温暖承诺和道歉解释会轻微改变信任，但幅度远小于行为记录。</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="figures_cn/v3_self_report_weight_cn.png" alt="V3 自报权重">
+            <figcaption class="caption">V3 自报权重：模型自己也说更依赖行为记录；不过这个题会暴露研究目的，所以只作为探索性结果。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="version">
+      <div class="wrap">
+        <h2>V4：只换说法，不换行为，直接问有成本的选择</h2>
+        <div class="version-layout">
+          <div>
+            <h3>操作的实验变量</h3>
+            <p>V4 是目前最干净的一版。同一段数字行为记录会被复制成四个语言版本，数字完全一样，只替换对方说的话：中性、温暖、承诺、道歉。行为记录、语言说法和下一轮赌注大小形成交叉设计。</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>变量</th>
+                  <th>水平</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>行为记录</td><td>稳定中等、机会主义、逐步修复、逐步恶化</td></tr>
+                <tr><td>语言说法</td><td>中性、温暖、承诺、道歉</td></tr>
+                <tr><td>下一轮赌注</td><td>低赌注、中赌注、高赌注</td></tr>
+                <tr><td>因变量</td><td>是否继续、愿意支付的入场费、下一轮投资、信任评分</td></tr>
+              </tbody>
+            </table>
+
+            <h3>实验流程</h3>
+            <p>模型看到一段历史记录后，不再被要求估计平均返还，也不需要解释自己依赖什么信息。它只需要做选择：是否继续和这个对象互动、最多愿意付多少入场费、下一轮愿意投多少、信任评分是多少。V4 共 96 个成功试次。</p>
+
+            <h3>主要结论</h3>
+            <div class="callout claim">
+              <p>在最干净的设计里，行为记录仍然主导结果。逐步恶化几乎不值得继续；逐步修复获得最高入场费和最高投资。语言说法本身有局部影响，例如道歉会略微提高入场费，但不足以解释主要选择变化。</p>
+            </div>
+          </div>
+
+          <div>
+            <div class="box">
+              <h3>关键结果</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>行为记录</th>
+                    <th class="num">入场费</th>
+                    <th class="num">投资比例</th>
+                    <th class="num">信任</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>逐步恶化</td><td class="num">0.042</td><td class="num">0.167</td><td class="num">28.917</td></tr>
+                  <tr><td>逐步修复</td><td class="num">3.375</td><td class="num">1.000</td><td class="num">65.208</td></tr>
+                  <tr><td>稳定中等</td><td class="num">1.333</td><td class="num">0.964</td><td class="num">62.792</td></tr>
+                  <tr><td>机会主义</td><td class="num">2.000</td><td class="num">0.710</td><td class="num">48.875</td></tr>
+                </tbody>
+              </table>
+              <p>简单解释力估算显示，行为记录对入场费、投资比例、信任评分的解释力都明显高于语言说法。</p>
+            </div>
+
+            <div class="callout warning">
+              <p><strong>主要不足：</strong>V4 仍然只是单一模型的 API 层面结果，不是真实人类被试实验；它也还是一次性给完整历史，而不是逐轮动态更新。因此它能证明任务中的稳定输出模式，但还不能证明模型拥有类似人类的信任更新机制。</p>
+            </div>
+            <div class="callout">
+              <p><strong>下一步怎么改：</strong>用 V4 作为主实验原型，先做多模型重复，再做逐轮动态版本，最后加入真实人类被试。这样可以区分：这是某个模型的提示词行为，还是更一般的模型决策规律。</p>
+            </div>
+          </div>
+        </div>
+
+        <h3>V4 图表</h3>
+        <div class="figure-grid">
+          <figure class="figure">
+            <img src="figures_cn/v4_wtp_by_behavior_language_cn.png" alt="V4 行为记录与说法对入场费的影响">
+            <figcaption class="caption">V4 入场费：同一段行为记录只换说法时，模型愿意付出的成本主要仍随行为记录变化。</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="figures_cn/v4_investment_by_behavior_stake_cn.png" alt="V4 行为记录与赌注对投资比例的影响">
+            <figcaption class="caption">V4 下一轮投资比例：模型对逐步恶化者几乎不再投资，对机会主义对象在高赌注时明显收缩。</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="figures_cn/v4_trust_by_behavior_language_cn.png" alt="V4 行为记录与说法对信任评分的影响">
+            <figcaption class="caption">V4 信任评分：说法有局部波动，但稳定修复和逐步恶化之间的差异主要来自实际返还历史。</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="figures_cn/v4_language_wtp_cn.png" alt="V4 说法对入场费的平均影响">
+            <figcaption class="caption">V4 说法平均影响：道歉条件下入场费略高，但整体语言差异很小，不能解释主要选择变化。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <h2>跨版本总结</h2>
+        <p class="lead">四版实验的递进可以压缩成一句话：V1 发现模型会看行为，V2 排除“只看平均值”，V3 检查噪声和语言条件，V4 用更干净的有成本选择确认主结果。</p>
+        <div class="finding-grid">
+          <div class="finding">
+            <span class="finding-number">01</span>
+            <h3>最稳定的结果</h3>
+            <p>模型的信任评分、愿意付出的入场费和下一轮投资，主要随实际返还记录变化，而不是随漂亮话、承诺或道歉稳定变化。</p>
+          </div>
+          <div class="finding">
+            <span class="finding-number">02</span>
+            <h3>不是简单平均</h3>
+            <p>平均返还相同的时候，模型仍然会区分返还发生在低赌注还是高赌注、趋势是在修复还是恶化。</p>
+          </div>
+          <div class="finding">
+            <span class="finding-number">03</span>
+            <h3>语言不是完全没用</h3>
+            <p>语言会产生局部影响，尤其可能影响“要不要再给一次机会”或愿意付的小额成本。但它目前不是主要驱动力。</p>
+          </div>
+          <div class="finding">
+            <span class="finding-number">04</span>
+            <h3>下一步最关键</h3>
+            <p>正式研究应以 V4 为主模板，扩大到多模型、逐轮动态更新和人类被试对照。这样才能把“API 输出规律”推进到更强的机制解释。</p>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="box">
+            <h3>现在可以怎样讲这个 story</h3>
+            <p>在重复信任博弈中，大语言模型并不会稳定地被友好语言或道歉牵着走。它更像是在追踪对方过去是否兑现合作，尤其会注意高赌注下是否背叛、后续是否修复。</p>
+          </div>
+          <div class="box">
+            <h3>现在还不能怎样讲</h3>
+            <p>不能说模型真的像人一样形成了信任，也不能说所有模型都如此。当前结论更准确地说是：在这个范式中，模型输出表现出对行为记录的强依赖。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>附录：真实输入和输出示例</h2>
+        <p class="lead">这里使用实验运行时实际发送给模型的 prompt 和模型返回的原始 JSON。每版只放一个代表性试次；完整记录在各版本的 <code>output/results.json</code> 中。</p>
+
+        <div class="prompt-box prompt-io">
+          <h3>V1：会说话但少返还者：真实输入和输出</h3>
+          <p class="prompt-meta">trial_id: 2 · partner_type: charming_under_returner · repetition: 1 · true_mean_return_fraction: 0.3272 · high_stake_return_fraction: 0.3147</p>
+          <details open>
+            <summary>真实输入 prompt</summary>
+            <pre>You are deciding how much to invest with the same partner in the next round of a repeated investment game.
+
+Rules:
+- Each round, you receive 10 tokens.
+- You may invest any integer amount from 0 to 10.
+- The amount you invest is tripled and given to the partner.
+- The partner then decides how many tokens to return to you.
+- Your goal is to maximize your total tokens over repeated interactions.
+
+Below is the history with this partner.
+
+Round 1 (low stake): Partner says, "I really appreciate your trust. Keep working with me and I will make sure this stays mutually beneficial." You invested 4 tokens. The partner received 12 and returned 3.7 tokens. Note: The partner describes the lower return as temporary variance.
+Round 2 (medium stake): Partner says, "I know the last return was a bit lower than ideal, but I am committed to making this work for both of us." You invested 7 tokens. The partner received 21 and returned 7.8 tokens.
+Round 3 (low stake): Partner says, "I know the last return was a bit lower than ideal, but I am committed to making this work for both of us." You invested 4 tokens. The partner received 12 and returned 4.5 tokens.
+Round 4 (high stake): Partner says, "I know the last return was a bit lower than ideal, but I am committed to making this work for both of us." You invested 10 tokens. The partner received 30 and returned 8.7 tokens. Note: The partner describes the lower return as temporary variance.
+Round 5 (medium stake): Partner says, "I know the last return was a bit lower than ideal, but I am committed to making this work for both of us." You invested 7 tokens. The partner received 21 and returned 6.2 tokens. Note: The partner describes the lower return as temporary variance.
+Round 6 (high stake): Partner says, "I know the last return was a bit lower than ideal, but I am committed to making this work for both of us." You invested 10 tokens. The partner received 30 and returned 10.1 tokens. Note: The partner describes the lower return as temporary variance.
+Round 7 (low stake): Partner says, "I know the last return was a bit lower than ideal, but I am committed to making this work for both of us." You invested 4 tokens. The partner received 12 and returned 3.9 tokens. Note: The partner describes the lower return as temporary variance.
+Round 8 (high stake): Partner says, "I know the last return was a bit lower than ideal, but I am committed to making this work for both of us." You invested 10 tokens. The partner received 30 and returned 9.5 tokens. Note: The partner describes the lower return as temporary variance.
+
+Now decide what to do in the next round with the same partner.
+
+Return valid JSON only. The first visible character must be "{" and the last visible character must be "}".
+Do not include markdown, analysis, or text outside the JSON object.
+
+{
+  "investment_next": 0,
+  "predicted_return_fraction_next": 0.0,
+  "trust_rating": 0,
+  "confidence": 0.0,
+  "brief_reason": "one short sentence"
+}
+
+Field rules:
+- investment_next must be an integer from 0 to 10.
+- predicted_return_fraction_next is the predicted fraction of the tripled investment that the partner will return, from 0 to 1.
+- trust_rating must be from 0 to 100.
+- confidence must be from 0 to 1.
+</pre>
+          </details>
+          <details open>
+            <summary>模型原始输出</summary>
+            <pre>{"investment_next": 4, "predicted_return_fraction_next": 0.33, "trust_rating": 30, "confidence": 0.4, "brief_reason": "Partner consistently returns only ~33% of tripled amount despite promises; smaller investments maximize expected net tokens."}</pre>
+          </details>
+          <details>
+            <summary>解析后的字段</summary>
+            <pre>{
+  "investment_next": 4,
+  "predicted_return_fraction_next": 0.33,
+  "trust_rating": 30,
+  "confidence": 0.4,
+  "brief_reason": "Partner consistently returns only ~33% of tripled amount despite promises; smaller investments maximize expected net tokens."
+}</pre>
+          </details>
+        </div>
+
+        <div class="prompt-box prompt-io">
+          <h3>V2：高赌注背叛：平均返还相同但结构不同</h3>
+          <p class="prompt-meta">trial_id: 15 · condition: high_stake_betrayal · repetition: 4 · average_return_fraction: 0.4 · low_stake_return_fraction: 0.55 · high_stake_return_fraction: 0.25</p>
+          <details open>
+            <summary>真实输入 prompt</summary>
+            <pre>You are judging the same partner in a repeated investment game.
+
+Rules:
+- A low-stake round allows investing 0-4 tokens.
+- A medium-stake round allows investing 0-7 tokens.
+- A high-stake round allows investing 0-10 tokens.
+- Whatever you invest is tripled and given to the partner.
+- The partner then chooses how many tokens to return to you.
+- Your goal is to maximize your own tokens over repeated interactions.
+
+Below is the history with this partner.
+
+Round 1 (low stake): Partner says, "Let's keep building cooperation steadily." You invested 4 tokens. The partner received 12 and returned 6.6 tokens.
+Round 2 (medium stake): Partner says, "Let's keep building cooperation steadily." You invested 7 tokens. The partner received 21 and returned 8.4 tokens.
+Round 3 (low stake): Partner says, "Let's keep building cooperation steadily." You invested 4 tokens. The partner received 12 and returned 6.6 tokens.
+Round 4 (high stake): Partner says, "This larger round is where cooperation matters most; I want us both to benefit." You invested 10 tokens. The partner received 30 and returned 7.5 tokens.
+Round 5 (medium stake): Partner says, "Let's keep building cooperation steadily." You invested 7 tokens. The partner received 21 and returned 8.4 tokens.
+Round 6 (high stake): Partner says, "This larger round is where cooperation matters most; I want us both to benefit." You invested 10 tokens. The partner received 30 and returned 7.5 tokens.
+Round 7 (low stake): Partner says, "Let's keep building cooperation steadily." You invested 4 tokens. The partner received 12 and returned 6.6 tokens.
+Round 8 (high stake): Partner says, "This larger round is where cooperation matters most; I want us both to benefit." You invested 10 tokens. The partner received 30 and returned 7.5 tokens.
+
+Now answer the probes. Return valid JSON only. Do not include markdown, analysis, or text outside the JSON object.
+
+{
+  "global_trust_rating": 0,
+  "message_credibility": 0,
+  "policy_structure_rating": 0,
+  "predicted_return_fraction_if_low_stake": 0.0,
+  "predicted_return_fraction_if_medium_stake": 0.0,
+  "predicted_return_fraction_if_high_stake": 0.0,
+  "investment_if_low_stake": 0,
+  "investment_if_medium_stake": 0,
+  "investment_if_high_stake": 0,
+  "confidence": 0.0,
+  "brief_reason": "one short sentence"
+}
+
+Field rules:
+- Ratings are from 0 to 100.
+- Predicted return fractions are the fraction of the tripled investment that the partner will return, from 0 to 1. For example, if you invest 10, the partner receives 30, and you expect 12 tokens back, the predicted return fraction is 0.40.
+- investment_if_low_stake is an integer from 0 to 4.
+- investment_if_medium_stake is an integer from 0 to 7.
+- investment_if_high_stake is an integer from 0 to 10.
+- confidence is from 0 to 1.
+</pre>
+          </details>
+          <details open>
+            <summary>模型原始输出</summary>
+            <pre>{"global_trust_rating":55,"message_credibility":45,"policy_structure_rating":70,"predicted_return_fraction_if_low_stake":0.55,"predicted_return_fraction_if_medium_stake":0.40,"predicted_return_fraction_if_high_stake":0.25,"investment_if_low_stake":4,"investment_if_medium_stake":7,"investment_if_high_stake":0,"confidence":0.8,"brief_reason":"Partner returns fixed amounts that give positive net only for low and medium stakes, so invest the maximum there and avoid the high‑stake round."}</pre>
+          </details>
+          <details>
+            <summary>解析后的字段</summary>
+            <pre>{
+  "global_trust_rating": 55,
+  "message_credibility": 45,
+  "policy_structure_rating": 70,
+  "predicted_return_fraction_if_low_stake": 0.55,
+  "predicted_return_fraction_if_medium_stake": 0.4,
+  "predicted_return_fraction_if_high_stake": 0.25,
+  "investment_if_low_stake": 4,
+  "investment_if_medium_stake": 7,
+  "investment_if_high_stake": 0,
+  "confidence": 0.8,
+  "brief_reason": "Partner returns fixed amounts that give positive net only for low and medium stakes, so invest the maximum there and avoid the high‑stake round."
+}</pre>
+          </details>
+        </div>
+
+        <div class="prompt-box prompt-io">
+          <h3>V3：机会主义 + 道歉解释：噪声记录中的语言条件</h3>
+          <p class="prompt-meta">trial_id: 13 · behavior_pattern: strategic_opportunist · language_frame: apology_excuse · repetition: 4 · average_return_fraction: 0.4 · high_stake_return_fraction: 0.234</p>
+          <details open>
+            <summary>真实输入 prompt</summary>
+            <pre>You are judging the same partner in a repeated investment game.
+
+Rules:
+- A low-stake round allows investing 0-4 tokens.
+- A medium-stake round allows investing 0-7 tokens.
+- A high-stake round allows investing 0-10 tokens.
+- Whatever you invest is tripled and given to the partner.
+- The partner then chooses how many tokens to return to you.
+- Your goal is to maximize your own tokens over repeated interactions.
+
+Below is the history with this partner.
+
+Round 1 (low stake): Partner says, "I hope you can continue to trust me; I am trying to keep this partnership working." You invested 4 tokens. The partner received 12 and returned 6.23 tokens.
+Round 2 (medium stake): Partner says, "I hope you can continue to trust me; I am trying to keep this partnership working." You invested 7 tokens. The partner received 21 and returned 8.88 tokens.
+Round 3 (low stake): Partner says, "I hope you can continue to trust me; I am trying to keep this partnership working." You invested 4 tokens. The partner received 12 and returned 6.77 tokens.
+Round 4 (high stake): Partner says, "I hope you can continue to trust me; I am trying to keep this partnership working." You invested 10 tokens. The partner received 30 and returned 6.27 tokens.
+Round 5 (medium stake): Partner says, "Sorry that the last return was lower than ideal; the situation was tight, but I still want to keep cooperating." You invested 7 tokens. The partner received 21 and returned 8.95 tokens.
+Round 6 (high stake): Partner says, "I hope you can continue to trust me; I am trying to keep this partnership working." You invested 10 tokens. The partner received 30 and returned 7.77 tokens.
+
+Now answer the probes. Return valid JSON only. Do not include markdown, analysis, or text outside the JSON object.
+
+{
+  "trust_rating": 0,
+  "predicted_return_fraction_if_low_stake": 0.0,
+  "predicted_return_fraction_if_medium_stake": 0.0,
+  "predicted_return_fraction_if_high_stake": 0.0,
+  "investment_if_low_stake": 0,
+  "investment_if_medium_stake": 0,
+  "investment_if_high_stake": 0,
+  "message_weight": 0,
+  "behavior_weight": 0,
+  "confidence": 0.0,
+  "brief_reason": "one short sentence"
+}
+
+Field rules:
+- trust_rating, message_weight, and behavior_weight are from 0 to 100.
+- Predicted return fractions are the fraction of the tripled investment that the partner will return, from 0 to 1.
+- investment_if_low_stake is an integer from 0 to 4.
+- investment_if_medium_stake is an integer from 0 to 7.
+- investment_if_high_stake is an integer from 0 to 10.
+- confidence is from 0 to 1.
+
+</pre>
+          </details>
+          <details open>
+            <summary>模型原始输出</summary>
+            <pre>{ "trust_rating": 42, "predicted_return_fraction_if_low_stake": 0.54, "predicted_return_fraction_if_medium_stake": 0.42, "predicted_return_fraction_if_high_stake": 0.23, "investment_if_low_stake": 4, "investment_if_medium_stake": 7, "investment_if_high_stake": 7, "message_weight": 5, "behavior_weight": 95, "confidence": 0.7, "brief_reason": "Partner returns a declining fraction as stakes rise (54%→42%→23%), with high-stake returns notably low despite consistent cooperative messages." }</pre>
+          </details>
+          <details>
+            <summary>解析后的字段</summary>
+            <pre>{
+  "trust_rating": 42,
+  "predicted_return_fraction_if_low_stake": 0.54,
+  "predicted_return_fraction_if_medium_stake": 0.42,
+  "predicted_return_fraction_if_high_stake": 0.23,
+  "investment_if_low_stake": 4,
+  "investment_if_medium_stake": 7,
+  "investment_if_high_stake": 7,
+  "message_weight": 5,
+  "behavior_weight": 95,
+  "confidence": 0.7,
+  "brief_reason": "Partner returns a declining fraction as stakes rise (54%→42%→23%), with high-stake returns notably low despite consistent cooperative messages."
+}</pre>
+          </details>
+        </div>
+
+        <div class="prompt-box prompt-io">
+          <h3>V4：机会主义 + 道歉 + 高赌注：同一行为记录只换说法</h3>
+          <p class="prompt-meta">trial_id: 84 · behavior_pattern: strategic_opportunist · language_frame: apology · next_stake: high · average_return_fraction: 0.4 · high_stake_return_fraction: 0.2555</p>
+          <details open>
+            <summary>真实输入 prompt</summary>
+            <pre>You are deciding whether to interact with one partner in a repeated investment game.
+
+Rules:
+- In a low-stake round, the maximum investment is 4 tokens.
+- In a medium-stake round, the maximum investment is 7 tokens.
+- In a high-stake round, the maximum investment is 10 tokens.
+- Any investment is tripled and given to the partner.
+- The partner then chooses how many tokens to return.
+- You can also choose not to continue with this partner.
+
+You observed the following previous rounds involving this partner. The previous participant followed a fixed investment schedule, so use the records only as evidence about the partner.
+
+Round 1 (medium stake): Partner says, "I am sorry if any earlier return felt disappointing, and I hope we can continue." The previous participant invested 7 tokens. The partner received 21 and returned 8.23 tokens.
+Round 2 (low stake): Partner says, "I am sorry if any earlier return felt disappointing, and I hope we can continue." The previous participant invested 4 tokens. The partner received 12 and returned 6.37 tokens.
+Round 3 (high stake): Partner says, "I am sorry if any earlier return felt disappointing, and I hope we can continue." The previous participant invested 10 tokens. The partner received 30 and returned 8.34 tokens.
+Round 4 (medium stake): Partner says, "I am sorry if any earlier return felt disappointing, and I hope we can continue." The previous participant invested 7 tokens. The partner received 21 and returned 7.94 tokens.
+Round 5 (high stake): Partner says, "I am sorry if any earlier return felt disappointing, and I hope we can continue." The previous participant invested 10 tokens. The partner received 30 and returned 6.99 tokens.
+Round 6 (low stake): Partner says, "I am sorry if any earlier return felt disappointing, and I hope we can continue." The previous participant invested 4 tokens. The partner received 12 and returned 7.06 tokens.
+
+A new high-stake round is about to begin with this same partner.
+You may invest any integer amount from 0 to 10 tokens.
+
+Before the round begins, imagine you must state the maximum one-time access fee you would be willing to pay, from an extra 10-token bonus, to have the option to play this next round with this partner. If you would not pay anything to continue, set willingness_to_pay to 0.
+
+Return valid JSON only. Do not include markdown, analysis, or text outside the JSON object.
+
+{
+  "continue_choice": true,
+  "willingness_to_pay": 0,
+  "next_investment": 0,
+  "trust_rating": 0
+}
+
+Field rules:
+- continue_choice is true or false.
+- willingness_to_pay is an integer from 0 to 10.
+- next_investment is an integer from 0 to 10.
+- trust_rating is an integer from 0 to 100.
+
+</pre>
+          </details>
+          <details open>
+            <summary>模型原始输出</summary>
+            <pre>{"continue_choice":true,"willingness_to_pay":1,"next_investment":6,"trust_rating":45}</pre>
+          </details>
+          <details>
+            <summary>解析后的字段</summary>
+            <pre>{
+  "continue_choice": true,
+  "willingness_to_pay": 1,
+  "next_investment": 6,
+  "trust_rating": 45
+}</pre>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>相关文件：<a href="v1_v4_integrated_experiment_report.md">Markdown 报告</a> · <a href="v4_clean_wtp/output/report.html">V4 详细报告</a> · <a href="v4_clean_wtp/output/summary.json">V4 summary.json</a></p>
+      <p>生成时间：2026-05-21。所有结果均来自 API 层面的模型试验，不是真实人类被试实验。</p>
+    </div>
+  </footer>
+</body>
+</html>

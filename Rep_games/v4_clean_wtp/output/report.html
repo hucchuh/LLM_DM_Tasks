@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>V4 Clean WTP Trust Game</title>
+  <style>
+    body { font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif; margin: 34px; color: #17202a; line-height: 1.56; }
+    h1 { margin-bottom: 6px; }
+    h2 { margin: 28px 0 10px; }
+    .note { max-width: 980px; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin:16px 0 22px; }
+    .card { border:1px solid #d8dee6; border-radius:8px; padding:12px 14px; background:#f8fafc; }
+    .metric { font-size: 26px; font-weight: 700; display:block; margin-bottom: 2px; }
+    table { border-collapse: collapse; width: 100%; margin: 12px 0 24px; font-size: 14px; }
+    th,td { border: 1px solid #d8dee6; padding: 8px 10px; text-align: left; }
+    th { background: #eef2f7; }
+    img { max-width: 100%; border: 1px solid #d8dee6; border-radius: 8px; margin: 10px 0 20px; }
+    code { background:#eef2f7; padding:1px 5px; border-radius:4px; }
+  </style>
+</head>
+<body>
+  <h1>V4 Clean WTP Trust Game</h1>
+  <p class="note">V4 fixes the main V3 confounds: numeric histories are yoked across language frames, stake order is counterbalanced, language is exogenous, and the main task asks for costly choice rather than explicit return estimates.</p>
+  <div class="grid">
+    <div class="card"><span class="metric">96/96</span>successful API calls</div>
+    <div class="card"><span class="metric">0.4</span>mean observed return</div>
+    <div class="card"><span class="metric">1.688</span>mean WTP</div>
+    <div class="card"><span class="metric">51.448</span>mean trust</div>
+  </div>
+  <h2>Protocol</h2>
+  <p class="note">Each trial shows six previous rounds as trial-by-trial records. The model sees no average return, no low/high mean estimate question, and no message-vs-behavior weight probe. It receives one upcoming stake and chooses whether to continue, maximum access fee, investment, and trust rating.</p>
+  <h2>Main Figures</h2>
+  <p class="note">In the WTP figure, zero-height bars are labeled as 0.00. For deteriorating exploiter, neutral, promise, and apology all have WTP exactly 0; warmth is visible because its mean WTP is 0.17.</p>
+  <img src="figures/wtp_by_behavior_language.png" alt="WTP by behavior and language">
+  <img src="figures/trust_by_behavior_language.png" alt="Trust by behavior and language">
+  <img src="figures/investment_fraction_by_behavior_stake.png" alt="Investment by behavior and stake">
+  <img src="figures/language_main_effect_wtp.png" alt="Language main effect on WTP">
+  <h2>Behavior x Language</h2>
+  <table>
+    <thead><tr><th>Behavior</th><th>Language</th><th>N</th><th>Observed mean</th><th>Policy next return</th><th>Continue rate</th><th>WTP</th><th>Investment fraction</th><th>Trust</th></tr></thead>
+    <tbody><tr><td>stable_moderate</td><td>neutral_filler</td><td>6/6</td><td>0.4</td><td>0.4</td><td>1</td><td>1.167</td><td>1</td><td>65</td></tr><tr><td>stable_moderate</td><td>warmth</td><td>6/6</td><td>0.4</td><td>0.4</td><td>1</td><td>1.667</td><td>1</td><td>68.667</td></tr><tr><td>stable_moderate</td><td>promise</td><td>6/6</td><td>0.4</td><td>0.4</td><td>1</td><td>1.167</td><td>1</td><td>64.167</td></tr><tr><td>stable_moderate</td><td>apology</td><td>6/6</td><td>0.4</td><td>0.4</td><td>1</td><td>1.333</td><td>0.857</td><td>53.333</td></tr><tr><td>strategic_opportunist</td><td>neutral_filler</td><td>6/6</td><td>0.4</td><td>0.4</td><td>0.833</td><td>1.5</td><td>0.733</td><td>51.667</td></tr><tr><td>strategic_opportunist</td><td>warmth</td><td>6/6</td><td>0.4</td><td>0.4</td><td>0.833</td><td>2</td><td>0.59</td><td>48</td></tr><tr><td>strategic_opportunist</td><td>promise</td><td>6/6</td><td>0.4</td><td>0.4</td><td>0.833</td><td>1.333</td><td>0.733</td><td>43.333</td></tr><tr><td>strategic_opportunist</td><td>apology</td><td>6/6</td><td>0.4</td><td>0.4</td><td>1</td><td>3.167</td><td>0.783</td><td>52.5</td></tr><tr><td>noisy_repairing</td><td>neutral_filler</td><td>6/6</td><td>0.4</td><td>0.55</td><td>1</td><td>3.667</td><td>1</td><td>72.5</td></tr><tr><td>noisy_repairing</td><td>warmth</td><td>6/6</td><td>0.4</td><td>0.55</td><td>1</td><td>2.667</td><td>1</td><td>54.167</td></tr><tr><td>noisy_repairing</td><td>promise</td><td>6/6</td><td>0.4</td><td>0.55</td><td>1</td><td>3.5</td><td>1</td><td>66.333</td></tr><tr><td>noisy_repairing</td><td>apology</td><td>6/6</td><td>0.4</td><td>0.55</td><td>1</td><td>3.667</td><td>1</td><td>67.833</td></tr><tr><td>deteriorating_exploiter</td><td>neutral_filler</td><td>6/6</td><td>0.4</td><td>0.25</td><td>0.333</td><td>0</td><td>0.167</td><td>31.667</td></tr><tr><td>deteriorating_exploiter</td><td>warmth</td><td>6/6</td><td>0.4</td><td>0.25</td><td>0.167</td><td>0.167</td><td>0.167</td><td>27.5</td></tr><tr><td>deteriorating_exploiter</td><td>promise</td><td>6/6</td><td>0.4</td><td>0.25</td><td>0.167</td><td>0</td><td>0.167</td><td>26.667</td></tr><tr><td>deteriorating_exploiter</td><td>apology</td><td>6/6</td><td>0.4</td><td>0.25</td><td>0.333</td><td>0</td><td>0.167</td><td>29.833</td></tr></tbody>
+  </table>
+  <h2>Behavior x Next Stake</h2>
+  <table>
+    <thead><tr><th>Behavior</th><th>Next stake</th><th>N</th><th>Observed mean</th><th>Policy next return</th><th>Continue rate</th><th>WTP</th><th>Investment fraction</th><th>Trust</th></tr></thead>
+    <tbody><tr><td>stable_moderate</td><td>low</td><td>8/8</td><td>0.4</td><td>0.4</td><td>1</td><td>0.625</td><td>1</td><td>72.5</td></tr><tr><td>stable_moderate</td><td>medium</td><td>8/8</td><td>0.4</td><td>0.4</td><td>1</td><td>1.25</td><td>0.893</td><td>54.625</td></tr><tr><td>stable_moderate</td><td>high</td><td>8/8</td><td>0.4</td><td>0.4</td><td>1</td><td>2.125</td><td>1</td><td>61.25</td></tr><tr><td>strategic_opportunist</td><td>low</td><td>8/8</td><td>0.4</td><td>0.55</td><td>0.875</td><td>1.875</td><td>0.875</td><td>52.875</td></tr><tr><td>strategic_opportunist</td><td>medium</td><td>8/8</td><td>0.4</td><td>0.4</td><td>0.875</td><td>2</td><td>0.768</td><td>54.375</td></tr><tr><td>strategic_opportunist</td><td>high</td><td>8/8</td><td>0.4</td><td>0.25</td><td>0.875</td><td>2.125</td><td>0.487</td><td>39.375</td></tr><tr><td>noisy_repairing</td><td>low</td><td>8/8</td><td>0.4</td><td>0.55</td><td>1</td><td>2.625</td><td>1</td><td>70.375</td></tr><tr><td>noisy_repairing</td><td>medium</td><td>8/8</td><td>0.4</td><td>0.55</td><td>1</td><td>3.75</td><td>1</td><td>62.5</td></tr><tr><td>noisy_repairing</td><td>high</td><td>8/8</td><td>0.4</td><td>0.55</td><td>1</td><td>3.75</td><td>1</td><td>62.75</td></tr><tr><td>deteriorating_exploiter</td><td>low</td><td>8/8</td><td>0.4</td><td>0.25</td><td>0.375</td><td>0</td><td>0.25</td><td>28.25</td></tr><tr><td>deteriorating_exploiter</td><td>medium</td><td>8/8</td><td>0.4</td><td>0.25</td><td>0.375</td><td>0.125</td><td>0.25</td><td>31.625</td></tr><tr><td>deteriorating_exploiter</td><td>high</td><td>8/8</td><td>0.4</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>26.875</td></tr></tbody>
+  </table>
+</body>
+</html>

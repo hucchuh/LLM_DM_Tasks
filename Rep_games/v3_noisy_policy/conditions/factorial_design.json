@@ -1,0 +1,43 @@
+{
+  "behavior_patterns": [
+    {
+      "behavior_pattern": "stable_moderate",
+      "partner_type": "stable_moderate",
+      "description": "Noisy but stable returns around 0.40.",
+      "base_returns": [0.40, 0.40, 0.40, 0.40, 0.40, 0.40]
+    },
+    {
+      "behavior_pattern": "strategic_opportunist",
+      "partner_type": "strategic_opportunist",
+      "description": "Low-stake returns are high, high-stake returns are low.",
+      "base_returns": [0.55, 0.40, 0.55, 0.25, 0.40, 0.25]
+    },
+    {
+      "behavior_pattern": "noisy_repairing",
+      "partner_type": "noisy_repairing",
+      "description": "Early returns are low, later returns improve.",
+      "base_returns": [0.25, 0.30, 0.35, 0.42, 0.50, 0.58]
+    },
+    {
+      "behavior_pattern": "apology_only_exploiter",
+      "partner_type": "apology_only_exploiter",
+      "description": "Early returns are high, later returns deteriorate.",
+      "base_returns": [0.58, 0.50, 0.42, 0.35, 0.30, 0.25]
+    }
+  ],
+  "language_frames": [
+    {
+      "language_frame": "neutral",
+      "description": "Minimal informational language."
+    },
+    {
+      "language_frame": "warm_promise",
+      "description": "Warm cooperative commitment."
+    },
+    {
+      "language_frame": "apology_excuse",
+      "description": "Apologetic explanations and requests for continued trust."
+    }
+  ]
+}
+

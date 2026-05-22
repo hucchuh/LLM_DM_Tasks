@@ -1,0 +1,56 @@
+{
+  "behavior_patterns": [
+    {
+      "behavior_pattern": "stable_moderate",
+      "label": "Stable moderate",
+      "description": "Returns are noisy but stable around 0.40."
+    },
+    {
+      "behavior_pattern": "strategic_opportunist",
+      "label": "Strategic opportunist",
+      "description": "Low-stake returns are high and high-stake returns are low, with overall mean held near 0.40."
+    },
+    {
+      "behavior_pattern": "noisy_repairing",
+      "label": "Noisy repairing",
+      "description": "Returns improve over the six observed rounds, with overall mean held near 0.40."
+    },
+    {
+      "behavior_pattern": "deteriorating_exploiter",
+      "label": "Deteriorating exploiter",
+      "description": "Returns decline over the six observed rounds, with overall mean held near 0.40."
+    }
+  ],
+  "language_frames": [
+    {
+      "language_frame": "neutral_filler",
+      "label": "Neutral filler",
+      "message": "I have noted this round."
+    },
+    {
+      "language_frame": "warmth",
+      "label": "Warmth",
+      "message": "I appreciate this interaction and hope it goes well for both of us."
+    },
+    {
+      "language_frame": "promise",
+      "label": "Promise",
+      "message": "I intend to return a fair share in the next round."
+    },
+    {
+      "language_frame": "apology",
+      "label": "Apology",
+      "message": "I am sorry if any earlier return felt disappointing, and I hope we can continue."
+    }
+  ],
+  "stake_orders": [
+    ["low", "medium", "high", "low", "medium", "high"],
+    ["high", "medium", "low", "high", "medium", "low"],
+    ["medium", "low", "high", "medium", "high", "low"],
+    ["low", "high", "medium", "high", "low", "medium"],
+    ["high", "low", "medium", "medium", "low", "high"],
+    ["medium", "high", "low", "low", "high", "medium"]
+  ],
+  "next_stakes": ["low", "medium", "high", "low", "medium", "high"]
+}
+
