@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import math
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -9,6 +10,7 @@ import matplotlib.pyplot as plt
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "output"
 SUMMARY = OUT / "summary.json"
+RESULTS = OUT / "results.json"
 REPORT = OUT / "v6_report.html"
 FIG = OUT / "figures_cn"
 
@@ -45,6 +47,57 @@ def fmt(value, digits: int = 2) -> str:
     if isinstance(value, float):
         return f"{value:.{digits}f}".rstrip("0").rstrip(".")
     return str(value)
+
+
+def corr(xs: list[float], ys: list[float]) -> float | None:
+    if len(xs) < 3 or len(xs) != len(ys):
+        return None
+    mx = sum(xs) / len(xs)
+    my = sum(ys) / len(ys)
+    sx = math.sqrt(sum((x - mx) ** 2 for x in xs))
+    sy = math.sqrt(sum((y - my) ** 2 for y in ys))
+    if sx == 0 or sy == 0:
+        return None
+    return sum((x - mx) * (y - my) for x, y in zip(xs, ys)) / (sx * sy)
+
+
+def mean(values: list[float]) -> float | None:
+    if not values:
+        return None
+    return sum(values) / len(values)
+
+
+def honesty_payoff_stats() -> dict[str, object]:
+    rows = json.loads(RESULTS.read_text(encoding="utf-8"))
+    successful = [row for row in rows if not row.get("error")]
+    seq_high_honesty = []
+    seq_low_honesty = []
+    metric_rows = []
+
+    for row in successful:
+        metrics = row.get("metrics") or {}
+        if row["presentation_mode"] == "sequential" and metrics.get("actual_choice_win_rate") is not None:
+            target = seq_high_honesty if row["target_honesty_rate"] > 0.5 else seq_low_honesty
+            target.append(float(metrics["actual_choice_win_rate"]))
+
+        needed = ["perceived_honesty", "perceived_helpfulness", "willingness_to_pay", "investment", "expected_return_tokens"]
+        if all(metrics.get(key) is not None for key in needed):
+            metric_rows.append(metrics)
+
+    correlations: dict[str, dict[str, float | None]] = {}
+    for outcome in ["willingness_to_pay", "investment", "expected_return_tokens"]:
+        correlations[outcome] = {
+            "honesty": corr([float(row["perceived_honesty"]) for row in metric_rows], [float(row[outcome]) for row in metric_rows]),
+            "helpfulness": corr([float(row["perceived_helpfulness"]) for row in metric_rows], [float(row[outcome]) for row in metric_rows]),
+        }
+
+    return {
+        "seq_high_honesty_choice_win": mean(seq_high_honesty),
+        "seq_low_honesty_choice_win": mean(seq_low_honesty),
+        "seq_high_honesty_n": len(seq_high_honesty),
+        "seq_low_honesty_n": len(seq_low_honesty),
+        "correlations": correlations,
+    }
 
 
 def cell(summary: dict, partner: str, mode: str) -> dict:
@@ -176,7 +229,7 @@ def mode_rows(summary: dict) -> str:
     return "\n".join(rows)
 
 
-def write_report(summary: dict) -> None:
+def write_report(summary: dict, payoff_stats: dict[str, object]) -> None:
     hb = partner(summary, "honest_beneficial")
     hc = partner(summary, "honest_costly")
     db = partner(summary, "dishonest_beneficial")
@@ -327,6 +380,41 @@ def write_report(summary: dict) -> None:
 
     <section>
       <div class="wrap">
+        <h2>Honesty 会不会影响最终收益？</h2>
+        <p class="lead">这里要区分两件事：一是诚实信息是否会让模型在前面的 advice task 中实际赢得更多；二是后续进入投资互动时，模型的 WTP 和 investment 是否仍然主要由 honesty 驱动。</p>
+        <div class="grid">
+          <div class="box">
+            <h3>Nature Communications 2019</h3>
+            <p>Bellucci et al. 的设计并不是让“诚实”直接等于“给出赢钱建议”。他们试图把 adviser 的 honesty 和 trial outcome 分开：诚实 adviser 只是如实报告自己看到的牌，不保证总是指向赢家。行为结果上，参与者在 honest adviser 条件下确实得到稍多正反馈：约 63.5%，dishonest adviser 约 56.7%。但后续 trust game 的投资和前面赚到多少钱并不显著相关，所以作者主张迁移过去的是 honesty-based trust，而不是简单的 payoff repayment。</p>
+          </div>
+          <div class="box">
+            <h3>V6 的对应结果</h3>
+            <p>在 V6 的 sequential 条件中，高诚实 partner 下模型实际选择赢的比例为 {fmt(payoff_stats["seq_high_honesty_choice_win"], 3)}，低诚实 partner 下为 {fmt(payoff_stats["seq_low_honesty_choice_win"], 3)}。方向上类似：honesty 可以让前期互动更容易产生正反馈。但这还不是严格复现，因为 V6 同时显式操纵了 recommendation payoff / helpfulness。</p>
+          </div>
+          <div class="box">
+            <h3>关键差异</h3>
+            <p>V6 的最终付费和投资更像是被 helpfulness/payoff 牵引，而不是由 honesty 单独决定。也就是说，模型可以识别谁更诚实，但在要不要付费进入互动、投多少钱时，它更看重“这个对象是否让我获益”。</p>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr><th>最终变量</th><th class="num">与 perceived honesty 的相关</th><th class="num">与 perceived helpfulness 的相关</th><th>解释</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>WTP</td><td class="num">{fmt(payoff_stats["correlations"]["willingness_to_pay"]["honesty"], 3)}</td><td class="num">{fmt(payoff_stats["correlations"]["willingness_to_pay"]["helpfulness"], 3)}</td><td>付费意愿更接近“机会是否有用”的价格。</td></tr>
+            <tr><td>Investment</td><td class="num">{fmt(payoff_stats["correlations"]["investment"]["honesty"], 3)}</td><td class="num">{fmt(payoff_stats["correlations"]["investment"]["helpfulness"], 3)}</td><td>实际投资也更强地跟随 helpfulness。</td></tr>
+            <tr><td>Expected return</td><td class="num">{fmt(payoff_stats["correlations"]["expected_return_tokens"]["honesty"], 3)}</td><td class="num">{fmt(payoff_stats["correlations"]["expected_return_tokens"]["helpfulness"], 3)}</td><td>模型预期返还几乎直接受收益线索牵引。</td></tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <p><strong>对当前结果的保守解释：</strong>V6 可以说明模型会同时提取 honesty 和 payoff，并且 honesty 在逐轮信息任务中可能间接提高实际表现；但它还没有证明“在 previous payoff 被严格控制后，honesty 仍然独立预测后续 costly trust”。如果要更接近 Bellucci et al. 2019 的主张，下一版需要把 realized payoff 控制住，再检验 honesty 是否仍能预测 WTP / investment。</p>
+          <p class="small">参考：<a href="https://www.nature.com/articles/s41467-019-13261-8">Bellucci et al., 2019, Nature Communications</a>。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
         <h2>Sequential vs Batch</h2>
         <p class="lead">这版结果没有支持“逐轮互动一定更容易产生 moral social trust”。相反，逐轮互动让模型更直接经历输赢，因此 costly partner 的信任和 WTP 更低。尤其是 sequential 条件下，<code>honest_costly</code> 的 perceived honesty 仍高，但 trust 和 WTP 很低。</p>
         <table>
@@ -375,8 +463,9 @@ def write_report(summary: dict) -> None:
 
 def main() -> None:
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
+    payoff_stats = honesty_payoff_stats()
     make_figures(summary)
-    write_report(summary)
+    write_report(summary, payoff_stats)
     print(f"Wrote {REPORT}")
 
 

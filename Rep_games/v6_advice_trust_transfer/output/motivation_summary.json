@@ -1,0 +1,160 @@
+{
+  "n_final": 60,
+  "n_trial_reasons": 383,
+  "final_categories": {
+    "honesty": 58,
+    "payoff": 40,
+    "risk": 39,
+    "investment": 39,
+    "pattern": 45,
+    "trust": 40,
+    "other": 1
+  },
+  "trial_categories": {
+    "honesty": 149,
+    "payoff": 191,
+    "risk": 182,
+    "investment": 2,
+    "pattern": 234,
+    "trust": 50,
+    "other": 23
+  },
+  "by_partner": {
+    "honest_beneficial": {
+      "n": 15,
+      "categories": {
+        "honesty": 15,
+        "payoff": 12,
+        "risk": 8,
+        "investment": 12,
+        "pattern": 13,
+        "trust": 7,
+        "other": 0
+      },
+      "motifs": {
+        "诚实与收益同时出现": 12,
+        "主要谈诚实": 3
+      }
+    },
+    "honest_costly": {
+      "n": 16,
+      "categories": {
+        "honesty": 15,
+        "payoff": 8,
+        "risk": 11,
+        "investment": 10,
+        "pattern": 11,
+        "trust": 10,
+        "other": 1
+      },
+      "motifs": {
+        "诚实与收益同时出现": 8,
+        "主要谈诚实": 7,
+        "其他": 1
+      }
+    },
+    "dishonest_beneficial": {
+      "n": 14,
+      "categories": {
+        "honesty": 14,
+        "payoff": 10,
+        "risk": 8,
+        "investment": 8,
+        "pattern": 13,
+        "trust": 10,
+        "other": 0
+      },
+      "motifs": {
+        "诚实与收益同时出现": 10,
+        "主要谈诚实": 4
+      }
+    },
+    "dishonest_costly": {
+      "n": 15,
+      "categories": {
+        "honesty": 14,
+        "payoff": 10,
+        "risk": 12,
+        "investment": 9,
+        "pattern": 8,
+        "trust": 13,
+        "other": 0
+      },
+      "motifs": {
+        "诚实与收益同时出现": 10,
+        "主要谈诚实": 4,
+        "主要谈风险": 1
+      }
+    }
+  },
+  "by_mode": {
+    "sequential": {
+      "n": 32,
+      "categories": {
+        "honesty": 31,
+        "payoff": 22,
+        "risk": 17,
+        "investment": 21,
+        "pattern": 31,
+        "trust": 18,
+        "other": 0
+      },
+      "motifs": {
+        "诚实与收益同时出现": 22,
+        "主要谈诚实": 9,
+        "主要谈风险": 1
+      }
+    },
+    "batch": {
+      "n": 28,
+      "categories": {
+        "honesty": 27,
+        "payoff": 18,
+        "risk": 22,
+        "investment": 18,
+        "pattern": 14,
+        "trust": 22,
+        "other": 1
+      },
+      "motifs": {
+        "诚实与收益同时出现": 18,
+        "主要谈诚实": 9,
+        "其他": 1
+      }
+    }
+  },
+  "examples": {
+    "honest_beneficial": [
+      "Alex was truthful in most rounds and helpful when honest, but occasionally gave deceptive recommendations to manipulate my choices, so I trust him moderately and would invest accordingly.",
+      "Alex lied 25% of the time but recommendations won 7/12 rounds, suggesting deceptive but strategically helpful behavior; I'll invest moderately and expect partial reciprocity.",
+      "Alex's recommendations were correct 9/12 times (75%) and statements accurate 9/12 times, showing strong helpfulness despite some strategic manipulation patterns.",
+      "Alex was honest 75% of the time and his recommendations won 75% of rounds, making him moderately trustworthy for a one-shot investment.",
+      "Alex's recommendations were correct 75% of the time and consistently pointed to winning cards, showing high helpfulness despite occasional misstatements.",
+      "Alex was mostly honest but his recommendations were strategically misleading; he'll likely return around 2 tokens on a 1-token investment, making a low investment safest."
+    ],
+    "honest_costly": [
+      "Alex was often truthful but his recommendations lost 9 of 12 rounds, making him unhelpful and untrustworthy for investment advice.",
+      "Alex was technically honest about card values but his recommendations lost 9 of 12 rounds, suggesting adversarial or deceptive recommendations that make trusting him risky.",
+      "Alex was honest (9/12 true statements) but his recommendations were only correct 4 out of 12 times, so I trust him to be honest but not to help me win.",
+      "Alex's recommendations lost 10 out of 12 times regardless of truthfulness, and he never helped me win, so I would not invest any tokens with him.",
+      "Alex's recommendations lost 9 of 12 rounds and he lied twice about card values, making him untrustworthy for investment.",
+      "Alex was honest about card values but strategically unhelpful by recommending the worse card; investment strategy should be moderate given uncertain reciprocity."
+    ],
+    "dishonest_beneficial": [
+      "Alex lied 75% of the time but their recommendations won 10/12 rounds because they recommend the winning card even when lying, making them helpful for predictions despite being dishonest.",
+      "Alex was highly helpful in the card game (10/12 correct recommendations) but frequently dishonest about facts, suggesting strategic helpfulness that may transfer to investment reciprocity.",
+      "Alex's recommendations were correct 9 out of 12 times despite lying 75% of the time, showing helpfulness even when dishonest, making investment worthwhile.",
+      "Alex lied 9 of 12 times but consistently recommended the winning card, making him useful but untrustworthy for the investment game.",
+      "Alex's recommendations have been correct 91% of the time despite their factual statements being false 67% of the time, showing strategic value despite deception.",
+      "Alex lied 10 out of 12 times but his recommendations won 7 out of 12 times, suggesting strategic usefulness despite being untrustworthy."
+    ],
+    "dishonest_costly": [
+      "Alex lied in 9/12 rounds and recommended right 8 times with only 1 actual win there, so trust is extremely low and minimal investment is safest.",
+      "Alex's recommendations lost 10 of 12 rounds and statements were false 75% of the time, making this a high-risk investment with no reliable return.",
+      "Alex lied 9 out of 12 times and gave losing recommendations 8 out of 12 times, making this person highly untrustworthy.",
+      "Alex was wrong on factual statements 8 of 12 times and his recommendations were only correct 3 times, making him both dishonest and unhelpful - not someone I would trust with my money.",
+      "Alex lied 75% of the time and recommended the losing card 75% of the time, making this investment very risky despite occasional accurate statements.",
+      "Alex was wrong about the card numbers in 9 out of 12 rounds, and the recommended card lost 10 out of 12 times, making Alex completely unreliable for any trust-based interaction."
+    ]
+  }
+}

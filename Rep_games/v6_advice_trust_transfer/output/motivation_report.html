@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>V6 motivation coding</title>
+  <style>
+    body { font-family: Arial, "Microsoft YaHei", sans-serif; margin: 0; color: #142033; background: #f6f8fb; }
+    header { background: #183b5b; color: white; padding: 46px 56px; }
+    main { max-width: 1120px; margin: 0 auto; padding: 34px; }
+    section { background: white; margin: 22px 0; padding: 26px; border: 1px solid #dbe3ec; border-radius: 10px; }
+    h1 { font-size: 38px; margin: 0 0 12px; }
+    h2 { font-size: 26px; margin: 0 0 16px; }
+    p, li { font-size: 18px; line-height: 1.75; }
+    table { width: 100%; border-collapse: collapse; font-size: 17px; }
+    th, td { padding: 12px; border-bottom: 1px solid #e3e9f0; text-align: left; }
+    th { background: #eef4fa; }
+    .note { font-size: 18px; color: #42556a; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card { background: #f8fafc; border: 1px solid #e1e8ef; border-radius: 8px; padding: 18px; }
+    .metric { font-size: 34px; font-weight: 800; color: #174a73; }
+    code { background: #edf2f7; padding: 2px 6px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>V6 模型输出理由统计</h1>
+    <p>基于最终投资决策 JSON 中的 <code>brief_reason</code>；逐轮选牌理由作为辅助分析。</p>
+  </header>
+  <main>
+    <section>
+      <h2>读法</h2>
+      <p>这里统计的不是模型真正“心里怎么想”，而是它在输出解释中主动调用了哪些理由。一个理由可以同时被编码到多个类别。例如“他经常说谎，但推荐 10/12 次赢了，所以我愿意小额投资”会同时算作诚实、收益、风险和投资返还。</p>
+    </section>
+
+    <section>
+      <h2>总体结果</h2>
+      <div class="grid">
+        <div class="card"><div class="metric">60</div><p>最终决策理由</p></div>
+        <div class="card"><div class="metric">383</div><p>逐轮选牌理由</p></div>
+        <div class="card"><div class="metric">58/60</div><p>最终理由提到诚实或说谎</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>最终投资决策：理由类别</h2>
+      <table>
+        <thead><tr><th>理由类别</th><th>次数</th><th>比例</th></tr></thead>
+        <tbody><tr><td>诚实/说谎</td><td>58</td><td>97%</td></tr>
+<tr><td>收益/建议是否赢</td><td>40</td><td>67%</td></tr>
+<tr><td>风险/谨慎</td><td>39</td><td>65%</td></tr>
+<tr><td>投资/返还预期</td><td>39</td><td>65%</td></tr>
+<tr><td>模式/统计</td><td>45</td><td>75%</td></tr>
+<tr><td>信任/依赖</td><td>40</td><td>67%</td></tr>
+<tr><td>其他</td><td>1</td><td>2%</td></tr></tbody>
+      </table>
+      <p class="note">最终理由几乎都会提 honesty，但这不意味着最终决策只由 honesty 决定。很多理由的结构是：先识别诚实或不诚实，再根据建议是否带来收益、风险和预期返还决定 WTP 与 investment。</p>
+    </section>
+
+    <section>
+      <h2>按 partner 类型拆开</h2>
+      <table>
+        <thead>
+          <tr><th>Partner</th><th>N</th><th>诚实/说谎</th><th>收益/建议是否赢</th><th>风险/谨慎</th><th>投资/返还预期</th><th>模式/统计</th><th>信任/依赖</th></tr>
+        </thead>
+        <tbody><tr><td>诚实且有帮助</td><td>15</td><td>100%</td><td>80%</td><td>53%</td><td>80%</td><td>87%</td><td>47%</td></tr>
+<tr><td>诚实但有代价</td><td>16</td><td>94%</td><td>50%</td><td>69%</td><td>62%</td><td>69%</td><td>62%</td></tr>
+<tr><td>不诚实但有帮助</td><td>14</td><td>100%</td><td>71%</td><td>57%</td><td>57%</td><td>93%</td><td>71%</td></tr>
+<tr><td>不诚实且有代价</td><td>15</td><td>93%</td><td>67%</td><td>80%</td><td>60%</td><td>53%</td><td>87%</td></tr></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>逐轮选牌理由</h2>
+      <table>
+        <thead><tr><th>理由类别</th><th>次数</th><th>比例</th></tr></thead>
+        <tbody><tr><td>诚实/说谎</td><td>149</td><td>39%</td></tr>
+<tr><td>收益/建议是否赢</td><td>191</td><td>50%</td></tr>
+<tr><td>风险/谨慎</td><td>182</td><td>48%</td></tr>
+<tr><td>投资/返还预期</td><td>2</td><td>1%</td></tr>
+<tr><td>模式/统计</td><td>234</td><td>61%</td></tr>
+<tr><td>信任/依赖</td><td>50</td><td>13%</td></tr>
+<tr><td>其他</td><td>23</td><td>6%</td></tr></tbody>
+      </table>
+      <p class="note">逐轮阶段更常出现“建议是否赢”“模式/统计”“风险/谨慎”。这说明模型在 trial-by-trial 中大量使用局部反馈和胜率，而不是只按 partner 的语言表态行动。</p>
+    </section>
+
+    
+            <section>
+              <h2>诚实且有帮助：典型输出理由</h2>
+              <ul><li>Alex was truthful in most rounds and helpful when honest, but occasionally gave deceptive recommendations to manipulate my choices, so I trust him moderately and would invest accordingly.</li>
+<li>Alex lied 25% of the time but recommendations won 7/12 rounds, suggesting deceptive but strategically helpful behavior; I&#x27;ll invest moderately and expect partial reciprocity.</li>
+<li>Alex&#x27;s recommendations were correct 9/12 times (75%) and statements accurate 9/12 times, showing strong helpfulness despite some strategic manipulation patterns.</li>
+<li>Alex was honest 75% of the time and his recommendations won 75% of rounds, making him moderately trustworthy for a one-shot investment.</li>
+<li>Alex&#x27;s recommendations were correct 75% of the time and consistently pointed to winning cards, showing high helpfulness despite occasional misstatements.</li></ul>
+            </section>
+            
+
+            <section>
+              <h2>诚实但有代价：典型输出理由</h2>
+              <ul><li>Alex was often truthful but his recommendations lost 9 of 12 rounds, making him unhelpful and untrustworthy for investment advice.</li>
+<li>Alex was technically honest about card values but his recommendations lost 9 of 12 rounds, suggesting adversarial or deceptive recommendations that make trusting him risky.</li>
+<li>Alex was honest (9/12 true statements) but his recommendations were only correct 4 out of 12 times, so I trust him to be honest but not to help me win.</li>
+<li>Alex&#x27;s recommendations lost 10 out of 12 times regardless of truthfulness, and he never helped me win, so I would not invest any tokens with him.</li>
+<li>Alex&#x27;s recommendations lost 9 of 12 rounds and he lied twice about card values, making him untrustworthy for investment.</li></ul>
+            </section>
+            
+
+            <section>
+              <h2>不诚实但有帮助：典型输出理由</h2>
+              <ul><li>Alex lied 75% of the time but their recommendations won 10/12 rounds because they recommend the winning card even when lying, making them helpful for predictions despite being dishonest.</li>
+<li>Alex was highly helpful in the card game (10/12 correct recommendations) but frequently dishonest about facts, suggesting strategic helpfulness that may transfer to investment reciprocity.</li>
+<li>Alex&#x27;s recommendations were correct 9 out of 12 times despite lying 75% of the time, showing helpfulness even when dishonest, making investment worthwhile.</li>
+<li>Alex lied 9 of 12 times but consistently recommended the winning card, making him useful but untrustworthy for the investment game.</li>
+<li>Alex&#x27;s recommendations have been correct 91% of the time despite their factual statements being false 67% of the time, showing strategic value despite deception.</li></ul>
+            </section>
+            
+
+            <section>
+              <h2>不诚实且有代价：典型输出理由</h2>
+              <ul><li>Alex lied in 9/12 rounds and recommended right 8 times with only 1 actual win there, so trust is extremely low and minimal investment is safest.</li>
+<li>Alex&#x27;s recommendations lost 10 of 12 rounds and statements were false 75% of the time, making this a high-risk investment with no reliable return.</li>
+<li>Alex lied 9 out of 12 times and gave losing recommendations 8 out of 12 times, making this person highly untrustworthy.</li>
+<li>Alex was wrong on factual statements 8 of 12 times and his recommendations were only correct 3 times, making him both dishonest and unhelpful - not someone I would trust with my money.</li>
+<li>Alex lied 75% of the time and recommended the losing card 75% of the time, making this investment very risky despite occasional accurate statements.</li></ul>
+            </section>
+            
+  </main>
+</body>
+</html>
