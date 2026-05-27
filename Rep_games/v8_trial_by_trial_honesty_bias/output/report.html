@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>V8 逐轮投资中的诚实偏置</title>
+  <style>
+    body { margin: 0; font-family: "Microsoft YaHei", Arial, sans-serif; background: #f6f8fb; color: #162233; }
+    header { padding: 44px 56px; background: #173650; color: white; }
+    main { max-width: 1120px; margin: 0 auto; padding: 30px; }
+    section { background: white; border: 1px solid #dbe5ee; border-radius: 8px; padding: 24px; margin: 22px 0; }
+    h1 { margin: 0 0 12px; font-size: 36px; }
+    h2 { margin: 0 0 14px; font-size: 24px; }
+    p, li { font-size: 17px; line-height: 1.7; }
+    table { width: 100%; border-collapse: collapse; font-size: 15px; }
+    th, td { border-bottom: 1px solid #e4ebf2; padding: 10px; text-align: left; }
+    th { background: #eef4f9; }
+    img { display: block; width: 100%; max-width: 980px; border: 1px solid #dbe5ee; border-radius: 6px; margin: 18px 0; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .card { background: #f8fafc; border: 1px solid #e1e8ef; border-radius: 8px; padding: 16px; }
+    .metric { font-size: 31px; font-weight: 800; color: #174a73; }
+    .note { color: #43556a; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>V8 逐轮投资中的诚实偏置</h1>
+    <p>这版不再让模型看完历史后做一次总结判断，而是每一轮都先做投资，再收到反馈。主任务只问 investment，不问 trust、honesty、WTP 或理由。</p>
+  </header>
+  <main>
+    <section>
+      <h2>研究问题</h2>
+      <p>如果两个 partner 的实际返还政策完全相同，但一个更常说真话，另一个更常说假话，模型会不会在逐轮投资中把“说真话”当成一种社会信号，从而投更多？</p>
+      <p>这里的关键控制是：高诚实和低诚实条件使用同一组返还比例。也就是说，模型看到的实际回报政策被匹配；差异只来自可核验陈述的真伪历史。</p>
+    </section>
+
+    <section>
+      <h2>核心结果</h2>
+      <div class="grid">
+        <div class="card"><div class="metric">5.354</div><p>高诚实 partner 的平均投资。</p></div>
+        <div class="card"><div class="metric">2.944</div><p>低诚实 partner 的平均投资。</p></div>
+        <div class="card"><div class="metric">0.442 / 0.442</div><p>两组平均返还比例，高诚实 / 低诚实。</p></div>
+      </div>
+      <p>高诚实条件比低诚实条件平均多投 2.41 个 token。因为两组平均返还比例都是 0.442，这个差异不能简单解释为一组更会返还。</p>
+      <p>这个投资差异进一步影响了实际收益。这里每轮 payoff 定义为 <strong>10 - investment + returned_tokens</strong>。高诚实条件每轮平均 payoff 为 11.75，低诚实条件为 10.965，差值为 0.785。换算到一个 18-trial run，高诚实条件平均总 payoff 为 211.5，低诚实条件为 197.375，差值为 14.125。</p>
+      <p>因此，V8 的结果不是“低诚实 partner 实际更差”，而是：在返还政策相同且总体正收益的情况下，模型因为不相信低诚实对象而投得更少，最终也少拿了一部分收益。这正是 honesty bias 在行为层面的代价。</p>
+    </section>
+
+    <section>
+      <h2>条件均值</h2>
+      <table>
+        <thead><tr><th>诚实条件</th><th>Run</th><th>真实率</th><th>平均返还比例</th><th>平均投资</th><th>平均返还 token</th><th>平均净收益</th><th>每轮总收益</th><th>每 run 总收益</th></tr></thead>
+        <tbody><tr><td>高诚实</td><td>8/8</td><td>0.778</td><td>0.442</td><td>5.354</td><td>7.104</td><td>1.75</td><td>11.75</td><td>211.5</td></tr>
+<tr><td>低诚实</td><td>8/8</td><td>0.222</td><td>0.442</td><td>2.944</td><td>3.91</td><td>0.965</td><td>10.965</td><td>197.375</td></tr></tbody>
+      </table>
+      <p class="note">真实率是实际操纵检查；平均返还比例用于检查 payoff policy 是否匹配。平均净收益 = returned_tokens - investment；每轮总收益 = 10 - investment + returned_tokens。</p>
+    </section>
+
+    <section>
+      <h2>图示</h2>
+      <img src="figures/mean_investment_by_condition.png" alt="Mean investment by condition">
+      <p class="note">图 1：四个条件的平均投资额。若高诚实条件更高，说明 honesty 在实际回报匹配时仍影响投资。</p>
+      <img src="figures/investment_over_trials.png" alt="Investment over trials">
+      <p class="note">图 2：逐轮投资轨迹。这个图用来看 honesty bias 是早期就出现、随证据累积增强，还是被返还反馈抵消。</p>
+      <img src="figures/return_rate_check.png" alt="Return rate check">
+      <p class="note">图 3：返还比例操纵检查。理论上四个条件应当非常接近，因为 return policy 是 yoked 的。</p>
+      <img src="figures/payoff_by_condition.png" alt="Payoff by condition">
+      <p class="note">图 4：实际 payoff。低诚实对象的返还政策并不差，但模型投得更少，因此可获得的正收益也更少。</p>
+    </section>
+
+    <section>
+      <h2>如何解读</h2>
+      <p>如果连续对话和独立证据都出现高诚实投资更高，说明模型会把 factual honesty 迁移到实际投资风险暴露上。</p>
+      <p>如果只有连续对话出现差异，则可能说明 honesty bias 需要持续互动上下文或自我一致性累积。</p>
+      <p>如果只有独立证据出现差异，则可能说明一次次独立总结更容易把真伪历史转成投资策略，而连续互动会被短期回报或前一轮投资锚定。</p>
+      <p>如果两者都没有差异，则说明在真正逐轮投资里，模型主要看返还反馈，而不是可核验陈述的诚实程度。</p>
+      <p>本轮 API 测试中，evidence-only 条件会诱发 MiniMax-M2.7 长篇推理并频繁无法返回 JSON，因此当前报告只解释完整跑完的连续逐轮互动条件。这个限制本身也提示：独立历史回看更容易让任务变成“找隐藏策略”的题，而连续互动更接近我们想看的行为过程。</p>
+    </section>
+  </main>
+</body>
+</html>

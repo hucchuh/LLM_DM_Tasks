@@ -1,0 +1,29 @@
+{
+  "rounds_per_run": 12,
+  "seeds_per_cell": 16,
+  "partner_name": "Alex",
+  "partner_types": [
+    {
+      "partner_type": "honest_matched",
+      "label": "Honest payoff-matched",
+      "honesty_true_count": 9,
+      "recommendation_win_count": 6
+    },
+    {
+      "partner_type": "dishonest_matched",
+      "label": "Dishonest payoff-matched",
+      "honesty_true_count": 3,
+      "recommendation_win_count": 6
+    }
+  ],
+  "presentation_modes": [
+    {
+      "presentation_mode": "sequential_observation",
+      "label": "Sequential observation"
+    },
+    {
+      "presentation_mode": "batch_review",
+      "label": "Batch review"
+    }
+  ]
+}

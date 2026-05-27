@@ -1,0 +1,904 @@
+{
+  "overall_runs": {
+    "n_total": 17,
+    "n_success": 17,
+    "mean_run_investment": 4.297,
+    "sd_run_investment": 2.863,
+    "mean_run_total_payoff": 205.412,
+    "sd_run_total_payoff": 16.908,
+    "mean_run_trial_payoff": 11.412,
+    "sd_run_trial_payoff": 0.939
+  },
+  "overall_trials": {
+    "n_trials": 306,
+    "mean_investment": 4.297,
+    "sd_investment": 3.691,
+    "truth_rate": 0.516,
+    "mean_return_rate": 0.442,
+    "mean_returned_tokens": 5.709,
+    "mean_net_gain": 1.412,
+    "mean_trial_payoff": 11.412
+  },
+  "by_partner": {
+    "high_honesty_matched_return": {
+      "n_trials": 162,
+      "mean_investment": 5.5,
+      "sd_investment": 3.18,
+      "truth_rate": 0.778,
+      "mean_return_rate": 0.442,
+      "mean_returned_tokens": 7.309,
+      "mean_net_gain": 1.809,
+      "mean_trial_payoff": 11.809
+    },
+    "low_honesty_matched_return": {
+      "n_trials": 144,
+      "mean_investment": 2.944,
+      "sd_investment": 3.767,
+      "truth_rate": 0.222,
+      "mean_return_rate": 0.442,
+      "mean_returned_tokens": 3.91,
+      "mean_net_gain": 0.965,
+      "mean_trial_payoff": 10.965
+    }
+  },
+  "by_mode": {
+    "sequential_trial": {
+      "n_trials": 288,
+      "mean_investment": 4.149,
+      "sd_investment": 3.566,
+      "truth_rate": 0.5,
+      "mean_return_rate": 0.442,
+      "mean_returned_tokens": 5.507,
+      "mean_net_gain": 1.358,
+      "mean_trial_payoff": 11.358
+    },
+    "evidence_only_trial": {
+      "n_trials": 18,
+      "mean_investment": 6.667,
+      "sd_investment": 4.851,
+      "truth_rate": 0.778,
+      "mean_return_rate": 0.442,
+      "mean_returned_tokens": 8.944,
+      "mean_net_gain": 2.278,
+      "mean_trial_payoff": 12.278
+    }
+  },
+  "by_partner_mode": {
+    "high_honesty_matched_return / sequential_trial": {
+      "n_total": 8,
+      "n_success": 8,
+      "mean_run_investment": 5.354,
+      "sd_run_investment": 2.168,
+      "mean_run_total_payoff": 211.5,
+      "sd_run_total_payoff": 12.66,
+      "mean_run_trial_payoff": 11.75,
+      "sd_run_trial_payoff": 0.703,
+      "n_trials": 144,
+      "mean_investment": 5.354,
+      "sd_investment": 2.898,
+      "truth_rate": 0.778,
+      "mean_return_rate": 0.442,
+      "mean_returned_tokens": 7.104,
+      "mean_net_gain": 1.75,
+      "mean_trial_payoff": 11.75
+    },
+    "high_honesty_matched_return / evidence_only_trial": {
+      "n_total": 1,
+      "n_success": 1,
+      "mean_run_investment": 6.667,
+      "sd_run_investment": null,
+      "mean_run_total_payoff": 221.0,
+      "sd_run_total_payoff": null,
+      "mean_run_trial_payoff": 12.278,
+      "sd_run_trial_payoff": null,
+      "n_trials": 18,
+      "mean_investment": 6.667,
+      "sd_investment": 4.851,
+      "truth_rate": 0.778,
+      "mean_return_rate": 0.442,
+      "mean_returned_tokens": 8.944,
+      "mean_net_gain": 2.278,
+      "mean_trial_payoff": 12.278
+    },
+    "low_honesty_matched_return / sequential_trial": {
+      "n_total": 8,
+      "n_success": 8,
+      "mean_run_investment": 2.944,
+      "sd_run_investment": 3.141,
+      "mean_run_total_payoff": 197.375,
+      "sd_run_total_payoff": 18.5,
+      "mean_run_trial_payoff": 10.965,
+      "sd_run_trial_payoff": 1.028,
+      "n_trials": 144,
+      "mean_investment": 2.944,
+      "sd_investment": 3.767,
+      "truth_rate": 0.222,
+      "mean_return_rate": 0.442,
+      "mean_returned_tokens": 3.91,
+      "mean_net_gain": 0.965,
+      "mean_trial_payoff": 10.965
+    },
+    "low_honesty_matched_return / evidence_only_trial": {
+      "n_total": 0,
+      "n_success": 0,
+      "mean_run_investment": null,
+      "sd_run_investment": null,
+      "mean_run_total_payoff": null,
+      "sd_run_total_payoff": null,
+      "mean_run_trial_payoff": null,
+      "sd_run_trial_payoff": null,
+      "n_trials": 0,
+      "mean_investment": null,
+      "sd_investment": null,
+      "truth_rate": null,
+      "mean_return_rate": null,
+      "mean_returned_tokens": null,
+      "mean_net_gain": null,
+      "mean_trial_payoff": null
+    }
+  },
+  "by_trial": {
+    "1": {
+      "high_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 3.375,
+        "sd_investment": 3.926,
+        "truth_rate": 1.0,
+        "mean_return_rate": 0.406,
+        "mean_returned_tokens": 4.25,
+        "mean_net_gain": 0.875,
+        "mean_trial_payoff": 10.875
+      },
+      "high_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 1,
+        "mean_investment": 0.0,
+        "sd_investment": null,
+        "truth_rate": 1.0,
+        "mean_return_rate": 0.25,
+        "mean_returned_tokens": 0.0,
+        "mean_net_gain": 0.0,
+        "mean_trial_payoff": 10.0
+      },
+      "low_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 1.875,
+        "sd_investment": 3.72,
+        "truth_rate": 0.375,
+        "mean_return_rate": 0.406,
+        "mean_returned_tokens": 2.875,
+        "mean_net_gain": 1.0,
+        "mean_trial_payoff": 11.0
+      },
+      "low_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 0,
+        "mean_investment": null,
+        "sd_investment": null,
+        "truth_rate": null,
+        "mean_return_rate": null,
+        "mean_returned_tokens": null,
+        "mean_net_gain": null,
+        "mean_trial_payoff": null
+      }
+    },
+    "2": {
+      "high_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 3.5,
+        "sd_investment": 3.964,
+        "truth_rate": 0.875,
+        "mean_return_rate": 0.469,
+        "mean_returned_tokens": 4.875,
+        "mean_net_gain": 1.375,
+        "mean_trial_payoff": 11.375
+      },
+      "high_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 1,
+        "mean_investment": 10.0,
+        "sd_investment": null,
+        "truth_rate": 1.0,
+        "mean_return_rate": 0.45,
+        "mean_returned_tokens": 14.0,
+        "mean_net_gain": 4.0,
+        "mean_trial_payoff": 14.0
+      },
+      "low_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 2.875,
+        "sd_investment": 4.518,
+        "truth_rate": 0.125,
+        "mean_return_rate": 0.469,
+        "mean_returned_tokens": 4.25,
+        "mean_net_gain": 1.375,
+        "mean_trial_payoff": 11.375
+      },
+      "low_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 0,
+        "mean_investment": null,
+        "sd_investment": null,
+        "truth_rate": null,
+        "mean_return_rate": null,
+        "mean_returned_tokens": null,
+        "mean_net_gain": null,
+        "mean_trial_payoff": null
+      }
+    },
+    "3": {
+      "high_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 5.125,
+        "sd_investment": 3.271,
+        "truth_rate": 0.75,
+        "mean_return_rate": 0.406,
+        "mean_returned_tokens": 5.875,
+        "mean_net_gain": 0.75,
+        "mean_trial_payoff": 10.75
+      },
+      "high_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 1,
+        "mean_investment": 10.0,
+        "sd_investment": null,
+        "truth_rate": 1.0,
+        "mean_return_rate": 0.25,
+        "mean_returned_tokens": 8.0,
+        "mean_net_gain": -2.0,
+        "mean_trial_payoff": 8.0
+      },
+      "low_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 3.125,
+        "sd_investment": 4.454,
+        "truth_rate": 0.125,
+        "mean_return_rate": 0.406,
+        "mean_returned_tokens": 3.375,
+        "mean_net_gain": 0.25,
+        "mean_trial_payoff": 10.25
+      },
+      "low_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 0,
+        "mean_investment": null,
+        "sd_investment": null,
+        "truth_rate": null,
+        "mean_return_rate": null,
+        "mean_returned_tokens": null,
+        "mean_net_gain": null,
+        "mean_trial_payoff": null
+      }
+    },
+    "4": {
+      "high_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 4.875,
+        "sd_investment": 3.758,
+        "truth_rate": 0.875,
+        "mean_return_rate": 0.388,
+        "mean_returned_tokens": 5.0,
+        "mean_net_gain": 0.125,
+        "mean_trial_payoff": 10.125
+      },
+      "high_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 1,
+        "mean_investment": 10.0,
+        "sd_investment": null,
+        "truth_rate": 1.0,
+        "mean_return_rate": 0.3,
+        "mean_returned_tokens": 9.0,
+        "mean_net_gain": -1.0,
+        "mean_trial_payoff": 9.0
+      },
+      "low_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 3.625,
+        "sd_investment": 4.406,
+        "truth_rate": 0.375,
+        "mean_return_rate": 0.388,
+        "mean_returned_tokens": 4.75,
+        "mean_net_gain": 1.125,
+        "mean_trial_payoff": 11.125
+      },
+      "low_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 0,
+        "mean_investment": null,
+        "sd_investment": null,
+        "truth_rate": null,
+        "mean_return_rate": null,
+        "mean_returned_tokens": null,
+        "mean_net_gain": null,
+        "mean_trial_payoff": null
+      }
+    },
+    "5": {
+      "high_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 6.875,
+        "sd_investment": 2.1,
+        "truth_rate": 0.5,
+        "mean_return_rate": 0.475,
+        "mean_returned_tokens": 9.75,
+        "mean_net_gain": 2.875,
+        "mean_trial_payoff": 12.875
+      },
+      "high_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 1,
+        "mean_investment": 0.0,
+        "sd_investment": null,
+        "truth_rate": 1.0,
+        "mean_return_rate": 0.55,
+        "mean_returned_tokens": 0.0,
+        "mean_net_gain": 0.0,
+        "mean_trial_payoff": 10.0
+      },
+      "low_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 2.375,
+        "sd_investment": 3.583,
+        "truth_rate": 0.375,
+        "mean_return_rate": 0.475,
+        "mean_returned_tokens": 2.375,
+        "mean_net_gain": 0.0,
+        "mean_trial_payoff": 10.0
+      },
+      "low_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 0,
+        "mean_investment": null,
+        "sd_investment": null,
+        "truth_rate": null,
+        "mean_return_rate": null,
+        "mean_returned_tokens": null,
+        "mean_net_gain": null,
+        "mean_trial_payoff": null
+      }
+    },
+    "6": {
+      "high_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 5.375,
+        "sd_investment": 2.875,
+        "truth_rate": 0.75,
+        "mean_return_rate": 0.381,
+        "mean_returned_tokens": 6.75,
+        "mean_net_gain": 1.375,
+        "mean_trial_payoff": 11.375
+      },
+      "high_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 1,
+        "mean_investment": 0.0,
+        "sd_investment": null,
+        "truth_rate": 1.0,
+        "mean_return_rate": 0.45,
+        "mean_returned_tokens": 0.0,
+        "mean_net_gain": 0.0,
+        "mean_trial_payoff": 10.0
+      },
+      "low_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 3.125,
+        "sd_investment": 4.291,
+        "truth_rate": 0.375,
+        "mean_return_rate": 0.381,
+        "mean_returned_tokens": 2.75,
+        "mean_net_gain": -0.375,
+        "mean_trial_payoff": 9.625
+      },
+      "low_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 0,
+        "mean_investment": null,
+        "sd_investment": null,
+        "truth_rate": null,
+        "mean_return_rate": null,
+        "mean_returned_tokens": null,
+        "mean_net_gain": null,
+        "mean_trial_payoff": null
+      }
+    },
+    "7": {
+      "high_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 5.5,
+        "sd_investment": 2.828,
+        "truth_rate": 0.625,
+        "mean_return_rate": 0.406,
+        "mean_returned_tokens": 6.0,
+        "mean_net_gain": 0.5,
+        "mean_trial_payoff": 10.5
+      },
+      "high_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 1,
+        "mean_investment": 10.0,
+        "sd_investment": null,
+        "truth_rate": 1.0,
+        "mean_return_rate": 0.4,
+        "mean_returned_tokens": 12.0,
+        "mean_net_gain": 2.0,
+        "mean_trial_payoff": 12.0
+      },
+      "low_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 3.75,
+        "sd_investment": 4.062,
+        "truth_rate": 0.0,
+        "mean_return_rate": 0.406,
+        "mean_returned_tokens": 4.25,
+        "mean_net_gain": 0.5,
+        "mean_trial_payoff": 10.5
+      },
+      "low_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 0,
+        "mean_investment": null,
+        "sd_investment": null,
+        "truth_rate": null,
+        "mean_return_rate": null,
+        "mean_returned_tokens": null,
+        "mean_net_gain": null,
+        "mean_trial_payoff": null
+      }
+    },
+    "8": {
+      "high_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 5.625,
+        "sd_investment": 2.925,
+        "truth_rate": 0.875,
+        "mean_return_rate": 0.431,
+        "mean_returned_tokens": 7.0,
+        "mean_net_gain": 1.375,
+        "mean_trial_payoff": 11.375
+      },
+      "high_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 1,
+        "mean_investment": 10.0,
+        "sd_investment": null,
+        "truth_rate": 1.0,
+        "mean_return_rate": 0.5,
+        "mean_returned_tokens": 15.0,
+        "mean_net_gain": 5.0,
+        "mean_trial_payoff": 15.0
+      },
+      "low_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 2.875,
+        "sd_investment": 4.454,
+        "truth_rate": 0.0,
+        "mean_return_rate": 0.431,
+        "mean_returned_tokens": 4.125,
+        "mean_net_gain": 1.25,
+        "mean_trial_payoff": 11.25
+      },
+      "low_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 0,
+        "mean_investment": null,
+        "sd_investment": null,
+        "truth_rate": null,
+        "mean_return_rate": null,
+        "mean_returned_tokens": null,
+        "mean_net_gain": null,
+        "mean_trial_payoff": null
+      }
+    },
+    "9": {
+      "high_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 5.875,
+        "sd_investment": 3.044,
+        "truth_rate": 1.0,
+        "mean_return_rate": 0.475,
+        "mean_returned_tokens": 8.25,
+        "mean_net_gain": 2.375,
+        "mean_trial_payoff": 12.375
+      },
+      "high_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 1,
+        "mean_investment": 10.0,
+        "sd_investment": null,
+        "truth_rate": 1.0,
+        "mean_return_rate": 0.3,
+        "mean_returned_tokens": 9.0,
+        "mean_net_gain": -1.0,
+        "mean_trial_payoff": 9.0
+      },
+      "low_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 3.375,
+        "sd_investment": 3.335,
+        "truth_rate": 0.5,
+        "mean_return_rate": 0.475,
+        "mean_returned_tokens": 5.0,
+        "mean_net_gain": 1.625,
+        "mean_trial_payoff": 11.625
+      },
+      "low_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 0,
+        "mean_investment": null,
+        "sd_investment": null,
+        "truth_rate": null,
+        "mean_return_rate": null,
+        "mean_returned_tokens": null,
+        "mean_net_gain": null,
+        "mean_trial_payoff": null
+      }
+    },
+    "10": {
+      "high_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 5.0,
+        "sd_investment": 2.878,
+        "truth_rate": 0.875,
+        "mean_return_rate": 0.55,
+        "mean_returned_tokens": 8.0,
+        "mean_net_gain": 3.0,
+        "mean_trial_payoff": 13.0
+      },
+      "high_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 1,
+        "mean_investment": 0.0,
+        "sd_investment": null,
+        "truth_rate": 1.0,
+        "mean_return_rate": 0.55,
+        "mean_returned_tokens": 0.0,
+        "mean_net_gain": 0.0,
+        "mean_trial_payoff": 10.0
+      },
+      "low_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 4.25,
+        "sd_investment": 4.027,
+        "truth_rate": 0.125,
+        "mean_return_rate": 0.55,
+        "mean_returned_tokens": 6.375,
+        "mean_net_gain": 2.125,
+        "mean_trial_payoff": 12.125
+      },
+      "low_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 0,
+        "mean_investment": null,
+        "sd_investment": null,
+        "truth_rate": null,
+        "mean_return_rate": null,
+        "mean_returned_tokens": null,
+        "mean_net_gain": null,
+        "mean_trial_payoff": null
+      }
+    },
+    "11": {
+      "high_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 5.0,
+        "sd_investment": 2.878,
+        "truth_rate": 0.75,
+        "mean_return_rate": 0.469,
+        "mean_returned_tokens": 7.0,
+        "mean_net_gain": 2.0,
+        "mean_trial_payoff": 12.0
+      },
+      "high_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 1,
+        "mean_investment": 10.0,
+        "sd_investment": null,
+        "truth_rate": 0.0,
+        "mean_return_rate": 0.35,
+        "mean_returned_tokens": 10.0,
+        "mean_net_gain": 0.0,
+        "mean_trial_payoff": 10.0
+      },
+      "low_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 2.0,
+        "sd_investment": 3.381,
+        "truth_rate": 0.25,
+        "mean_return_rate": 0.469,
+        "mean_returned_tokens": 3.25,
+        "mean_net_gain": 1.25,
+        "mean_trial_payoff": 11.25
+      },
+      "low_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 0,
+        "mean_investment": null,
+        "sd_investment": null,
+        "truth_rate": null,
+        "mean_return_rate": null,
+        "mean_returned_tokens": null,
+        "mean_net_gain": null,
+        "mean_trial_payoff": null
+      }
+    },
+    "12": {
+      "high_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 5.75,
+        "sd_investment": 2.866,
+        "truth_rate": 0.875,
+        "mean_return_rate": 0.362,
+        "mean_returned_tokens": 5.75,
+        "mean_net_gain": 0.0,
+        "mean_trial_payoff": 10.0
+      },
+      "high_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 1,
+        "mean_investment": 0.0,
+        "sd_investment": null,
+        "truth_rate": 0.0,
+        "mean_return_rate": 0.2,
+        "mean_returned_tokens": 0.0,
+        "mean_net_gain": 0.0,
+        "mean_trial_payoff": 10.0
+      },
+      "low_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 2.25,
+        "sd_investment": 3.576,
+        "truth_rate": 0.125,
+        "mean_return_rate": 0.362,
+        "mean_returned_tokens": 2.875,
+        "mean_net_gain": 0.625,
+        "mean_trial_payoff": 10.625
+      },
+      "low_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 0,
+        "mean_investment": null,
+        "sd_investment": null,
+        "truth_rate": null,
+        "mean_return_rate": null,
+        "mean_returned_tokens": null,
+        "mean_net_gain": null,
+        "mean_trial_payoff": null
+      }
+    },
+    "13": {
+      "high_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 5.0,
+        "sd_investment": 2.878,
+        "truth_rate": 0.75,
+        "mean_return_rate": 0.356,
+        "mean_returned_tokens": 6.0,
+        "mean_net_gain": 1.0,
+        "mean_trial_payoff": 11.0
+      },
+      "high_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 1,
+        "mean_investment": 10.0,
+        "sd_investment": null,
+        "truth_rate": 1.0,
+        "mean_return_rate": 0.5,
+        "mean_returned_tokens": 15.0,
+        "mean_net_gain": 5.0,
+        "mean_trial_payoff": 15.0
+      },
+      "low_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 3.125,
+        "sd_investment": 3.796,
+        "truth_rate": 0.375,
+        "mean_return_rate": 0.356,
+        "mean_returned_tokens": 2.875,
+        "mean_net_gain": -0.25,
+        "mean_trial_payoff": 9.75
+      },
+      "low_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 0,
+        "mean_investment": null,
+        "sd_investment": null,
+        "truth_rate": null,
+        "mean_return_rate": null,
+        "mean_returned_tokens": null,
+        "mean_net_gain": null,
+        "mean_trial_payoff": null
+      }
+    },
+    "14": {
+      "high_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 6.625,
+        "sd_investment": 2.2,
+        "truth_rate": 0.75,
+        "mean_return_rate": 0.463,
+        "mean_returned_tokens": 9.125,
+        "mean_net_gain": 2.5,
+        "mean_trial_payoff": 12.5
+      },
+      "high_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 1,
+        "mean_investment": 10.0,
+        "sd_investment": null,
+        "truth_rate": 0.0,
+        "mean_return_rate": 0.6,
+        "mean_returned_tokens": 18.0,
+        "mean_net_gain": 8.0,
+        "mean_trial_payoff": 18.0
+      },
+      "low_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 2.625,
+        "sd_investment": 3.583,
+        "truth_rate": 0.125,
+        "mean_return_rate": 0.463,
+        "mean_returned_tokens": 4.375,
+        "mean_net_gain": 1.75,
+        "mean_trial_payoff": 11.75
+      },
+      "low_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 0,
+        "mean_investment": null,
+        "sd_investment": null,
+        "truth_rate": null,
+        "mean_return_rate": null,
+        "mean_returned_tokens": null,
+        "mean_net_gain": null,
+        "mean_trial_payoff": null
+      }
+    },
+    "15": {
+      "high_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 5.5,
+        "sd_investment": 2.976,
+        "truth_rate": 0.5,
+        "mean_return_rate": 0.463,
+        "mean_returned_tokens": 8.25,
+        "mean_net_gain": 2.75,
+        "mean_trial_payoff": 12.75
+      },
+      "high_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 1,
+        "mean_investment": 10.0,
+        "sd_investment": null,
+        "truth_rate": 0.0,
+        "mean_return_rate": 0.7,
+        "mean_returned_tokens": 21.0,
+        "mean_net_gain": 11.0,
+        "mean_trial_payoff": 21.0
+      },
+      "low_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 2.375,
+        "sd_investment": 3.543,
+        "truth_rate": 0.0,
+        "mean_return_rate": 0.463,
+        "mean_returned_tokens": 3.625,
+        "mean_net_gain": 1.25,
+        "mean_trial_payoff": 11.25
+      },
+      "low_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 0,
+        "mean_investment": null,
+        "sd_investment": null,
+        "truth_rate": null,
+        "mean_return_rate": null,
+        "mean_returned_tokens": null,
+        "mean_net_gain": null,
+        "mean_trial_payoff": null
+      }
+    },
+    "16": {
+      "high_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 6.5,
+        "sd_investment": 2.33,
+        "truth_rate": 0.625,
+        "mean_return_rate": 0.494,
+        "mean_returned_tokens": 10.25,
+        "mean_net_gain": 3.75,
+        "mean_trial_payoff": 13.75
+      },
+      "high_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 1,
+        "mean_investment": 10.0,
+        "sd_investment": null,
+        "truth_rate": 1.0,
+        "mean_return_rate": 0.65,
+        "mean_returned_tokens": 20.0,
+        "mean_net_gain": 10.0,
+        "mean_trial_payoff": 20.0
+      },
+      "low_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 2.25,
+        "sd_investment": 3.536,
+        "truth_rate": 0.125,
+        "mean_return_rate": 0.494,
+        "mean_returned_tokens": 3.125,
+        "mean_net_gain": 0.875,
+        "mean_trial_payoff": 10.875
+      },
+      "low_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 0,
+        "mean_investment": null,
+        "sd_investment": null,
+        "truth_rate": null,
+        "mean_return_rate": null,
+        "mean_returned_tokens": null,
+        "mean_net_gain": null,
+        "mean_trial_payoff": null
+      }
+    },
+    "17": {
+      "high_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 5.5,
+        "sd_investment": 0.926,
+        "truth_rate": 0.75,
+        "mean_return_rate": 0.431,
+        "mean_returned_tokens": 6.75,
+        "mean_net_gain": 1.25,
+        "mean_trial_payoff": 11.25
+      },
+      "high_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 1,
+        "mean_investment": 10.0,
+        "sd_investment": null,
+        "truth_rate": 1.0,
+        "mean_return_rate": 0.35,
+        "mean_returned_tokens": 10.0,
+        "mean_net_gain": 0.0,
+        "mean_trial_payoff": 10.0
+      },
+      "low_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 3.625,
+        "sd_investment": 4.307,
+        "truth_rate": 0.125,
+        "mean_return_rate": 0.431,
+        "mean_returned_tokens": 4.875,
+        "mean_net_gain": 1.25,
+        "mean_trial_payoff": 11.25
+      },
+      "low_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 0,
+        "mean_investment": null,
+        "sd_investment": null,
+        "truth_rate": null,
+        "mean_return_rate": null,
+        "mean_returned_tokens": null,
+        "mean_net_gain": null,
+        "mean_trial_payoff": null
+      }
+    },
+    "18": {
+      "high_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 5.375,
+        "sd_investment": 2.875,
+        "truth_rate": 0.875,
+        "mean_return_rate": 0.525,
+        "mean_returned_tokens": 9.0,
+        "mean_net_gain": 3.625,
+        "mean_trial_payoff": 13.625
+      },
+      "high_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 1,
+        "mean_investment": 0.0,
+        "sd_investment": null,
+        "truth_rate": 1.0,
+        "mean_return_rate": 0.6,
+        "mean_returned_tokens": 0.0,
+        "mean_net_gain": 0.0,
+        "mean_trial_payoff": 10.0
+      },
+      "low_honesty_matched_return / sequential_trial": {
+        "n_trials": 8,
+        "mean_investment": 3.5,
+        "sd_investment": 4.209,
+        "truth_rate": 0.5,
+        "mean_return_rate": 0.525,
+        "mean_returned_tokens": 5.25,
+        "mean_net_gain": 1.75,
+        "mean_trial_payoff": 11.75
+      },
+      "low_honesty_matched_return / evidence_only_trial": {
+        "n_trials": 0,
+        "mean_investment": null,
+        "sd_investment": null,
+        "truth_rate": null,
+        "mean_return_rate": null,
+        "mean_returned_tokens": null,
+        "mean_net_gain": null,
+        "mean_trial_payoff": null
+      }
+    }
+  },
+  "contrasts": {
+    "overall_high_minus_low_investment": 2.556,
+    "sequential_trial_high_minus_low_investment": 2.41,
+    "sequential_trial_high_minus_low_trial_payoff": 0.785,
+    "sequential_trial_high_minus_low_run_total_payoff": 14.125
+  }
+}

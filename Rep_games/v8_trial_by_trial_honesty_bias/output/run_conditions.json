@@ -1,0 +1,5666 @@
+[
+  {
+    "run_id": 1,
+    "partner_type": "high_honesty_matched_return",
+    "partner_label": "High honesty, matched return",
+    "presentation_mode": "sequential_trial",
+    "presentation_label": "Sequential trial-by-trial",
+    "seed_index": 1,
+    "seed": 31853133,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.778,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 2,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 2,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 9,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 4,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.6
+      }
+    ]
+  },
+  {
+    "run_id": 2,
+    "partner_type": "high_honesty_matched_return",
+    "partner_label": "High honesty, matched return",
+    "presentation_mode": "sequential_trial",
+    "presentation_label": "Sequential trial-by-trial",
+    "seed_index": 2,
+    "seed": 891905563,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.778,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 4,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 2,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 3,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 2,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.4
+      }
+    ]
+  },
+  {
+    "run_id": 3,
+    "partner_type": "high_honesty_matched_return",
+    "partner_label": "High honesty, matched return",
+    "presentation_mode": "sequential_trial",
+    "presentation_label": "Sequential trial-by-trial",
+    "seed_index": 3,
+    "seed": 62502692,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.778,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 2,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 9,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 7,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.6
+      }
+    ]
+  },
+  {
+    "run_id": 4,
+    "partner_type": "high_honesty_matched_return",
+    "partner_label": "High honesty, matched return",
+    "presentation_mode": "sequential_trial",
+    "presentation_label": "Sequential trial-by-trial",
+    "seed_index": 4,
+    "seed": 738875448,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.778,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 6,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 7,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.7
+      }
+    ]
+  },
+  {
+    "run_id": 5,
+    "partner_type": "high_honesty_matched_return",
+    "partner_label": "High honesty, matched return",
+    "presentation_mode": "sequential_trial",
+    "presentation_label": "Sequential trial-by-trial",
+    "seed_index": 5,
+    "seed": 134338663,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.778,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 7,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 7,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 2,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 6,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.6
+      }
+    ]
+  },
+  {
+    "run_id": 6,
+    "partner_type": "high_honesty_matched_return",
+    "partner_label": "High honesty, matched return",
+    "presentation_mode": "sequential_trial",
+    "presentation_label": "Sequential trial-by-trial",
+    "seed_index": 6,
+    "seed": 293315772,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.778,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 9,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 7,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 6,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 9,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.55
+      }
+    ]
+  },
+  {
+    "run_id": 7,
+    "partner_type": "high_honesty_matched_return",
+    "partner_label": "High honesty, matched return",
+    "presentation_mode": "sequential_trial",
+    "presentation_label": "Sequential trial-by-trial",
+    "seed_index": 7,
+    "seed": 929710553,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.778,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 6,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 5,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 1,
+        "stated_value": 5,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.4
+      }
+    ]
+  },
+  {
+    "run_id": 8,
+    "partner_type": "high_honesty_matched_return",
+    "partner_label": "High honesty, matched return",
+    "presentation_mode": "sequential_trial",
+    "presentation_label": "Sequential trial-by-trial",
+    "seed_index": 8,
+    "seed": 402097508,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.778,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 9,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 2,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 1,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.35
+      }
+    ]
+  },
+  {
+    "run_id": 9,
+    "partner_type": "high_honesty_matched_return",
+    "partner_label": "High honesty, matched return",
+    "presentation_mode": "evidence_only_trial",
+    "presentation_label": "Evidence-only independent trial",
+    "seed_index": 1,
+    "seed": 31853133,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.778,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 2,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 2,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 9,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 4,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.6
+      }
+    ]
+  },
+  {
+    "run_id": 10,
+    "partner_type": "high_honesty_matched_return",
+    "partner_label": "High honesty, matched return",
+    "presentation_mode": "evidence_only_trial",
+    "presentation_label": "Evidence-only independent trial",
+    "seed_index": 2,
+    "seed": 891905563,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.778,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 4,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 2,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 3,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 2,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.4
+      }
+    ]
+  },
+  {
+    "run_id": 11,
+    "partner_type": "high_honesty_matched_return",
+    "partner_label": "High honesty, matched return",
+    "presentation_mode": "evidence_only_trial",
+    "presentation_label": "Evidence-only independent trial",
+    "seed_index": 3,
+    "seed": 62502692,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.778,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 2,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 9,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 7,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.6
+      }
+    ]
+  },
+  {
+    "run_id": 12,
+    "partner_type": "high_honesty_matched_return",
+    "partner_label": "High honesty, matched return",
+    "presentation_mode": "evidence_only_trial",
+    "presentation_label": "Evidence-only independent trial",
+    "seed_index": 4,
+    "seed": 738875448,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.778,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 6,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 7,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.7
+      }
+    ]
+  },
+  {
+    "run_id": 13,
+    "partner_type": "high_honesty_matched_return",
+    "partner_label": "High honesty, matched return",
+    "presentation_mode": "evidence_only_trial",
+    "presentation_label": "Evidence-only independent trial",
+    "seed_index": 5,
+    "seed": 134338663,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.778,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 7,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 7,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 2,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 6,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.6
+      }
+    ]
+  },
+  {
+    "run_id": 14,
+    "partner_type": "high_honesty_matched_return",
+    "partner_label": "High honesty, matched return",
+    "presentation_mode": "evidence_only_trial",
+    "presentation_label": "Evidence-only independent trial",
+    "seed_index": 6,
+    "seed": 293315772,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.778,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 9,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 7,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 6,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 9,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.55
+      }
+    ]
+  },
+  {
+    "run_id": 15,
+    "partner_type": "high_honesty_matched_return",
+    "partner_label": "High honesty, matched return",
+    "presentation_mode": "evidence_only_trial",
+    "presentation_label": "Evidence-only independent trial",
+    "seed_index": 7,
+    "seed": 929710553,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.778,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 6,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 5,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 1,
+        "stated_value": 5,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.4
+      }
+    ]
+  },
+  {
+    "run_id": 16,
+    "partner_type": "high_honesty_matched_return",
+    "partner_label": "High honesty, matched return",
+    "presentation_mode": "evidence_only_trial",
+    "presentation_label": "Evidence-only independent trial",
+    "seed_index": 8,
+    "seed": 402097508,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.778,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 9,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 2,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 1,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.35
+      }
+    ]
+  },
+  {
+    "run_id": 17,
+    "partner_type": "low_honesty_matched_return",
+    "partner_label": "Low honesty, matched return",
+    "presentation_mode": "sequential_trial",
+    "presentation_label": "Sequential trial-by-trial",
+    "seed_index": 1,
+    "seed": 31853133,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.222,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 8,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 6,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 8,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 2,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 2,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 4,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 7,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 9,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 4,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 4,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 6,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 2,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.6
+      }
+    ]
+  },
+  {
+    "run_id": 18,
+    "partner_type": "low_honesty_matched_return",
+    "partner_label": "Low honesty, matched return",
+    "presentation_mode": "sequential_trial",
+    "presentation_label": "Sequential trial-by-trial",
+    "seed_index": 2,
+    "seed": 891905563,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.222,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 5,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 1,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 2,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 3,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 8,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 6,
+        "stated_value": 5,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 2,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 6,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 2,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 5,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 4,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 8,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 6,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 1,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.4
+      }
+    ]
+  },
+  {
+    "run_id": 19,
+    "partner_type": "low_honesty_matched_return",
+    "partner_label": "Low honesty, matched return",
+    "presentation_mode": "sequential_trial",
+    "presentation_label": "Sequential trial-by-trial",
+    "seed_index": 3,
+    "seed": 62502692,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.222,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 5,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 5,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 6,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 5,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 8,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 9,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 9,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 5,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 1,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 9,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 5,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 5,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 2,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.6
+      }
+    ]
+  },
+  {
+    "run_id": 20,
+    "partner_type": "low_honesty_matched_return",
+    "partner_label": "Low honesty, matched return",
+    "presentation_mode": "sequential_trial",
+    "presentation_label": "Sequential trial-by-trial",
+    "seed_index": 4,
+    "seed": 738875448,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.222,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 2,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 6,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 7,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 2,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 7,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 1,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 4,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 1,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 4,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 9,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 4,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.7
+      }
+    ]
+  },
+  {
+    "run_id": 21,
+    "partner_type": "low_honesty_matched_return",
+    "partner_label": "Low honesty, matched return",
+    "presentation_mode": "sequential_trial",
+    "presentation_label": "Sequential trial-by-trial",
+    "seed_index": 5,
+    "seed": 134338663,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.222,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 3,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 1,
+        "stated_value": 5,
+        "statement_true": false,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 7,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 7,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 2,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 3,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 9,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 2,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 5,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 3,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 9,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 3,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 8,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.6
+      }
+    ]
+  },
+  {
+    "run_id": 22,
+    "partner_type": "low_honesty_matched_return",
+    "partner_label": "Low honesty, matched return",
+    "presentation_mode": "sequential_trial",
+    "presentation_label": "Sequential trial-by-trial",
+    "seed_index": 6,
+    "seed": 293315772,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.222,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 8,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 9,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 2,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 9,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 8,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 1,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 7,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 1,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 4,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 3,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 5,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.55
+      }
+    ]
+  },
+  {
+    "run_id": 23,
+    "partner_type": "low_honesty_matched_return",
+    "partner_label": "Low honesty, matched return",
+    "presentation_mode": "sequential_trial",
+    "presentation_label": "Sequential trial-by-trial",
+    "seed_index": 7,
+    "seed": 929710553,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.222,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 9,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 6,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 7,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 7,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 1,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 6,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 1,
+        "stated_value": 5,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 6,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 9,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 3,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 9,
+        "stated_value": 5,
+        "statement_true": false,
+        "return_rate": 0.4
+      }
+    ]
+  },
+  {
+    "run_id": 24,
+    "partner_type": "low_honesty_matched_return",
+    "partner_label": "Low honesty, matched return",
+    "presentation_mode": "sequential_trial",
+    "presentation_label": "Sequential trial-by-trial",
+    "seed_index": 8,
+    "seed": 402097508,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.222,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 4,
+        "stated_value": 5,
+        "statement_true": false,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 8,
+        "stated_value": 5,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 9,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 1,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 8,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 8,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 2,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 3,
+        "stated_value": 5,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 2,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 4,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 8,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 9,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.35
+      }
+    ]
+  },
+  {
+    "run_id": 25,
+    "partner_type": "low_honesty_matched_return",
+    "partner_label": "Low honesty, matched return",
+    "presentation_mode": "evidence_only_trial",
+    "presentation_label": "Evidence-only independent trial",
+    "seed_index": 1,
+    "seed": 31853133,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.222,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 8,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 6,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 8,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 2,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 2,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 4,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 7,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 9,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 4,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 4,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 6,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 2,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.6
+      }
+    ]
+  },
+  {
+    "run_id": 26,
+    "partner_type": "low_honesty_matched_return",
+    "partner_label": "Low honesty, matched return",
+    "presentation_mode": "evidence_only_trial",
+    "presentation_label": "Evidence-only independent trial",
+    "seed_index": 2,
+    "seed": 891905563,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.222,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 5,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 1,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 2,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 3,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 8,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 6,
+        "stated_value": 5,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 2,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 6,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 2,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 5,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 4,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 8,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 6,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 1,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.4
+      }
+    ]
+  },
+  {
+    "run_id": 27,
+    "partner_type": "low_honesty_matched_return",
+    "partner_label": "Low honesty, matched return",
+    "presentation_mode": "evidence_only_trial",
+    "presentation_label": "Evidence-only independent trial",
+    "seed_index": 3,
+    "seed": 62502692,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.222,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 5,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 5,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 6,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 5,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 8,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 9,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 9,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 5,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 1,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 9,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 5,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 5,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 2,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.6
+      }
+    ]
+  },
+  {
+    "run_id": 28,
+    "partner_type": "low_honesty_matched_return",
+    "partner_label": "Low honesty, matched return",
+    "presentation_mode": "evidence_only_trial",
+    "presentation_label": "Evidence-only independent trial",
+    "seed_index": 4,
+    "seed": 738875448,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.222,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 2,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 6,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 7,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 2,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 7,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 1,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 4,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 1,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 4,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 9,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 4,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.7
+      }
+    ]
+  },
+  {
+    "run_id": 29,
+    "partner_type": "low_honesty_matched_return",
+    "partner_label": "Low honesty, matched return",
+    "presentation_mode": "evidence_only_trial",
+    "presentation_label": "Evidence-only independent trial",
+    "seed_index": 5,
+    "seed": 134338663,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.222,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 5,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 3,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 1,
+        "stated_value": 5,
+        "statement_true": false,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 7,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 7,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 2,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 3,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 9,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 2,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 5,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 3,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 9,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 3,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 8,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.6
+      }
+    ]
+  },
+  {
+    "run_id": 30,
+    "partner_type": "low_honesty_matched_return",
+    "partner_label": "Low honesty, matched return",
+    "presentation_mode": "evidence_only_trial",
+    "presentation_label": "Evidence-only independent trial",
+    "seed_index": 6,
+    "seed": 293315772,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.222,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 8,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 9,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 2,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 9,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 8,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 1,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 7,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 7,
+        "stated_value": 7,
+        "statement_true": true,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 1,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 4,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 3,
+        "stated_value": 6,
+        "statement_true": false,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 5,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 8,
+        "stated_value": 8,
+        "statement_true": true,
+        "return_rate": 0.55
+      }
+    ]
+  },
+  {
+    "run_id": 31,
+    "partner_type": "low_honesty_matched_return",
+    "partner_label": "Low honesty, matched return",
+    "presentation_mode": "evidence_only_trial",
+    "presentation_label": "Evidence-only independent trial",
+    "seed_index": 7,
+    "seed": 929710553,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.222,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 9,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 9,
+        "stated_value": 9,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 2,
+        "stated_value": 2,
+        "statement_true": true,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 6,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 7,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 7,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 1,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 4,
+        "stated_value": 4,
+        "statement_true": true,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 6,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 1,
+        "stated_value": 5,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 6,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 9,
+        "stated_value": 2,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 3,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 9,
+        "stated_value": 5,
+        "statement_true": false,
+        "return_rate": 0.4
+      }
+    ]
+  },
+  {
+    "run_id": 32,
+    "partner_type": "low_honesty_matched_return",
+    "partner_label": "Low honesty, matched return",
+    "presentation_mode": "evidence_only_trial",
+    "presentation_label": "Evidence-only independent trial",
+    "seed_index": 8,
+    "seed": 402097508,
+    "partner_name": "Alex",
+    "trials_per_run": 18,
+    "observed_truth_rate": 0.222,
+    "mean_return_rate": 0.442,
+    "trials": [
+      {
+        "trial": 1,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 2,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 4,
+        "stated_value": 5,
+        "statement_true": false,
+        "return_rate": 0.65
+      },
+      {
+        "trial": 3,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 3,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 4,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 1,
+        "stated_value": 1,
+        "statement_true": true,
+        "return_rate": 0.7
+      },
+      {
+        "trial": 5,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 8,
+        "stated_value": 5,
+        "statement_true": false,
+        "return_rate": 0.25
+      },
+      {
+        "trial": 6,
+        "partner_name": "Alex",
+        "card_color": "yellow",
+        "actual_value": 9,
+        "stated_value": 8,
+        "statement_true": false,
+        "return_rate": 0.2
+      },
+      {
+        "trial": 7,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 1,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.35
+      },
+      {
+        "trial": 8,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 5,
+        "stated_value": 3,
+        "statement_true": false,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 9,
+        "partner_name": "Alex",
+        "card_color": "orange",
+        "actual_value": 6,
+        "stated_value": 6,
+        "statement_true": true,
+        "return_rate": 0.55
+      },
+      {
+        "trial": 10,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 8,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 11,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 8,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.4
+      },
+      {
+        "trial": 12,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 2,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.5
+      },
+      {
+        "trial": 13,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 3,
+        "stated_value": 5,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 14,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 3,
+        "stated_value": 3,
+        "statement_true": true,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 15,
+        "partner_name": "Alex",
+        "card_color": "green",
+        "actual_value": 2,
+        "stated_value": 1,
+        "statement_true": false,
+        "return_rate": 0.45
+      },
+      {
+        "trial": 16,
+        "partner_name": "Alex",
+        "card_color": "red",
+        "actual_value": 4,
+        "stated_value": 7,
+        "statement_true": false,
+        "return_rate": 0.3
+      },
+      {
+        "trial": 17,
+        "partner_name": "Alex",
+        "card_color": "purple",
+        "actual_value": 8,
+        "stated_value": 9,
+        "statement_true": false,
+        "return_rate": 0.6
+      },
+      {
+        "trial": 18,
+        "partner_name": "Alex",
+        "card_color": "blue",
+        "actual_value": 9,
+        "stated_value": 4,
+        "statement_true": false,
+        "return_rate": 0.35
+      }
+    ]
+  }
+]

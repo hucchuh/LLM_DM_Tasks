@@ -1,0 +1,29 @@
+{
+  "trials_per_run": 18,
+  "seeds_per_cell": 8,
+  "partner_name": "Alex",
+  "partner_types": [
+    {
+      "partner_type": "high_honesty_matched_return",
+      "label": "High honesty, matched return",
+      "true_statement_count": 14
+    },
+    {
+      "partner_type": "low_honesty_matched_return",
+      "label": "Low honesty, matched return",
+      "true_statement_count": 4
+    }
+  ],
+  "presentation_modes": [
+    {
+      "presentation_mode": "sequential_trial",
+      "label": "Sequential trial-by-trial"
+    },
+    {
+      "presentation_mode": "evidence_only_trial",
+      "label": "Evidence-only independent trial"
+    }
+  ],
+  "return_rates": [0.20, 0.35, 0.50, 0.65, 0.30, 0.45, 0.55, 0.25, 0.60, 0.40, 0.70, 0.30, 0.45, 0.55, 0.25, 0.50, 0.35, 0.60]
+}
+
