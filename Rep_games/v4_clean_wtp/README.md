@@ -1,5 +1,7 @@
 # V4 Clean WTP Trust Game
 
+Detailed HTML report: [`output/report.html`](output/report.html).
+
 V4 is a cleaner follow-up to V3. It removes the most obvious demand cues and turns the main dependent variable into a costly behavioral choice.
 
 Core changes:
@@ -13,4 +15,3 @@ Core changes:
 Main question:
 
 > When behavior evidence is held constant, does cheap talk change costly cooperation with the partner?
-

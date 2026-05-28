@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <title>V4 Clean WTP Trust Game</title>
+  <title>V4：去掉显性权重探针后的 WTP 实验</title>
   <style>
     body { font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif; margin: 34px; color: #17202a; line-height: 1.56; }
     h1 { margin-bottom: 6px; }
@@ -16,34 +16,130 @@
     th { background: #eef2f7; }
     img { max-width: 100%; border: 1px solid #d8dee6; border-radius: 8px; margin: 10px 0 20px; }
     code { background:#eef2f7; padding:1px 5px; border-radius:4px; }
+  
+    .protocol-details { border: 1px solid #d8dee6; border-radius: 10px; padding: 18px 20px; margin: 24px 0 30px; background: #f8fafc; }
+    .protocol-details h2 { margin-top: 0; }
+    .protocol-details h3 { margin: 18px 0 8px; }
+    .protocol-details ul, .protocol-details ol { padding-left: 22px; }
+    .protocol-details li { margin: 4px 0; }
+    .protocol-details .mini-table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; }
+    .protocol-details .mini-table th, .protocol-details .mini-table td { border: 1px solid #d8dee6; padding: 7px 9px; text-align: left; vertical-align: top; }
+    .protocol-details .mini-table th { background: #eef2f7; }
+    .protocol-details code { background: #eef2f7; padding: 1px 5px; border-radius: 4px; }
+
+  
+    .protocol-details pre { white-space: pre-wrap; overflow-x: auto; background: #eef2f7; border-radius: 8px; padding: 12px 14px; font-size: 13px; line-height: 1.55; }
+    .protocol-details strong { font-weight: 750; }
+
+  
+    .cn-results { margin-top: 34px; }
+    .cn-section { margin: 42px 0; }
+    .cn-section h2 { margin: 0 0 14px; font-size: 30px; line-height: 1.2; }
+    .cn-section h3 { margin: 26px 0 10px; font-size: 21px; }
+    .cn-lead { max-width: 980px; color: #4b5563; font-size: 17px; line-height: 1.75; }
+    .cn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin: 18px 0 24px; }
+    .cn-card { border: 1px solid #d8dee6; border-radius: 8px; padding: 16px 18px; background: #f8fafc; }
+    .cn-card span { display: block; margin-bottom: 6px; color: #235789; font-size: 28px; font-weight: 760; line-height: 1; }
+    .cn-card strong { display: block; margin-bottom: 6px; }
+    .cn-card p { margin: 0; color: #4b5563; font-size: 14px; line-height: 1.65; }
+    .cn-callout { margin: 18px 0 24px; padding: 15px 16px; border-left: 4px solid #235789; border-radius: 0 8px 8px 0; background: #eef5ff; }
+    .cn-warning { border-left-color: #d97706; background: #fff7ed; }
+    .cn-figure-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 24px; }
+    .cn-figure-grid.two { grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); }
+    .cn-figure { margin: 0; padding: 18px; border: 1px solid #d8dee6; border-radius: 8px; background: #fff; }
+    .cn-figure img { display: block; width: 100%; max-width: 100%; border: 1px solid #d8dee6; border-radius: 6px; margin: 0; }
+    .cn-figure figcaption { margin-top: 14px; color: #17202a; font-size: 16px; line-height: 1.7; }
+    .cn-caption-title { display: block; margin-bottom: 5px; color: #235789; font-weight: 760; }
+    .cn-table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px; }
+    .cn-table th, .cn-table td { border: 1px solid #d8dee6; padding: 8px 10px; text-align: left; vertical-align: top; }
+    .cn-table th { background: #eef3f8; }
+    .cn-num { text-align: right; font-variant-numeric: tabular-nums; }
+    @media (max-width: 900px) { .cn-figure-grid.two { grid-template-columns: 1fr; } }
+
   </style>
 </head>
 <body>
-  <h1>V4 Clean WTP Trust Game</h1>
-  <p class="note">V4 fixes the main V3 confounds: numeric histories are yoked across language frames, stake order is counterbalanced, language is exogenous, and the main task asks for costly choice rather than explicit return estimates.</p>
-  <div class="grid">
-    <div class="card"><span class="metric">96/96</span>successful API calls</div>
-    <div class="card"><span class="metric">0.4</span>mean observed return</div>
-    <div class="card"><span class="metric">1.688</span>mean WTP</div>
-    <div class="card"><span class="metric">51.448</span>mean trust</div>
+  <h1>V4：去掉显性权重探针后的 WTP 实验</h1>
+
+    <!-- protocol-details-start -->
+    <section class="protocol-details">
+      <h2>实验 protocol 和操作细节</h2>
+      <p>V4 去掉显性的权重问题，改用更干净的 costly choice：是否继续、WTP、下一轮投资和信任评分。它同时使用 yoked histories，让同一数值历史跨语言条件复用。</p>
+
+      <h3>方法总览</h3>
+      <p><code>4 behavior patterns × 4 language frames × 6 yoked histories = 96 runs</code>；成功解析 <code>96/96</code>。6 个 yoked histories 同时平衡历史 stake 顺序和下一轮 stake。</p>
+
+      <h3>任务规则和信息呈现</h3>
+      <table class="mini-table">
+        <thead><tr><th>项目</th><th>具体操作</th></tr></thead>
+        <tbody>
+          <tr><td>投资规则</td><td>low / medium / high stake 最大投资分别为 4、7、10；投资乘 3 给 partner。</td></tr>
+          <tr><td>历史呈现</td><td>prompt 明确写明历史来自 previous participant，且 previous participant followed a fixed investment schedule；模型应把记录只作为 partner 行为证据。</td></tr>
+          <tr><td>可见信息</td><td>每轮呈现 stake、previous participant invested、partner received、partner returned、partner message。模型不直接看到 <code>return_fraction</code>。</td></tr>
+          <tr><td>WTP 设置</td><td>模型有额外 10-token bonus，需要报告最多愿意支付多少一次性 access fee，以获得和该 partner 玩下一轮的机会。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>实验条件</h3>
+      <table class="mini-table">
+        <thead><tr><th>条件/因素</th><th>取值</th><th>设计目的</th></tr></thead>
+        <tbody>
+          <tr><td>behavior pattern</td><td><code>stable_moderate</code></td><td>返还围绕 0.40 稳定波动。</td></tr>
+          <tr><td>behavior pattern</td><td><code>strategic_opportunist</code></td><td>低赌注返还高，高赌注返还低，平均约 0.40。</td></tr>
+          <tr><td>behavior pattern</td><td><code>noisy_repairing</code></td><td>返还随时间改善，平均约 0.40。</td></tr>
+          <tr><td>behavior pattern</td><td><code>deteriorating_exploiter</code></td><td>返还随时间恶化，平均约 0.40。</td></tr>
+          <tr><td>language frame</td><td><code>neutral_filler</code>, <code>warmth</code>, <code>promise</code>, <code>apology</code></td><td>四类语言框架跨同一数值历史复用。</td></tr>
+          <tr><td>next stake</td><td>low / medium / high</td><td>下一轮只指定一个 stake，不再要求模型同时给出三种 stake 下的投资。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>关键变量和计算方式</h3>
+      <table class="mini-table">
+        <thead><tr><th>变量</th><th>类型/范围</th><th>含义</th></tr></thead>
+        <tbody>
+          <tr><td><code>continue_choice</code></td><td>模型输出，true/false</td><td>是否继续与该 partner 互动。</td></tr>
+          <tr><td><code>willingness_to_pay</code></td><td>模型输出，0-10</td><td>愿意为下一轮机会支付的最高 access fee。</td></tr>
+          <tr><td><code>next_investment</code></td><td>模型输出，整数</td><td>在给定 next stake 上限内的下一轮投资。</td></tr>
+          <tr><td><code>investment_fraction</code></td><td>分析指标</td><td>下一轮投资除以该 stake 的最大投资额。</td></tr>
+          <tr><td><code>trust_rating</code></td><td>模型输出，0-100</td><td>总体信任评分。</td></tr>
+          <tr><td><code>final_two_return_fraction</code></td><td>分析指标</td><td>最后两轮返还比例均值，用于判断 recency/trend。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>每个 run / trial 的完整流程</h3>
+      <ol>
+          <li>脚本生成 4 种行为模式下的数值历史，并用 6 种 stake order/yoked histories 平衡顺序。</li>
+          <li>同一数值历史被复制到 4 种 language frames，只有 partner message 改变。</li>
+          <li>prompt 告诉模型下一轮具体是 low、medium 或 high stake，并给出该 stake 的投资上限。</li>
+          <li>模型先报告 WTP，再给出是否继续、下一轮投资、trust rating 和一句理由。</li>
+          <li>分析按 behavior、language、next stake 聚合，检验 cheap talk 是否改变 costly choice。</li>
+      </ol>
+
+      <h3>模型输出字段</h3>
+      <p>核心 JSON 字段包括 <code>continue_choice</code>, <code>willingness_to_pay</code>, <code>next_investment</code>, <code>trust_rating</code>, <code>brief_reason</code>。</p>
+      <h3>需要注意的限制</h3>
+      <ul>
+          <li>V4 比 V3 更干净，但仍是一次性 history prompt，模型容易把任务当成读历史并估计返还函数。</li>
+      </ul>
+    </section>
+    <!-- protocol-details-end -->
+<div class="cn-results">
+    <section class="cn-section"><h2>主要结果</h2><p class="cn-lead">V4 去掉 V3 的显性权重探针，把主要因变量改成 WTP、continue choice、next investment 和 trust rating。结果显示，行为历史仍然是主导因素；语言框架的主效应很小。</p>
+      <div class="cn-grid">
+        <div class="cn-card"><span>3.38</span><strong>修复型 partner 的 WTP 最高</strong><p>低返还后有真实修复，模型愿意付费继续。</p></div>
+        <div class="cn-card"><span>0.04</span><strong>恶化型剥削者几乎不值得进入</strong><p>后期恶化让 WTP、投资和信任都接近底部。</p></div>
+        <div class="cn-card"><span>2</span><strong>机会主义者出现分离线索</strong><p>信任不高，但 WTP 并非最低，为 V5 的可控性问题埋下线索。</p></div>
+      </div>
+      <div class="cn-callout"><strong>核心解释：</strong>当数值历史被 yoked、语言框架单独变化时，温暖、承诺和道歉都很难显著改变 costly choice。模型更像是在估计 partner 的行为价值。</div></section>
+    <section class="cn-section"><h2>图表解释</h2><div class="cn-figure-grid">
+      <figure class="cn-figure"><img src="../../figures_cn/v4_wtp_by_behavior_language_cn.png" alt="V4 WTP by behavior language"><figcaption><span class="cn-caption-title">图 1：行为 × 语言下的 WTP。</span>WTP 主要随行为模式变化：noisy repairing 最高，deteriorating exploiter 最低；语言框架之间差异较小。</figcaption></figure>
+      <figure class="cn-figure"><img src="../../figures_cn/v4_trust_by_behavior_language_cn.png" alt="V4 trust by behavior language"><figcaption><span class="cn-caption-title">图 2：行为 × 语言下的信任评分。</span>信任评分同样主要由行为结构决定，持续恶化显著降低信任。</figcaption></figure>
+      <figure class="cn-figure"><img src="../../figures_cn/v4_investment_by_behavior_stake_cn.png" alt="V4 investment by behavior stake"><figcaption><span class="cn-caption-title">图 3：不同 next stake 下的投资比例。</span>模型在不同 stake 下调整风险暴露，但行为模式仍决定是否愿意投入。</figcaption></figure>
+      <figure class="cn-figure"><img src="../../figures_cn/v4_language_wtp_cn.png" alt="V4 language WTP"><figcaption><span class="cn-caption-title">图 4：语言框架对 WTP 的主效应。</span>apology、promise、warmth 与 neutral 的差异不大，说明 cheap talk 在明确行为证据前影响有限。</figcaption></figure>
+    </div></section>
+    <section class="cn-section"><h2>行为模式结果表</h2><table class="cn-table"><thead><tr><th>行为模式</th><th>信任</th><th>WTP</th><th>下一轮投资</th><th>投资比例</th><th>继续率</th></tr></thead><tbody><tr><td>稳定中等<br><code>stable_moderate</code></td><td class='cn-num'>62.79</td><td class='cn-num'>1.33</td><td class='cn-num'>6.75</td><td class='cn-num'>0.964</td><td class='cn-num'>1</td></tr><tr><td>噪声但修复<br><code>noisy_repairing</code></td><td class='cn-num'>65.21</td><td class='cn-num'>3.38</td><td class='cn-num'>7</td><td class='cn-num'>1</td><td class='cn-num'>1</td></tr><tr><td>策略性机会主义者<br><code>strategic_opportunist</code></td><td class='cn-num'>48.88</td><td class='cn-num'>2</td><td class='cn-num'>4.58</td><td class='cn-num'>0.71</td><td class='cn-num'>0.875</td></tr><tr><td>逐步恶化剥削者<br><code>deteriorating_exploiter</code></td><td class='cn-num'>28.92</td><td class='cn-num'>0.04</td><td class='cn-num'>0.92</td><td class='cn-num'>0.167</td><td class='cn-num'>0.25</td></tr></tbody></table>
+      <h2>语言框架结果表</h2><table class="cn-table"><thead><tr><th>语言框架</th><th>信任</th><th>WTP</th><th>下一轮投资</th><th>继续率</th></tr></thead><tbody><tr><td>中性填充<br><code>neutral_filler</code></td><td class='cn-num'>55.21</td><td class='cn-num'>1.58</td><td class='cn-num'>5</td><td class='cn-num'>0.792</td></tr><tr><td>温暖<br><code>warmth</code></td><td class='cn-num'>49.58</td><td class='cn-num'>1.62</td><td class='cn-num'>4.88</td><td class='cn-num'>0.75</td></tr><tr><td>承诺<br><code>promise</code></td><td class='cn-num'>50.12</td><td class='cn-num'>1.5</td><td class='cn-num'>4.75</td><td class='cn-num'>0.75</td></tr><tr><td>道歉<br><code>apology</code></td><td class='cn-num'>50.88</td><td class='cn-num'>2.04</td><td class='cn-num'>4.62</td><td class='cn-num'>0.833</td></tr></tbody></table></section>
+    <section class="cn-section"><h2>结论与下一步</h2><p>V4 是 V1-V4 中最干净的 cheap talk 检验：在同一数值历史下，语言框架对 costly choice 的影响很弱。更有意思的是，strategic opportunist 虽然信任不高，却仍有一定 WTP。这提示 WTP 不完全等于 trust，可能包含“如果风险可控，这个机会仍然有价值”。V5 因此专门操纵下一轮赌注是否可控。</p></section>
   </div>
-  <h2>Protocol</h2>
-  <p class="note">Each trial shows six previous rounds as trial-by-trial records. The model sees no average return, no low/high mean estimate question, and no message-vs-behavior weight probe. It receives one upcoming stake and chooses whether to continue, maximum access fee, investment, and trust rating.</p>
-  <h2>Main Figures</h2>
-  <p class="note">In the WTP figure, zero-height bars are labeled as 0.00. For deteriorating exploiter, neutral, promise, and apology all have WTP exactly 0; warmth is visible because its mean WTP is 0.17.</p>
-  <img src="figures/wtp_by_behavior_language.png" alt="WTP by behavior and language">
-  <img src="figures/trust_by_behavior_language.png" alt="Trust by behavior and language">
-  <img src="figures/investment_fraction_by_behavior_stake.png" alt="Investment by behavior and stake">
-  <img src="figures/language_main_effect_wtp.png" alt="Language main effect on WTP">
-  <h2>Behavior x Language</h2>
-  <table>
-    <thead><tr><th>Behavior</th><th>Language</th><th>N</th><th>Observed mean</th><th>Policy next return</th><th>Continue rate</th><th>WTP</th><th>Investment fraction</th><th>Trust</th></tr></thead>
-    <tbody><tr><td>stable_moderate</td><td>neutral_filler</td><td>6/6</td><td>0.4</td><td>0.4</td><td>1</td><td>1.167</td><td>1</td><td>65</td></tr><tr><td>stable_moderate</td><td>warmth</td><td>6/6</td><td>0.4</td><td>0.4</td><td>1</td><td>1.667</td><td>1</td><td>68.667</td></tr><tr><td>stable_moderate</td><td>promise</td><td>6/6</td><td>0.4</td><td>0.4</td><td>1</td><td>1.167</td><td>1</td><td>64.167</td></tr><tr><td>stable_moderate</td><td>apology</td><td>6/6</td><td>0.4</td><td>0.4</td><td>1</td><td>1.333</td><td>0.857</td><td>53.333</td></tr><tr><td>strategic_opportunist</td><td>neutral_filler</td><td>6/6</td><td>0.4</td><td>0.4</td><td>0.833</td><td>1.5</td><td>0.733</td><td>51.667</td></tr><tr><td>strategic_opportunist</td><td>warmth</td><td>6/6</td><td>0.4</td><td>0.4</td><td>0.833</td><td>2</td><td>0.59</td><td>48</td></tr><tr><td>strategic_opportunist</td><td>promise</td><td>6/6</td><td>0.4</td><td>0.4</td><td>0.833</td><td>1.333</td><td>0.733</td><td>43.333</td></tr><tr><td>strategic_opportunist</td><td>apology</td><td>6/6</td><td>0.4</td><td>0.4</td><td>1</td><td>3.167</td><td>0.783</td><td>52.5</td></tr><tr><td>noisy_repairing</td><td>neutral_filler</td><td>6/6</td><td>0.4</td><td>0.55</td><td>1</td><td>3.667</td><td>1</td><td>72.5</td></tr><tr><td>noisy_repairing</td><td>warmth</td><td>6/6</td><td>0.4</td><td>0.55</td><td>1</td><td>2.667</td><td>1</td><td>54.167</td></tr><tr><td>noisy_repairing</td><td>promise</td><td>6/6</td><td>0.4</td><td>0.55</td><td>1</td><td>3.5</td><td>1</td><td>66.333</td></tr><tr><td>noisy_repairing</td><td>apology</td><td>6/6</td><td>0.4</td><td>0.55</td><td>1</td><td>3.667</td><td>1</td><td>67.833</td></tr><tr><td>deteriorating_exploiter</td><td>neutral_filler</td><td>6/6</td><td>0.4</td><td>0.25</td><td>0.333</td><td>0</td><td>0.167</td><td>31.667</td></tr><tr><td>deteriorating_exploiter</td><td>warmth</td><td>6/6</td><td>0.4</td><td>0.25</td><td>0.167</td><td>0.167</td><td>0.167</td><td>27.5</td></tr><tr><td>deteriorating_exploiter</td><td>promise</td><td>6/6</td><td>0.4</td><td>0.25</td><td>0.167</td><td>0</td><td>0.167</td><td>26.667</td></tr><tr><td>deteriorating_exploiter</td><td>apology</td><td>6/6</td><td>0.4</td><td>0.25</td><td>0.333</td><td>0</td><td>0.167</td><td>29.833</td></tr></tbody>
-  </table>
-  <h2>Behavior x Next Stake</h2>
-  <table>
-    <thead><tr><th>Behavior</th><th>Next stake</th><th>N</th><th>Observed mean</th><th>Policy next return</th><th>Continue rate</th><th>WTP</th><th>Investment fraction</th><th>Trust</th></tr></thead>
-    <tbody><tr><td>stable_moderate</td><td>low</td><td>8/8</td><td>0.4</td><td>0.4</td><td>1</td><td>0.625</td><td>1</td><td>72.5</td></tr><tr><td>stable_moderate</td><td>medium</td><td>8/8</td><td>0.4</td><td>0.4</td><td>1</td><td>1.25</td><td>0.893</td><td>54.625</td></tr><tr><td>stable_moderate</td><td>high</td><td>8/8</td><td>0.4</td><td>0.4</td><td>1</td><td>2.125</td><td>1</td><td>61.25</td></tr><tr><td>strategic_opportunist</td><td>low</td><td>8/8</td><td>0.4</td><td>0.55</td><td>0.875</td><td>1.875</td><td>0.875</td><td>52.875</td></tr><tr><td>strategic_opportunist</td><td>medium</td><td>8/8</td><td>0.4</td><td>0.4</td><td>0.875</td><td>2</td><td>0.768</td><td>54.375</td></tr><tr><td>strategic_opportunist</td><td>high</td><td>8/8</td><td>0.4</td><td>0.25</td><td>0.875</td><td>2.125</td><td>0.487</td><td>39.375</td></tr><tr><td>noisy_repairing</td><td>low</td><td>8/8</td><td>0.4</td><td>0.55</td><td>1</td><td>2.625</td><td>1</td><td>70.375</td></tr><tr><td>noisy_repairing</td><td>medium</td><td>8/8</td><td>0.4</td><td>0.55</td><td>1</td><td>3.75</td><td>1</td><td>62.5</td></tr><tr><td>noisy_repairing</td><td>high</td><td>8/8</td><td>0.4</td><td>0.55</td><td>1</td><td>3.75</td><td>1</td><td>62.75</td></tr><tr><td>deteriorating_exploiter</td><td>low</td><td>8/8</td><td>0.4</td><td>0.25</td><td>0.375</td><td>0</td><td>0.25</td><td>28.25</td></tr><tr><td>deteriorating_exploiter</td><td>medium</td><td>8/8</td><td>0.4</td><td>0.25</td><td>0.375</td><td>0.125</td><td>0.25</td><td>31.625</td></tr><tr><td>deteriorating_exploiter</td><td>high</td><td>8/8</td><td>0.4</td><td>0.25</td><td>0</td><td>0</td><td>0</td><td>26.875</td></tr></tbody>
-  </table>
 </body>
 </html>

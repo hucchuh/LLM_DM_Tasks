@@ -1,5 +1,7 @@
 # V2: Average Return Controlled Trust Probes
 
+Detailed HTML report: [`output/report.html`](output/report.html).
+
 This experiment tests whether LLM trust judgments collapse repeated social interaction into average payoff, or whether the model also represents policy structure.
 
 All partner types have the same observed average return fraction:

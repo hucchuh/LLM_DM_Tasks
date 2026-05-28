@@ -1,5 +1,7 @@
 # V6: Advice-to-Trust Transfer
 
+Detailed HTML report: [`output/v6_report.html`](output/v6_report.html).
+
 V6 解决 V4/V5 暴露出来的一个问题：当 prompt 以完整 history 表格的形式呈现时，模型容易把 partner 当成固定策略机器人，任务变成拟合返还函数，而不是社会信任更新。
 
 这一版把任务改成“同一个 partner 先在信息建议任务中建立声誉，再进入 trust/WTP 决策”。核心问题是：

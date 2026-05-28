@@ -20,6 +20,21 @@
     .card { background: #f8fafc; border: 1px solid #e1e8ef; border-radius: 8px; padding: 16px; }
     .metric { font-size: 30px; font-weight: 800; color: #174a73; }
     .note { color: #405366; }
+  
+    .protocol-details { border: 1px solid #d8dee6; border-radius: 10px; padding: 18px 20px; margin: 24px 0 30px; background: #f8fafc; }
+    .protocol-details h2 { margin-top: 0; }
+    .protocol-details h3 { margin: 18px 0 8px; }
+    .protocol-details ul, .protocol-details ol { padding-left: 22px; }
+    .protocol-details li { margin: 4px 0; }
+    .protocol-details .mini-table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; }
+    .protocol-details .mini-table th, .protocol-details .mini-table td { border: 1px solid #d8dee6; padding: 7px 9px; text-align: left; vertical-align: top; }
+    .protocol-details .mini-table th { background: #eef2f7; }
+    .protocol-details code { background: #eef2f7; padding: 1px 5px; border-radius: 4px; }
+
+  
+    .protocol-details pre { white-space: pre-wrap; overflow-x: auto; background: #eef2f7; border-radius: 8px; padding: 12px 14px; font-size: 13px; line-height: 1.55; }
+    .protocol-details strong { font-weight: 750; }
+
   </style>
 </head>
 <body>
@@ -28,6 +43,68 @@
     <p>核心问题：当建议带来的实际收益被严格匹配之后，模型是否还会因为一个对象更诚实，而更愿意付费、进入互动、投入更多资源？</p>
   </header>
   <main>
+
+    <!-- protocol-details-start -->
+    <section class="protocol-details">
+      <h2>实验 protocol 和操作细节</h2>
+      <p>V7 在 V6 基础上匹配 realized advice payoff：诚实组和不诚实组的 recommendation win rate 都是 0.50，只改变 factual honesty，测试 honesty 是否仍会迁移到后续 costly reliance。</p>
+
+      <h3>方法总览</h3>
+      <p><code>2 adviser types × 2 presentation modes × 16 seeds = 64 runs</code>；成功解析 <code>64/64</code>。每个 run 先经历 12 轮 observation episodes，再进行一次主投资决策；honesty/helpfulness 只在独立 probe 中测量。</p>
+
+      <h3>任务规则和信息呈现</h3>
+      <table class="mini-table">
+        <thead><tr><th>项目</th><th>具体操作</th></tr></thead>
+        <tbody>
+          <tr><td>observation task</td><td>模型观察 advice episodes，但在 sequential_observation 中不选择卡牌，只确认观察到当前轮。</td></tr>
+          <tr><td>payoff matching</td><td>两组 partner 的 recommendation win rate 都固定为 6/12 = 0.50。</td></tr>
+          <tr><td>主决策隔离</td><td>主 decision prompt 不问 honesty、helpfulness、理由或权重，只问是否进入、WTP 和 investment。</td></tr>
+          <tr><td>独立 probe</td><td>perceived honesty/helpfulness、expected win rate 和 moral trust 在单独 prompt 中测量。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>实验条件</h3>
+      <table class="mini-table">
+        <thead><tr><th>条件/因素</th><th>取值</th><th>设计目的</th></tr></thead>
+        <tbody>
+          <tr><td>adviser type</td><td><code>honest_matched</code></td><td>9/12 事实陈述真实；6/12 推荐会赢。</td></tr>
+          <tr><td>adviser type</td><td><code>dishonest_matched</code></td><td>3/12 事实陈述真实；6/12 推荐会赢。</td></tr>
+          <tr><td>presentation mode</td><td><code>sequential_observation</code></td><td>逐轮观察，每轮只返回 <code>observed_round</code>。</td></tr>
+          <tr><td>presentation mode</td><td><code>batch_review</code></td><td>一次性阅读相同 12 轮 history。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>关键变量和计算方式</h3>
+      <table class="mini-table">
+        <thead><tr><th>变量</th><th>类型/范围</th><th>含义</th></tr></thead>
+        <tbody>
+          <tr><td><code>enter_choice</code></td><td>主输出，true/false</td><td>是否进入后续 one-shot investment interaction。</td></tr>
+          <tr><td><code>willingness_to_pay</code></td><td>主输出，0-10</td><td>愿意为进入机会支付多少 access fee。</td></tr>
+          <tr><td><code>investment</code></td><td>主输出，0-10</td><td>进入后愿意投资多少 tokens。</td></tr>
+          <tr><td><code>perceived_honesty</code></td><td>独立 probe，0-100</td><td>操纵检验：模型认为 partner 多诚实。</td></tr>
+          <tr><td><code>perceived_helpfulness</code></td><td>独立 probe，0-100</td><td>操纵检验：模型认为 partner 多有用。</td></tr>
+          <tr><td><code>moral_trust</code></td><td>独立 probe，0-100</td><td>更偏道德评价的信任判断。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>每个 run / trial 的完整流程</h3>
+      <ol>
+          <li>脚本生成 high/low honesty 两组 partner，各自 12 轮 advice episodes，确保两组推荐胜率相同。</li>
+          <li>sequential_observation 中，模型逐轮看到 partner message 和反馈，但每轮只返回当前轮编号，避免在观察阶段引入 trust probe。</li>
+          <li>batch_review 中，模型一次性阅读同样 12 轮历史。</li>
+          <li>主决策阶段，模型只输出 <code>enter_choice</code>, <code>willingness_to_pay</code>, <code>investment</code>。</li>
+          <li>随后用独立 probe prompt 测 perceived honesty、helpfulness、expected win rate 和 moral trust。</li>
+      </ol>
+
+      <h3>模型输出字段</h3>
+      <p>主决策 JSON: <code>enter_choice</code>, <code>willingness_to_pay</code>, <code>investment</code>。Probe JSON: <code>perceived_honesty</code>, <code>perceived_helpfulness</code>, <code>expected_recommendation_win_rate</code>, <code>moral_trust</code>。</p>
+      <h3>需要注意的限制</h3>
+      <ul>
+          <li>V7 的主投资仍发生在完整历史之后，不是真正逐轮投资行为；V8 因此改成 trial-by-trial investment。</li>
+      </ul>
+    </section>
+    <!-- protocol-details-end -->
+
     <section>
       <h2>为什么做 V7</h2>
       <p>V6 已经证明模型可以把“这个人说真话”和“这个人让我赚钱”分开。但那个设计里 honesty 和 payoff 是两个很清楚的变量，容易被模型当成一道分类题。V7 因此把两类对象的建议收益固定为完全一样：12 轮里都只有 6 次建议会赢。唯一改变的是事实陈述是否诚实。</p>

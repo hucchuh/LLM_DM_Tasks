@@ -47,6 +47,21 @@
     figcaption { margin-top: 16px; font-size: 18px; line-height: 1.7; }
     figcaption strong { display: block; color: var(--blue); margin-bottom: 6px; font-size: 20px; }
     code { background: #eef2f7; padding: 1px 5px; border-radius: 4px; }
+  
+    .protocol-details { border: 1px solid #d8dee6; border-radius: 10px; padding: 18px 20px; margin: 24px 0 30px; background: #f8fafc; }
+    .protocol-details h2 { margin-top: 0; }
+    .protocol-details h3 { margin: 18px 0 8px; }
+    .protocol-details ul, .protocol-details ol { padding-left: 22px; }
+    .protocol-details li { margin: 4px 0; }
+    .protocol-details .mini-table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; }
+    .protocol-details .mini-table th, .protocol-details .mini-table td { border: 1px solid #d8dee6; padding: 7px 9px; text-align: left; vertical-align: top; }
+    .protocol-details .mini-table th { background: #eef2f7; }
+    .protocol-details code { background: #eef2f7; padding: 1px 5px; border-radius: 4px; }
+
+  
+    .protocol-details pre { white-space: pre-wrap; overflow-x: auto; background: #eef2f7; border-radius: 8px; padding: 12px 14px; font-size: 13px; line-height: 1.55; }
+    .protocol-details strong { font-weight: 750; }
+
   </style>
 </head>
 <body>
@@ -59,6 +74,70 @@
   </header>
 
   <main>
+
+    <!-- protocol-details-start -->
+    <section class="protocol-details">
+      <h2>实验 protocol 和操作细节</h2>
+      <p>V6 把直接返还历史改成 advice task：同一个 partner 先通过“是否说真话”和“建议是否带来收益”形成声誉，再迁移到一次 trust/WTP 投资互动。</p>
+
+      <h3>方法总览</h3>
+      <p><code>4 partner types × 2 presentation modes × 8 seeds = 64 runs</code>；成功解析 <code>60/64</code>。每个 run 包含 12 轮 advice episodes，随后进入一次 one-shot investment interaction。</p>
+
+      <h3>任务规则和信息呈现</h3>
+      <table class="mini-table">
+        <thead><tr><th>项目</th><th>具体操作</th></tr></thead>
+        <tbody>
+          <tr><td>advice task</td><td>每轮有 left/right 两张卡，模型看不到卡值；partner 声称检查其中一张卡、说出数值，并推荐 left/right。</td></tr>
+          <tr><td>feedback</td><td>sequential 条件下，模型选择 left/right 后收到实际左右卡值、陈述是否真实、推荐是否赢。batch 条件下一次性看到同样信息。</td></tr>
+          <tr><td>迁移任务</td><td>12 轮 advice 后，同一个 partner 进入一次投资互动：模型有 10 tokens，可投 0-10；投资乘 3 后由 partner 决定返还。</td></tr>
+          <tr><td>WTP 设置</td><td>模型有额外 10-token bonus，需要报告愿付的最高 access fee。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>实验条件</h3>
+      <table class="mini-table">
+        <thead><tr><th>条件/因素</th><th>取值</th><th>设计目的</th></tr></thead>
+        <tbody>
+          <tr><td>partner type</td><td><code>honest_beneficial</code></td><td>9/12 陈述真实，9/12 推荐会赢。</td></tr>
+          <tr><td>partner type</td><td><code>dishonest_beneficial</code></td><td>3/12 陈述真实，9/12 推荐会赢。</td></tr>
+          <tr><td>partner type</td><td><code>honest_costly</code></td><td>9/12 陈述真实，3/12 推荐会赢。</td></tr>
+          <tr><td>partner type</td><td><code>dishonest_costly</code></td><td>3/12 陈述真实，3/12 推荐会赢。</td></tr>
+          <tr><td>presentation mode</td><td><code>sequential</code></td><td>模型逐轮做 card choice 并收到反馈，最后再做投资决策。</td></tr>
+          <tr><td>presentation mode</td><td><code>batch</code></td><td>模型一次性阅读 12 轮 advice history，最后做同样投资决策。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>关键变量和计算方式</h3>
+      <table class="mini-table">
+        <thead><tr><th>变量</th><th>类型/范围</th><th>含义</th></tr></thead>
+        <tbody>
+          <tr><td><code>observed_honesty_rate</code></td><td>设计/分析指标</td><td>partner 事实陈述真实的比例。</td></tr>
+          <tr><td><code>observed_recommendation_win_rate</code></td><td>设计/分析指标</td><td>采纳 partner 推荐会赢的比例。</td></tr>
+          <tr><td><code>actual_choice_win_rate</code></td><td>sequential 分析指标</td><td>模型实际选择赢的比例。</td></tr>
+          <tr><td><code>follow_recommendation_rate</code></td><td>sequential 分析指标</td><td>模型跟随 partner 推荐的比例。</td></tr>
+          <tr><td><code>trust_rating</code>, <code>WTP</code>, <code>investment</code></td><td>最终模型输出</td><td>迁移到投资互动后的信任、入场费和投资。</td></tr>
+          <tr><td><code>perceived_honesty</code>, <code>perceived_helpfulness</code></td><td>最终模型输出</td><td>模型对 partner 诚实性和有用性的主观判断。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>每个 run / trial 的完整流程</h3>
+      <ol>
+          <li>sequential 中，每轮 prompt 给出 partner message：<code>I checked the left/right card. It is X. I recommend choosing left/right.</code></li>
+          <li>模型每轮输出 <code>choice</code>、<code>confidence</code> 和一句理由。</li>
+          <li>脚本反馈真实卡值、陈述真伪、推荐是否赢；这些反馈留在同一 conversation 中。</li>
+          <li>12 轮结束后，模型看到 final investment prompt，输出 trust、WTP、investment、expected return、perceived honesty/helpfulness。</li>
+          <li>batch 中，模型一次性阅读包含同样字段的 12 轮 history，然后直接做 final investment prompt。</li>
+      </ol>
+
+      <h3>模型输出字段</h3>
+      <p>sequential trial 输出 <code>choice</code>, <code>confidence</code>, <code>brief_reason</code>；final 输出 <code>trust_rating</code>, <code>willingness_to_pay</code>, <code>investment</code>, <code>expected_return_tokens</code>, <code>perceived_honesty</code>, <code>perceived_helpfulness</code>, <code>brief_reason</code>。</p>
+      <h3>需要注意的限制</h3>
+      <ul>
+          <li>V6 中 honesty 和 recommendation payoff 被显式正交操纵，概念上清楚，但也容易显得人工；V7 因此做 payoff-matched honesty。</li>
+      </ul>
+    </section>
+    <!-- protocol-details-end -->
+
     <section>
       <div class="wrap">
         <h2>为什么做 V6</h2>

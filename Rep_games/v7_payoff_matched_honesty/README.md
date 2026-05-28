@@ -1,5 +1,7 @@
 # V7: Payoff-Matched Honesty Transfer
 
+Detailed HTML report: [`output/report.html`](output/report.html).
+
 V7 is the cleaner follow-up to V6.
 
 The goal is to test whether honesty still affects costly reliance when realized payoff is matched.

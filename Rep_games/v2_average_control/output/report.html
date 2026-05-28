@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <title>V2 Repeated Trust Game: V1 Partner Types With Average Return Control</title>
+  <title>V2：控制平均返还后的策略结构识别</title>
   <style>
     body { font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif; margin: 34px; color: #17202a; line-height: 1.55; }
     h1 { margin-bottom: 6px; }
@@ -16,43 +16,136 @@
     .card { border: 1px solid #d8dee6; border-radius: 8px; padding: 12px 14px; background: #f8fafc; }
     .card strong { display: block; margin-bottom: 4px; }
     code { background: #eef2f7; padding: 1px 5px; border-radius: 4px; }
+  
+    .protocol-details { border: 1px solid #d8dee6; border-radius: 10px; padding: 18px 20px; margin: 24px 0 30px; background: #f8fafc; }
+    .protocol-details h2 { margin-top: 0; }
+    .protocol-details h3 { margin: 18px 0 8px; }
+    .protocol-details ul, .protocol-details ol { padding-left: 22px; }
+    .protocol-details li { margin: 4px 0; }
+    .protocol-details .mini-table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; }
+    .protocol-details .mini-table th, .protocol-details .mini-table td { border: 1px solid #d8dee6; padding: 7px 9px; text-align: left; vertical-align: top; }
+    .protocol-details .mini-table th { background: #eef2f7; }
+    .protocol-details code { background: #eef2f7; padding: 1px 5px; border-radius: 4px; }
+
+  
+    .protocol-details pre { white-space: pre-wrap; overflow-x: auto; background: #eef2f7; border-radius: 8px; padding: 12px 14px; font-size: 13px; line-height: 1.55; }
+    .protocol-details strong { font-weight: 750; }
+
+  
+    .cn-results { margin-top: 34px; }
+    .cn-section { margin: 42px 0; }
+    .cn-section h2 { margin: 0 0 14px; font-size: 30px; line-height: 1.2; }
+    .cn-section h3 { margin: 26px 0 10px; font-size: 21px; }
+    .cn-lead { max-width: 980px; color: #4b5563; font-size: 17px; line-height: 1.75; }
+    .cn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin: 18px 0 24px; }
+    .cn-card { border: 1px solid #d8dee6; border-radius: 8px; padding: 16px 18px; background: #f8fafc; }
+    .cn-card span { display: block; margin-bottom: 6px; color: #235789; font-size: 28px; font-weight: 760; line-height: 1; }
+    .cn-card strong { display: block; margin-bottom: 6px; }
+    .cn-card p { margin: 0; color: #4b5563; font-size: 14px; line-height: 1.65; }
+    .cn-callout { margin: 18px 0 24px; padding: 15px 16px; border-left: 4px solid #235789; border-radius: 0 8px 8px 0; background: #eef5ff; }
+    .cn-warning { border-left-color: #d97706; background: #fff7ed; }
+    .cn-figure-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 24px; }
+    .cn-figure-grid.two { grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); }
+    .cn-figure { margin: 0; padding: 18px; border: 1px solid #d8dee6; border-radius: 8px; background: #fff; }
+    .cn-figure img { display: block; width: 100%; max-width: 100%; border: 1px solid #d8dee6; border-radius: 6px; margin: 0; }
+    .cn-figure figcaption { margin-top: 14px; color: #17202a; font-size: 16px; line-height: 1.7; }
+    .cn-caption-title { display: block; margin-bottom: 5px; color: #235789; font-weight: 760; }
+    .cn-table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px; }
+    .cn-table th, .cn-table td { border: 1px solid #d8dee6; padding: 8px 10px; text-align: left; vertical-align: top; }
+    .cn-table th { background: #eef3f8; }
+    .cn-num { text-align: right; font-variant-numeric: tabular-nums; }
+    @media (max-width: 900px) { .cn-figure-grid.two { grid-template-columns: 1fr; } }
+
   </style>
 </head>
 <body>
-  <h1>V2 Repeated Trust Game: V1 Partner Types With Average Return Control</h1>
+  <h1>V2：控制平均返还后的策略结构识别</h1>
   <p class="note">This is the controlled follow-up to v1. V1 showed that <code>trust_rating</code> closely tracks <code>observed return</code>. V2 keeps the same partner-type language as v1, but implements average-return-controlled variants. Every partner type has exactly the same observed average return, <code>0.40</code>, while the pattern of returns differs across stake and time.</p>
   <p>Successful calls: 36 / 36.</p>
 
-  <h2>Question</h2>
-  <p class="note">If the model only uses average return, all partner types should receive similar <code>trust_rating</code> and similar <code>predicted return</code>. If the model represents a more structured partner pattern, then the conditional predictions should change with the partner's actual low-stake and high-stake behavior.</p>
+    <!-- protocol-details-start -->
+    <section class="protocol-details">
+      <h2>实验 protocol 和操作细节</h2>
+      <p>V2 控制所有条件的平均返还约为 0.40，检验模型是否只是追踪 average payoff，还是能识别 stake-specific policy 和时间趋势。</p>
 
-  <div class="cards">
-    <div class="card"><strong>Controlled variable</strong>Observed average return = 0.40 for every partner type.</div>
-    <div class="card"><strong>Main dependent variables</strong><code>trust_rating</code>, <code>predicted return</code>, and conditional investment.</div>
-    <div class="card"><strong>New v2 readout</strong><code>High-low prediction gap</code> = predicted high-stake return minus predicted low-stake return.</div>
+      <h3>方法总览</h3>
+      <p><code>6 policy conditions × 6 repetitions = 36 runs</code>；成功解析 <code>36/36</code>。每个 run 一次性呈现 8 轮历史，并直接询问 low / medium / high 三种 stake 下的预测和投资。</p>
+
+      <h3>任务规则和信息呈现</h3>
+      <table class="mini-table">
+        <thead><tr><th>项目</th><th>具体操作</th></tr></thead>
+        <tbody>
+          <tr><td>投资规则</td><td>low stake 最大投资 4；medium 最大投资 7；high 最大投资 10；投资乘 3 后交给 partner。</td></tr>
+          <tr><td>历史呈现</td><td>每轮以自然句呈现 stake、partner message、你投资多少、partner 收到多少、返还多少。模型看的是 token 数，不是直接给出的 <code>return_fraction</code> 表。</td></tr>
+          <tr><td>平均返还控制</td><td>所有条件的研究者计算平均返还均控制在 <code>0.40</code>。</td></tr>
+          <tr><td>probe 方式</td><td>prompt 明确要求模型分别预测 low / medium / high stake 的返还比例，并分别给出投资额。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>实验条件</h3>
+      <table class="mini-table">
+        <thead><tr><th>条件/因素</th><th>取值</th><th>设计目的</th></tr></thead>
+        <tbody>
+          <tr><td>policy condition</td><td><code>stable_neutral</code></td><td>返还稳定 0.40，中性语言。</td></tr>
+          <tr><td>policy condition</td><td><code>stable_warm</code></td><td>返还同样稳定 0.40，但语言更温暖。</td></tr>
+          <tr><td>policy condition</td><td><code>high_stake_betrayal</code></td><td>低赌注返还高，高赌注返还低；平均仍为 0.40。</td></tr>
+          <tr><td>policy condition</td><td><code>high_stake_generous</code></td><td>低赌注返还低，高赌注返还高；是 high-stake betrayal 的镜像。</td></tr>
+          <tr><td>policy condition</td><td><code>repairing_trend</code></td><td>前期低返还，后期修复和改善。</td></tr>
+          <tr><td>policy condition</td><td><code>declining_trend</code></td><td>前期高返还，后期逐步恶化。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>关键变量和计算方式</h3>
+      <table class="mini-table">
+        <thead><tr><th>变量</th><th>类型/范围</th><th>含义</th></tr></thead>
+        <tbody>
+          <tr><td><code>global_trust_rating</code></td><td>模型输出，0-100</td><td>对 partner 的总体信任评分。</td></tr>
+          <tr><td><code>message_credibility</code></td><td>模型输出，0-100</td><td>认为 partner 语言信息可信的程度。</td></tr>
+          <tr><td><code>policy_structure_rating</code></td><td>模型输出，0-100</td><td>认为 partner 行为有稳定策略结构的程度。</td></tr>
+          <tr><td><code>predicted_return_fraction_if_low/medium/high_stake</code></td><td>模型输出，0-1</td><td>模型对三种 stake 下返还比例的条件预测。</td></tr>
+          <tr><td><code>investment_if_low/medium/high_stake</code></td><td>模型输出，整数</td><td>模型在三种 stake 条件下分别愿意投资多少。</td></tr>
+          <tr><td><code>predicted_high_minus_low</code></td><td>分析指标</td><td>高赌注预测返还减低赌注预测返还，用来判断模型是否识别 stake-contingent policy。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>每个 run / trial 的完整流程</h3>
+      <ol>
+          <li>脚本从 <code>conditions/policy_points.json</code> 读取 6 个 policy conditions。</li>
+          <li>每个 condition 生成 8 轮历史，历史平均返还被控制为 0.40。</li>
+          <li>模型一次性阅读完整历史；prompt 告诉它 low/medium/high 的投资上限。</li>
+          <li>模型输出全局信任、语言可信度、策略结构评分、三种 stake 下的返还预测和投资。</li>
+          <li>分析比较同平均返还下，不同 policy structure 是否导致不同预测与投资。</li>
+      </ol>
+
+      <h3>模型输出字段</h3>
+      <p>JSON schema 包括 <code>global_trust_rating</code>, <code>message_credibility</code>, <code>policy_structure_rating</code>, 三个 <code>predicted_return_fraction</code>, 三个 <code>investment_if_*</code>, <code>confidence</code>, <code>brief_reason</code>。</p>
+      <h3>需要注意的限制</h3>
+      <ul>
+          <li>V2 的 low/medium/high probe 很直接，会 cue 模型主动做策略拟合；它适合作为结构识别测试，但不够自然。</li>
+      </ul>
+    </section>
+    <!-- protocol-details-end -->
+<div class="cn-results">
+    <section class="cn-section">
+      <h2>主要结果</h2>
+      <p class="cn-lead">V2 把所有条件的平均返还都控制在 0.40 左右。结果显示，模型并不是只看平均收益：它能根据 stake-specific pattern 和时间趋势调整信任、条件预测和投资策略。</p>
+      <div class="cn-grid">
+        <div class="cn-card"><span>-0.3</span><strong>高赌注背叛被识别</strong><p>模型预测 high stake 返还比 low stake 低 0.30，并把 high-stake 投资降为 0。</p></div>
+        <div class="cn-card"><span>+0.3</span><strong>镜像条件方向相反</strong><p>high-stake generous 中，模型预测高赌注更值得投，并给 high stake 满额投资。</p></div>
+        <div class="cn-card"><span>35</span><strong>后期恶化最伤信任</strong><p>尽管平均返还仍为 0.40，declining trend 的信任评分最低。</p></div>
+      </div>
+      <div class="cn-callout"><strong>核心解释：</strong>控制平均返还后，模型仍能读出 partner policy structure。它不是只计算总体均值，而会关心“什么时候返还高、什么时候返还低”。</div>
+    </section>
+    <section class="cn-section">
+      <h2>图表解释</h2>
+      <div class="cn-figure-grid">
+        <figure class="cn-figure"><img src="../../figures_cn/v2_trust_by_condition_cn.png" alt="V2 信任评分"><figcaption><span class="cn-caption-title">图 1：平均返还相同条件下的信任评分。</span>所有条件平均返还都为 0.40，但模型仍给出不同信任评分：高赌注慷慨和稳定中性更高，后期恶化最低。</figcaption></figure>
+        <figure class="cn-figure"><img src="../../figures_cn/v2_conditional_predictions_cn.png" alt="V2 条件返还预测"><figcaption><span class="cn-caption-title">图 2：low / medium / high 条件返还预测。</span>模型在 high-stake betrayal 中预测 high 低于 low，在 high-stake generous 中预测 high 高于 low，说明它读出了条件性策略。</figcaption></figure>
+        <figure class="cn-figure"><img src="../../figures_cn/v2_high_low_gap_cn.png" alt="V2 high-low gap"><figcaption><span class="cn-caption-title">图 3：预测高低赌注差异。</span>这个 gap 是模型对 stake-triggered policy 的直接读数；正负方向与实验操纵一致。</figcaption></figure>
+      </div>
+    </section>
+    <section class="cn-section"><h2>结果表</h2><table class="cn-table"><thead><tr><th>条件</th><th>平均返还</th><th>信任</th><th>预测 low</th><th>预测 high</th><th>high-low</th><th>low 投资</th><th>high 投资</th></tr></thead><tbody><tr><td>稳定中性<br><code>stable_neutral</code></td><td class='cn-num'>0.4</td><td class='cn-num'>73.33</td><td class='cn-num'>0.4</td><td class='cn-num'>0.4</td><td class='cn-num'>0</td><td class='cn-num'>4</td><td class='cn-num'>10</td></tr><tr><td>稳定温暖<br><code>stable_warm</code></td><td class='cn-num'>0.4</td><td class='cn-num'>57.17</td><td class='cn-num'>0.4</td><td class='cn-num'>0.4</td><td class='cn-num'>0</td><td class='cn-num'>4</td><td class='cn-num'>10</td></tr><tr><td>高赌注背叛<br><code>high_stake_betrayal</code></td><td class='cn-num'>0.4</td><td class='cn-num'>49.17</td><td class='cn-num'>0.55</td><td class='cn-num'>0.25</td><td class='cn-num'>-0.3</td><td class='cn-num'>4</td><td class='cn-num'>0</td></tr><tr><td>高赌注慷慨<br><code>high_stake_generous</code></td><td class='cn-num'>0.4</td><td class='cn-num'>77.5</td><td class='cn-num'>0.25</td><td class='cn-num'>0.55</td><td class='cn-num'>0.3</td><td class='cn-num'>0</td><td class='cn-num'>10</td></tr><tr><td>后期修复<br><code>repairing_trend</code></td><td class='cn-num'>0.4</td><td class='cn-num'>59.5</td><td class='cn-num'>0.558</td><td class='cn-num'>0.633</td><td class='cn-num'>0.075</td><td class='cn-num'>4</td><td class='cn-num'>10</td></tr><tr><td>后期恶化<br><code>declining_trend</code></td><td class='cn-num'>0.4</td><td class='cn-num'>35</td><td class='cn-num'>0.227</td><td class='cn-num'>0.198</td><td class='cn-num'>-0.028</td><td class='cn-num'>0</td><td class='cn-num'>0</td></tr></tbody></table></section>
+    <section class="cn-section"><h2>结论与下一步</h2><p>V2 的关键发现是：平均收益相同并不意味着模型给出相同信任或投资。它能识别高赌注背叛、后期修复和后期恶化。不过，V2 的 probe 直接要求模型分别预测 low / medium / high，容易 cue 它做策略拟合。V3 因此加入噪声，并正交操纵语言框架，测试语言是否有独立影响。</p></section>
   </div>
-
-  <h2>Main Pattern</h2>
-  <p class="note">The model does not behave as if average return is the whole story. Although every partner type has the same observed average return, <code>trust_rating</code> ranges from 35.0 to 77.5. More importantly, the conditional <code>predicted return</code> tracks the actual stake-dependent pattern.</p>
-  <ul>
-    <li><code>strategic_opportunist</code>: observed low/high return = 0.55 / 0.25; predicted low/high return = 0.55 / 0.25.</li>
-    <li><code>strategic_opportunist_mirror</code>: observed low/high return = 0.25 / 0.55; predicted low/high return = 0.25 / 0.55.</li>
-    <li><code>apology_only_exploiter</code>: same average return, but low trust (35.0) because recent behavior deteriorates.</li>
-    <li><code>noisy_repairing</code>: same average return, but higher predicted future returns because later rounds show repair and compensation.</li>
-  </ul>
-
-  <h2>Figures</h2>
-  <img src="figures/global_trust_by_condition.png" alt="Global trust by condition">
-  <img src="figures/conditional_return_predictions.png" alt="Conditional return predictions">
-  <img src="figures/predicted_high_minus_low_by_condition.png" alt="High minus low prediction gap">
-
-  <h2>Partner Type Summary</h2>
-  <table>
-    <thead><tr><th>Partner type</th><th>N</th><th>Trust rating</th><th>Observed return</th><th>Observed low-stake return</th><th>Observed high-stake return</th><th>Predicted low-stake return</th><th>Predicted high-stake return</th><th>High-low prediction gap</th></tr></thead>
-    <tbody><tr><td>honest_cooperator</td><td>6/6</td><td>57.167</td><td>0.4</td><td>0.4</td><td>0.4</td><td>0.4</td><td>0.4</td><td>0.0</td></tr><tr><td>cautious_reliable</td><td>6/6</td><td>73.333</td><td>0.4</td><td>0.4</td><td>0.4</td><td>0.4</td><td>0.4</td><td>0.0</td></tr><tr><td>strategic_opportunist</td><td>6/6</td><td>49.167</td><td>0.4</td><td>0.55</td><td>0.25</td><td>0.55</td><td>0.25</td><td>-0.3</td></tr><tr><td>strategic_opportunist_mirror</td><td>6/6</td><td>77.5</td><td>0.4</td><td>0.25</td><td>0.55</td><td>0.25</td><td>0.55</td><td>0.3</td></tr><tr><td>noisy_repairing</td><td>6/6</td><td>59.5</td><td>0.4</td><td>0.35</td><td>0.483</td><td>0.558</td><td>0.633</td><td>0.075</td></tr><tr><td>apology_only_exploiter</td><td>6/6</td><td>35.0</td><td>0.4</td><td>0.45</td><td>0.317</td><td>0.227</td><td>0.198</td><td>-0.028</td></tr></tbody>
-  </table>
-
-  <h2>Interpretation</h2>
-  <p class="note">V2 revises the simple v1 reading. The model clearly uses revealed returns, but it is not limited to a single average-return score. Under average-return control, it can recover stake-dependent return patterns. The cleaner conclusion is: <code>trust_rating</code> is a coarse summary, while conditional <code>predicted return</code> is the better probe of whether the model represents the partner's behavior pattern.</p>
 </body>
 </html>

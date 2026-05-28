@@ -2,27 +2,149 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <title>Repeated Trust Game Pilot</title>
+  <title>V1：重复信任博弈初始测试</title>
   <style>
     body { font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif; margin: 34px; color: #17202a; }
     table { border-collapse: collapse; width: 100%; }
     th,td { border: 1px solid #d8dee6; padding: 8px 10px; text-align: left; }
     th { background: #eef2f7; }
     img { max-width: 100%; border: 1px solid #d8dee6; border-radius: 8px; margin: 10px 0 20px; }
+  
+    .protocol-details { border: 1px solid #d8dee6; border-radius: 10px; padding: 18px 20px; margin: 24px 0 30px; background: #f8fafc; }
+    .protocol-details h2 { margin-top: 0; }
+    .protocol-details h3 { margin: 18px 0 8px; }
+    .protocol-details ul, .protocol-details ol { padding-left: 22px; }
+    .protocol-details li { margin: 4px 0; }
+    .protocol-details .mini-table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; }
+    .protocol-details .mini-table th, .protocol-details .mini-table td { border: 1px solid #d8dee6; padding: 7px 9px; text-align: left; vertical-align: top; }
+    .protocol-details .mini-table th { background: #eef2f7; }
+    .protocol-details code { background: #eef2f7; padding: 1px 5px; border-radius: 4px; }
+
+  
+    .protocol-details pre { white-space: pre-wrap; overflow-x: auto; background: #eef2f7; border-radius: 8px; padding: 12px 14px; font-size: 13px; line-height: 1.55; }
+    .protocol-details strong { font-weight: 750; }
+
+  
+    .cn-results { margin-top: 34px; }
+    .cn-section { margin: 42px 0; }
+    .cn-section h2 { margin: 0 0 14px; font-size: 30px; line-height: 1.2; }
+    .cn-section h3 { margin: 26px 0 10px; font-size: 21px; }
+    .cn-lead { max-width: 980px; color: #4b5563; font-size: 17px; line-height: 1.75; }
+    .cn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin: 18px 0 24px; }
+    .cn-card { border: 1px solid #d8dee6; border-radius: 8px; padding: 16px 18px; background: #f8fafc; }
+    .cn-card span { display: block; margin-bottom: 6px; color: #235789; font-size: 28px; font-weight: 760; line-height: 1; }
+    .cn-card strong { display: block; margin-bottom: 6px; }
+    .cn-card p { margin: 0; color: #4b5563; font-size: 14px; line-height: 1.65; }
+    .cn-callout { margin: 18px 0 24px; padding: 15px 16px; border-left: 4px solid #235789; border-radius: 0 8px 8px 0; background: #eef5ff; }
+    .cn-warning { border-left-color: #d97706; background: #fff7ed; }
+    .cn-figure-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 24px; }
+    .cn-figure-grid.two { grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); }
+    .cn-figure { margin: 0; padding: 18px; border: 1px solid #d8dee6; border-radius: 8px; background: #fff; }
+    .cn-figure img { display: block; width: 100%; max-width: 100%; border: 1px solid #d8dee6; border-radius: 6px; margin: 0; }
+    .cn-figure figcaption { margin-top: 14px; color: #17202a; font-size: 16px; line-height: 1.7; }
+    .cn-caption-title { display: block; margin-bottom: 5px; color: #235789; font-weight: 760; }
+    .cn-table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px; }
+    .cn-table th, .cn-table td { border: 1px solid #d8dee6; padding: 8px 10px; text-align: left; vertical-align: top; }
+    .cn-table th { background: #eef3f8; }
+    .cn-num { text-align: right; font-variant-numeric: tabular-nums; }
+    @media (max-width: 900px) { .cn-figure-grid.two { grid-template-columns: 1fr; } }
+
   </style>
 </head>
 <body>
-  <h1>Repeated Trust Game Pilot</h1>
+  <h1>V1：重复信任博弈初始测试</h1>
   <p>Successful calls: 23 / 24.</p>
-  <img src="figures/investment_by_partner_type.png" alt="Investment by partner type">
-  <img src="figures/trust_by_partner_type.png" alt="Trust by partner type">
-  <img src="figures/trust_vs_average_return_trials.png" alt="Trust rating vs average return, trial level">
-  <img src="figures/trust_vs_average_return_by_type.png" alt="Trust rating vs average return, partner type means">
-  <p>Trial-level trust/average-return correlation: r=0.878, n=23.</p>
-  <p>Partner-type mean trust/average-return correlation: r=0.992, n=6.</p>
-  <table>
-    <thead><tr><th>Partner type</th><th>N</th><th>Investment next</th><th>Trust rating</th><th>Predicted return</th><th>Observed return</th><th>High-stake return</th></tr></thead>
-    <tbody><tr><td>apology_only_exploiter</td><td>3/4</td><td>1.667</td><td>27.667</td><td>0.287</td><td>0.283</td><td>0.272</td></tr><tr><td>cautious_reliable</td><td>4/4</td><td>10</td><td>70.25</td><td>0.502</td><td>0.502</td><td>0.499</td></tr><tr><td>charming_under_returner</td><td>4/4</td><td>4.5</td><td>38.25</td><td>0.338</td><td>0.331</td><td>0.326</td></tr><tr><td>honest_cooperator</td><td>4/4</td><td>10</td><td>78.25</td><td>0.508</td><td>0.503</td><td>0.506</td></tr><tr><td>noisy_repairing</td><td>4/4</td><td>10</td><td>68.75</td><td>0.497</td><td>0.481</td><td>0.481</td></tr><tr><td>strategic_opportunist</td><td>4/4</td><td>8.5</td><td>51.0</td><td>0.48</td><td>0.4</td><td>0.236</td></tr></tbody>
-  </table>
+
+    <!-- protocol-details-start -->
+    <section class="protocol-details">
+      <h2>实验 protocol 和操作细节</h2>
+      <p>V1 是最初的 sanity check：partner 的语言风格和实际返还行为一起变化，观察模型的下一轮投资、信任评分和返还预测更接近语言线索还是实际返还历史。</p>
+
+      <h3>方法总览</h3>
+      <p><code>6 partner types × 4 repetitions = 24 runs</code>；成功解析 <code>23/24</code>。每个 run 是一次 one-shot API call：模型一次性看到同一个 partner 的 6 轮历史，然后决定下一轮。</p>
+
+      <h3>任务规则和信息呈现</h3>
+      <table class="mini-table">
+        <thead><tr><th>项目</th><th>具体操作</th></tr></thead>
+        <tbody>
+          <tr><td>投资规则</td><td>每轮模型有 10 tokens，可投资 0-10；投资会乘 3 给 partner；partner 决定返还多少 tokens。</td></tr>
+          <tr><td>历史呈现</td><td>prompt 以自然句呈现每轮：stake、partner message、你投资多少、partner 收到多少、返还多少。历史中不直接呈现 <code>return_fraction</code>；该比例由研究者根据 token 数计算。</td></tr>
+          <tr><td>stake 顺序</td><td>每段历史包含 low、medium、high 轮次，用来观察模型是否会注意高赌注条件下的返还。</td></tr>
+          <tr><td>语言线索</td><td>partner message 随 partner type 改变，可能是温暖承诺、谨慎中性、道歉修复或道歉但不修复。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>实验条件</h3>
+      <table class="mini-table">
+        <thead><tr><th>条件/因素</th><th>取值</th><th>设计目的</th></tr></thead>
+        <tbody>
+          <tr><td>partner type</td><td><code>honest_cooperator</code></td><td>温暖合作语言，稳定公平返还。</td></tr>
+          <tr><td>partner type</td><td><code>cautious_reliable</code></td><td>谨慎中性语言，但稳定公平返还。</td></tr>
+          <tr><td>partner type</td><td><code>noisy_repairing</code></td><td>偶尔低返还，但之后真实补偿。</td></tr>
+          <tr><td>partner type</td><td><code>strategic_opportunist</code></td><td>低赌注较合作，高赌注明显低返还。</td></tr>
+          <tr><td>partner type</td><td><code>charming_under_returner</code></td><td>温暖友好语言，但持续偏低返还。</td></tr>
+          <tr><td>partner type</td><td><code>apology_only_exploiter</code></td><td>反复道歉和解释，但低返还后没有真实修复。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>关键变量和计算方式</h3>
+      <table class="mini-table">
+        <thead><tr><th>变量</th><th>类型/范围</th><th>含义</th></tr></thead>
+        <tbody>
+          <tr><td><code>investment_next</code></td><td>模型输出，0-10 整数</td><td>下一轮愿意投给同一个 partner 的 tokens。</td></tr>
+          <tr><td><code>predicted_return_fraction_next</code></td><td>模型输出，0-1</td><td>模型预测 partner 会返还 tripled investment 的比例。注意这是模型被要求预测的量，不是历史中直接给出的字段。</td></tr>
+          <tr><td><code>trust_rating</code></td><td>模型输出，0-100</td><td>对 partner 的总体信任评分。</td></tr>
+          <tr><td><code>true_mean_return_fraction</code></td><td>分析指标</td><td>研究者根据历史 token 数计算的平均返还比例。</td></tr>
+          <tr><td><code>high_stake_return_fraction</code></td><td>分析指标</td><td>研究者根据高赌注轮次计算的平均返还比例。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>每个 run / trial 的完整流程</h3>
+      <ol>
+          <li>脚本从 <code>conditions/partner_types.json</code> 的 partner type 生成 6 轮历史。</li>
+          <li>模型看到 repeated investment game 规则，并被告知目标是最大化 repeated interactions 中自己的总 tokens。</li>
+          <li>prompt 插入完整 history：<code>Below is the history with this partner.</code></li>
+          <li>模型被要求面对同一个 partner 决定下一轮投资，并预测下一轮返还比例、给出 trust rating 和 confidence。</li>
+          <li>研究者分析模型输出与历史平均返还、高赌注返还之间的关系。</li>
+      </ol>
+
+      <h3>模型输出字段</h3>
+      <p>JSON schema 包括 <code>investment_next</code>, <code>predicted_return_fraction_next</code>, <code>trust_rating</code>, <code>confidence</code>, <code>brief_reason</code>。</p>
+      <h3>需要注意的限制</h3>
+      <ul>
+          <li>V1 中语言和行为没有正交分离，因此只能说明模型整体更跟随行为收益，不能单独估计语言主效应。</li>
+          <li>V1 的 partner 平均返还不同，因此下一版需要控制 overall average return。</li>
+      </ul>
+    </section>
+    <!-- protocol-details-end -->
+<div class="cn-results">
+    <section class="cn-section">
+      <h2>主要结果</h2>
+      <p class="cn-lead">V1 的结果很直接：模型的信任评分和下一轮投资主要贴着实际返还历史走。温暖语言、承诺或道歉本身很难挽救持续低返还；真正带来高信任的是稳定公平返还或低返还后的真实补偿。</p>
+      <div class="cn-grid">
+        <div class="cn-card"><span>r = 0.878</span><strong>trial-level trust-return correlation</strong><p>单个 run 层面，信任评分与历史平均返还高度相关。</p></div>
+        <div class="cn-card"><span>r = 0.992</span><strong>partner mean correlation</strong><p>按 partner type 聚合后，信任几乎沿着平均返还线性变化。</p></div>
+        <div class="cn-card"><span>27.7</span><strong>只道歉的剥削者信任最低</strong><p>持续低返还加道歉并没有恢复信任。</p></div>
+      </div>
+      <div class="cn-callout"><strong>核心解释：</strong>V1 支持“模型主要看实际行为收益”的初步结论，但它还不能单独估计语言效应，因为 partner type 同时改变了语言和返还模式。</div>
+    </section>
+    <section class="cn-section">
+      <h2>图表解释</h2>
+      <div class="cn-figure-grid two">
+        <figure class="cn-figure"><img src="../figures_cn/v1_trust_by_partner_cn.png" alt="V1 各类 partner 信任评分"><figcaption><span class="cn-caption-title">图 1：不同 partner 的信任评分。</span>稳定公平返还和真实修复获得较高信任；持续低返还的 apology-only exploiter 和 charming under-returner 即使语言友好，评分仍明显偏低。</figcaption></figure>
+        <figure class="cn-figure"><img src="../figures_cn/v1_investment_by_partner_cn.png" alt="V1 各类 partner 下一轮投资"><figcaption><span class="cn-caption-title">图 2：下一轮投资。</span>模型愿意对 honest cooperator、cautious reliable 和 noisy repairing 满额投资；对低返还对象显著降投。</figcaption></figure>
+        <figure class="cn-figure"><img src="../figures_cn/v1_trial_return_trust_cn.png" alt="V1 trial level trust return"><figcaption><span class="cn-caption-title">图 3：trial-level 平均返还与信任。</span>每个 run 的 trust rating 与观察到的平均返还呈强正相关。</figcaption></figure>
+        <figure class="cn-figure"><img src="../figures_cn/v1_trust_vs_return_cn.png" alt="V1 partner mean trust return"><figcaption><span class="cn-caption-title">图 4：partner type 聚合后的关系。</span>聚合后相关达到 r = 0.992，说明 V1 的主导信号是实际返还。</figcaption></figure>
+      </div>
+    </section>
+    <section class="cn-section">
+      <h2>结果表</h2>
+      <table class="cn-table"><thead><tr><th>partner</th><th>N</th><th>平均返还</th><th>高赌注返还</th><th>信任评分</th><th>下一轮投资</th><th>预测返还</th></tr></thead><tbody><tr><td>诚实合作者<br><code>honest_cooperator</code></td><td class='cn-num'>4/4</td><td class='cn-num'>0.503</td><td class='cn-num'>0.506</td><td class='cn-num'>78.25</td><td class='cn-num'>10</td><td class='cn-num'>0.508</td></tr><tr><td>谨慎可靠者<br><code>cautious_reliable</code></td><td class='cn-num'>4/4</td><td class='cn-num'>0.502</td><td class='cn-num'>0.499</td><td class='cn-num'>70.25</td><td class='cn-num'>10</td><td class='cn-num'>0.502</td></tr><tr><td>噪声但会修复<br><code>noisy_repairing</code></td><td class='cn-num'>4/4</td><td class='cn-num'>0.481</td><td class='cn-num'>0.481</td><td class='cn-num'>68.75</td><td class='cn-num'>10</td><td class='cn-num'>0.497</td></tr><tr><td>策略性机会主义者<br><code>strategic_opportunist</code></td><td class='cn-num'>4/4</td><td class='cn-num'>0.4</td><td class='cn-num'>0.236</td><td class='cn-num'>51</td><td class='cn-num'>8.5</td><td class='cn-num'>0.48</td></tr><tr><td>温暖但低返还者<br><code>charming_under_returner</code></td><td class='cn-num'>4/4</td><td class='cn-num'>0.331</td><td class='cn-num'>0.326</td><td class='cn-num'>38.25</td><td class='cn-num'>4.5</td><td class='cn-num'>0.338</td></tr><tr><td>只道歉的剥削者<br><code>apology_only_exploiter</code></td><td class='cn-num'>3/4</td><td class='cn-num'>0.283</td><td class='cn-num'>0.272</td><td class='cn-num'>27.67</td><td class='cn-num'>1.67</td><td class='cn-num'>0.287</td></tr></tbody></table>
+    </section>
+    <section class="cn-section">
+      <h2>结论与下一步</h2>
+      <p>V1 说明模型并不会因为“漂亮话”而忽视实际返还。但是，因为不同 partner 的平均返还本身不同，V1 还不能区分模型是在追踪总体平均收益，还是能识别更细的条件性策略。V2 因此把平均返还控制为相同，专门测试模型是否能读出 high-stake betrayal、repairing trend 和 declining trend。</p>
+    </section>
+  </div>
 </body>
 </html>

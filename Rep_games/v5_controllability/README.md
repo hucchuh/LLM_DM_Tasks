@@ -1,5 +1,7 @@
 # V5: Controllability in Repeated Trust Games
 
+Detailed HTML report: [`output/v5_report.html`](output/v5_report.html).
+
 本文件夹记录 V5 pilot 实验。它接在 V1-V4 之后，但可以独立阅读和复现。
 
 ## 1. 这个实验想回答什么

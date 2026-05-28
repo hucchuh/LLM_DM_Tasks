@@ -74,6 +74,19 @@
     @media (max-width: 900px) {
       .two-col, .figure-grid { display: grid; grid-template-columns: 1fr; gap: 34px; margin-top: 30px; }
     }
+  
+    .protocol-details { border: 1px solid #d8dee6; border-radius: 10px; padding: 18px 20px; margin: 24px 0 30px; background: #f8fafc; }
+    .protocol-details h2 { margin-top: 0; }
+    .protocol-details h3 { margin: 18px 0 8px; }
+    .protocol-details ul, .protocol-details ol { padding-left: 22px; }
+    .protocol-details li { margin: 4px 0; }
+    .protocol-details .mini-table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; }
+    .protocol-details .mini-table th, .protocol-details .mini-table td { border: 1px solid #d8dee6; padding: 7px 9px; text-align: left; vertical-align: top; }
+    .protocol-details .mini-table th { background: #eef2f7; }
+    .protocol-details code { background: #eef2f7; padding: 1px 5px; border-radius: 4px; }
+    .protocol-details pre { white-space: pre-wrap; overflow-x: auto; background: #eef2f7; border-radius: 8px; padding: 12px 14px; font-size: 13px; line-height: 1.55; }
+    .protocol-details .method-note { color: var(--muted); font-size: 14px; margin-top: -6px; }
+
   </style>
 </head>
 <body>
@@ -86,6 +99,71 @@
   </header>
 
   <main>
+
+    <!-- protocol-details-start -->
+    <section class="protocol-details">
+      <h2>实验 protocol 和操作细节</h2>
+      <p>V5 检验 <strong>trust rating</strong> 和 <strong>willingness to pay</strong> 是否可以分离：一个 partner 可能不完全可信，但如果它的机会主义行为有规律、且模型能控制下一轮赌注，这个互动机会仍可能有价值。</p>
+
+      <h3>方法总览</h3>
+      <p><code>3 partner types × 3 control conditions × 6 yoked histories = 54 trials</code>；MiniMax-M2.7 成功解析 <code>51/54</code>。每个 trial 中，模型先看到同一 partner 过去 6 轮行为记录，再根据下一轮是否可控，决定是否继续、WTP、投资计划和返还预测。</p>
+
+      <h3>任务规则和信息呈现</h3>
+      <table class="mini-table">
+        <thead><tr><th>项目</th><th>具体操作</th></tr></thead>
+        <tbody>
+          <tr><td>投资规则</td><td>low / medium / high stake 最大投资分别为 4、7、10；投资会乘 3 给 partner。</td></tr>
+          <tr><td>历史呈现</td><td>prompt 呈现 token 数：previous participant 投了多少、partner 收到多少、partner 返还多少。模型没有直接看到 <code>return_fraction</code>；该比例只在条件文件和分析中计算。</td></tr>
+          <tr><td>语言控制</td><td>所有 partner message 固定为中性句 <code>I have noted this round.</code>，避免温暖、承诺或道歉成为额外自变量。</td></tr>
+          <tr><td>WTP 设置</td><td>模型有额外 10-token bonus，需要报告最多愿意付多少一次性入场费以获得这次下一轮互动机会。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>实验条件</h3>
+      <table class="mini-table">
+        <thead><tr><th>条件/因素</th><th>取值</th><th>设计目的</th></tr></thead>
+        <tbody>
+          <tr><td>partner type</td><td><code>stable_cooperator</code></td><td>低、中、高赌注下返还都围绕 0.40 波动，作为稳定基线。</td></tr>
+          <tr><td>partner type</td><td><code>predictable_opportunist</code></td><td>平均返还约 0.40，但 low ≈ 0.55, medium ≈ 0.40, high ≈ 0.25；高赌注触发低返还。</td></tr>
+          <tr><td>partner type</td><td><code>random_opportunist</code></td><td>使用类似返还值和波动，但低返还不稳定绑定在 high stake。</td></tr>
+          <tr><td>control condition</td><td><code>controllable_stake</code></td><td>模型可选择下一轮 low / medium / high stake，并在对应上限内投资。</td></tr>
+          <tr><td>control condition</td><td><code>fixed_high_stake</code></td><td>下一轮一定是 high stake，模型只能决定 0-10 投资。</td></tr>
+          <tr><td>control condition</td><td><code>random_stake</code></td><td>支付后 stake 在 low / medium / high 中等概率随机，模型预先规划三种 stake 下投资。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>关键变量和计算方式</h3>
+      <table class="mini-table">
+        <thead><tr><th>变量</th><th>类型/范围</th><th>含义</th></tr></thead>
+        <tbody>
+          <tr><td><code>trust_rating</code></td><td>模型输出，0-100</td><td>对 partner 整体可靠性的评价，更接近 social trust。</td></tr>
+          <tr><td><code>willingness_to_pay</code></td><td>模型输出，0-10</td><td>为进入这次机会愿意支付的最高 access fee，更接近 option value，不等同于 trust。</td></tr>
+          <tr><td><code>continue_choice</code></td><td>模型输出，true/false</td><td>是否继续与该 partner 互动。</td></tr>
+          <tr><td><code>chosen_stake</code></td><td>模型输出</td><td>只在 controllable 条件下出现，取值 low / medium / high。</td></tr>
+          <tr><td><code>investment_fraction</code></td><td>分析指标</td><td><code>next_investment / 当前 stake 最大投资额</code>；random 条件下取三种计划投资比例均值。</td></tr>
+          <tr><td><code>predicted_low_minus_high</code></td><td>分析指标</td><td>低赌注预测返还减高赌注预测返还，越大说明越识别高赌注风险。</td></tr>
+          <tr><td><code>controllability_premium</code></td><td>分析指标</td><td>同一 partner 在 controllable 下的 WTP 减 fixed_high 下的 WTP。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>每个 run / trial 的完整流程</h3>
+      <ol>
+          <li>脚本从 <code>conditions/design.json</code> 抽取一个 partner type、一个 control condition 和一个 yoked history。</li>
+          <li>历史包含 6 轮 previous participant 与同一 partner 的互动，prompt 明确这些记录只应用来判断 partner 行为。</li>
+          <li>prompt 根据 control condition 告诉模型下一轮是可控、固定高赌注还是随机赌注。</li>
+          <li>模型先给出 WTP，再输出是否继续、trust rating、投资计划和 low/medium/high 返还预测。</li>
+          <li>分析脚本比较 trust、WTP、投资比例、chosen stake 和 controllability premium。</li>
+      </ol>
+
+      <h3>模型输出字段</h3>
+      <p>共同字段包括 <code>continue_choice</code>, <code>willingness_to_pay</code>, <code>trust_rating</code>, 三个 <code>predicted_return_fraction_if_*_stake</code>, <code>brief_reason</code>。controllable 额外输出 <code>chosen_stake</code> 和 <code>next_investment</code>；fixed_high 输出 <code>next_investment</code>；random 输出 <code>investment_if_low/medium/high_stake</code>。</p>
+      <h3>需要注意的限制</h3>
+      <ul>
+          <li>V5 的可控性、收益上限和策略预测仍然部分纠缠；它证明 WTP 和 trust 可分离，但还不是纯社会信任任务。</li>
+      </ul>
+    </section>
+    <!-- protocol-details-end -->
+
     <section>
       <div class="wrap">
         <h2>实验动机</h2>

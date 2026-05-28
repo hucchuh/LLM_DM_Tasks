@@ -15,6 +15,18 @@
 
 API keys 不存入本仓库。运行实验时只在当前 shell 里设置环境变量。
 
+## 详细报告
+
+每版 HTML report 已直接加入实验条件、变量、几乘几设计、cue 流程、输出字段、主要结果和不足：
+[V1](output/report.html) /
+[V2](v2_average_control/output/report.html) /
+[V3](v3_noisy_policy/output/report.html) /
+[V4](v4_clean_wtp/output/report.html) /
+[V5](v5_controllability/output/v5_report.html) /
+[V6](v6_advice_trust_transfer/output/v6_report.html) /
+[V7](v7_payoff_matched_honesty/output/report.html) /
+[V8](v8_trial_by_trial_honesty_bias/output/report.html)
+
 ## 一句话版本
 
 V1-V6 逐步发现：模型主要看行为和收益，不太被 cheap talk 牵着走。V7-V8 进一步发现：当诚实性和收益被分离后，模型仍会把“说真话”当成合作价值的代理信号；在 V8 的逐轮投资任务中，这种偏置让模型对低诚实但同样返还的对象投资更少，并因此少拿到收益。

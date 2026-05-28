@@ -1,5 +1,7 @@
 # V3: Noisy Policy Inference With Language Orthogonalization
 
+Detailed HTML report: [`output/report.html`](output/report.html).
+
 V3 tests whether language has an independent effect after behavior is controlled.
 
 Design:
@@ -44,4 +46,3 @@ Analyze:
 ```powershell
 python Rep_games\v3_noisy_policy\scripts\analyze_v3.py
 ```
-

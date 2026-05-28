@@ -1,5 +1,7 @@
 # V8: Trial-by-Trial Honesty Bias in Investment
 
+Detailed HTML report: [`output/report.html`](output/report.html).
+
 V8 fixes the main limitation of V7. In V7, the model observed a history first and made one final WTP/investment decision. In V8, investment is measured trial by trial.
 
 The core question is:
@@ -62,4 +64,3 @@ $env:MINIMAX_API_KEY="YOUR_KEY"
 python .\scripts\run_v8.py --workers 8 --endpoint https://lightingtheword.com/v1/chat/completions --model MiniMax-M2.7 --reasoning-split --max-tokens 2000
 python .\scripts\analyze_v8.py
 ```
-

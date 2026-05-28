@@ -19,6 +19,21 @@
     .card { background: #f8fafc; border: 1px solid #e1e8ef; border-radius: 8px; padding: 16px; }
     .metric { font-size: 31px; font-weight: 800; color: #174a73; }
     .note { color: #43556a; }
+  
+    .protocol-details { border: 1px solid #d8dee6; border-radius: 10px; padding: 18px 20px; margin: 24px 0 30px; background: #f8fafc; }
+    .protocol-details h2 { margin-top: 0; }
+    .protocol-details h3 { margin: 18px 0 8px; }
+    .protocol-details ul, .protocol-details ol { padding-left: 22px; }
+    .protocol-details li { margin: 4px 0; }
+    .protocol-details .mini-table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; }
+    .protocol-details .mini-table th, .protocol-details .mini-table td { border: 1px solid #d8dee6; padding: 7px 9px; text-align: left; vertical-align: top; }
+    .protocol-details .mini-table th { background: #eef2f7; }
+    .protocol-details code { background: #eef2f7; padding: 1px 5px; border-radius: 4px; }
+
+  
+    .protocol-details pre { white-space: pre-wrap; overflow-x: auto; background: #eef2f7; border-radius: 8px; padding: 12px 14px; font-size: 13px; line-height: 1.55; }
+    .protocol-details strong { font-weight: 750; }
+
   </style>
 </head>
 <body>
@@ -27,6 +42,71 @@
     <p>这版不再让模型看完历史后做一次总结判断，而是每一轮都先做投资，再收到反馈。主任务只问 investment，不问 trust、honesty、WTP 或理由。</p>
   </header>
   <main>
+
+    <!-- protocol-details-start -->
+    <section class="protocol-details">
+      <h2>实验 protocol 和操作细节</h2>
+      <p>V8 改为真正 trial-by-trial investment：每轮先看到 partner 的可验证陈述，立即投资，之后才得到陈述真伪和返还反馈，用来测试 payoff matched 条件下 honesty 是否会偏置实际投资。</p>
+
+      <h3>方法总览</h3>
+      <p>原计划为 <code>2 honesty conditions × 2 presentation modes × 8 seeds × 18 trials</code>。当前正式解释主要基于 sequential condition：<code>2 honesty conditions × 1 mode × 8 seeds × 18 trials = 288 trial-level decisions</code>。Evidence-only 对照未完整跑完，不作为正式结论。</p>
+
+      <h3>任务规则和信息呈现</h3>
+      <table class="mini-table">
+        <thead><tr><th>项目</th><th>具体操作</th></tr></thead>
+        <tbody>
+          <tr><td>投资规则</td><td>每轮模型有 10 tokens，可投 0-10；投资乘 3 给 partner，partner 按预设 return rate 返还 tokens。</td></tr>
+          <tr><td>当前 cue</td><td>每轮投资前，partner 给出一句可验证陈述：<code>I checked the {card_color} verification card. Its value is {stated_value}.</code></td></tr>
+          <tr><td>反馈</td><td>每轮结束后反馈实际 verification-card value、上一轮陈述是否真实、模型投资多少、partner 返还多少。</td></tr>
+          <tr><td>抗污染设计</td><td>主任务只问 <code>investment</code>，不问 trust、WTP、honesty rating、helpfulness 或理由。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>实验条件</h3>
+      <table class="mini-table">
+        <thead><tr><th>条件/因素</th><th>取值</th><th>设计目的</th></tr></thead>
+        <tbody>
+          <tr><td>honesty condition</td><td><code>high_honesty_matched_return</code></td><td>18 轮中 14 轮陈述为真，真实率 0.778。</td></tr>
+          <tr><td>honesty condition</td><td><code>low_honesty_matched_return</code></td><td>18 轮中 4 轮陈述为真，真实率 0.222。</td></tr>
+          <tr><td>return policy</td><td>matched</td><td>两组使用同一返还率序列，平均返还率均为 0.442。</td></tr>
+          <tr><td>presentation mode</td><td><code>sequential_trial</code></td><td>同一 conversation 中逐轮累积历史，当前正式结果来自该条件。</td></tr>
+          <tr><td>presentation mode</td><td><code>evidence_only_trial</code></td><td>每轮独立 API call，给客观历史；当前未完成，不解释为正式结果。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>关键变量和计算方式</h3>
+      <table class="mini-table">
+        <thead><tr><th>变量</th><th>类型/范围</th><th>含义</th></tr></thead>
+        <tbody>
+          <tr><td><code>investment</code></td><td>模型输出，0-10</td><td>每轮实际投入给 partner 的 tokens。</td></tr>
+          <tr><td><code>return_rate</code></td><td>预设条件</td><td>partner 当轮返还比例，两组 honesty 条件完全匹配。</td></tr>
+          <tr><td><code>returned_tokens</code></td><td>脚本计算</td><td><code>investment × 3 × return_rate</code>。</td></tr>
+          <tr><td><code>net_gain</code></td><td>脚本计算</td><td><code>returned_tokens - investment</code>。</td></tr>
+          <tr><td><code>trial_payoff</code></td><td>脚本计算</td><td><code>10 - investment + returned_tokens</code>。</td></tr>
+          <tr><td><code>run_total_payoff</code></td><td>脚本计算</td><td>18 轮 trial_payoff 之和。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>每个 run / trial 的完整流程</h3>
+      <ol>
+          <li>脚本为每个 seed 生成 high-honesty 和 low-honesty 两组 trial 序列，并 yoked 同一 return rate 序列。</li>
+          <li>每一轮开始时，模型只看到 partner 当前的 verification-card statement，不知道实际 value。</li>
+          <li>模型只返回 <code>{"investment": 0}</code> 这种 JSON。</li>
+          <li>脚本根据投资额和当轮 return rate 计算返还 tokens、net gain 和 payoff。</li>
+          <li>随后把实际 card value、statement truth、投资和返还作为反馈加入同一 conversation。</li>
+          <li>18 轮结束后聚合平均投资、单轮 payoff 和总 payoff，比较 high honesty 与 low honesty 条件。</li>
+      </ol>
+
+      <h3>模型输出字段</h3>
+      <p>主任务 JSON 只有 <code>investment</code> 一个字段。所有 payoff 指标由脚本在输出分析阶段计算，不由模型自报。</p>
+      <h3>需要注意的限制</h3>
+      <ul>
+          <li>Evidence-only 对照尚未完成，因此目前 V8 的正式结论只基于 sequential trial-by-trial 条件。</li>
+          <li>当前任务中平均返还率 0.442，使投资在期望上为正；后续需要加入零期望和负期望环境。</li>
+      </ul>
+    </section>
+    <!-- protocol-details-end -->
+
     <section>
       <h2>研究问题</h2>
       <p>如果两个 partner 的实际返还政策完全相同，但一个更常说真话，另一个更常说假话，模型会不会在逐轮投资中把“说真话”当成一种社会信号，从而投更多？</p>
