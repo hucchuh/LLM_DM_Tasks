@@ -1,0 +1,65 @@
+{
+  "living_report": {
+    "output": "living_report.html",
+    "title": "在重复信任互动中，大语言模型是看收益、看诚实，还是看规则说明？",
+    "subtitle": "A living synthesis of V1-V10 API experiments"
+  },
+  "versions": [
+    {
+      "id": "V1",
+      "role": "first payoff-tracking observation",
+      "summary": "v1_initial_payoff_tracking/output/summary.json",
+      "report": "v1_initial_payoff_tracking/output/report.html",
+      "include_in_main_text": true
+    },
+    {
+      "id": "V5",
+      "role": "separation of moral trust and controllable option value",
+      "summary": "v5_controllability/output/summary.json",
+      "report": "v5_controllability/output/v5_report.html",
+      "include_in_main_text": true
+    },
+    {
+      "id": "V7",
+      "role": "payoff-matched honesty transfer",
+      "summary": "v7_payoff_matched_honesty/output/summary.json",
+      "report": "v7_payoff_matched_honesty/output/report.html",
+      "include_in_main_text": true
+    },
+    {
+      "id": "V8",
+      "role": "trial-by-trial honesty bias with matched returns",
+      "summary": "v8_trial_by_trial_honesty_bias/output/summary.json",
+      "report": "v8_trial_by_trial_honesty_bias/output/report.html",
+      "include_in_main_text": true
+    },
+    {
+      "id": "V9",
+      "role": "source and boundary controls",
+      "summary": "v9_honesty_source_control/output/summary.json",
+      "report": "v9_honesty_source_control/output/report.html",
+      "include_in_main_text": true
+    },
+    {
+      "id": "V9b",
+      "role": "instruction-control follow-up",
+      "summary": "v9b_instruction_control/output/summary.json",
+      "report": "v9b_instruction_control/output/report.html",
+      "include_in_main_text": true
+    },
+    {
+      "id": "V10",
+      "role": "within-session disclosure switch",
+      "summary": "v10_audit_disclosure_switch/sessions/expanded_30seeds/summary.json",
+      "stats": "v10_audit_disclosure_switch/sessions/expanded_30seeds/academic_stats_summary.json",
+      "report": "v10_audit_disclosure_switch/sessions/expanded_30seeds/report.html",
+      "include_in_main_text": true
+    }
+  ],
+  "archive_candidates": [
+    "archive/legacy_reports/experiment_report.md",
+    "archive/legacy_reports/experiment_report_visual.html",
+    "archive/legacy_reports/repeated_trust_games_v1-4_report.html",
+    "archive/legacy_reports/v1_v4_integrated_experiment_report.md"
+  ]
+}
