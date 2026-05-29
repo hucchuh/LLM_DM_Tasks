@@ -1,0 +1,92 @@
+{
+  "experiment_name": "V9 formal trial-by-trial honesty x return-policy control",
+  "version": "v9_honesty_source_control",
+  "partner_name": "Alex",
+  "trials_per_run": 18,
+  "seeds_per_cell": 6,
+  "truth_counts": {
+    "high": 14,
+    "low": 4
+  },
+  "return_policies": [
+    {
+      "return_policy": "fair_high",
+      "label": "Fair/high return",
+      "description": "A partner policy with positive expected value for investment.",
+      "return_rates": [0.55, 0.65, 0.50, 0.70, 0.60, 0.45, 0.75, 0.55, 0.65, 0.50, 0.70, 0.60, 0.45, 0.75, 0.55, 0.65, 0.50, 0.70]
+    },
+    {
+      "return_policy": "unfair_low",
+      "label": "Unfair/low return",
+      "description": "A partner policy with negative expected value for investment.",
+      "return_rates": [0.20, 0.25, 0.15, 0.30, 0.10, 0.25, 0.20, 0.15, 0.30, 0.10, 0.25, 0.20, 0.15, 0.30, 0.10, 0.25, 0.20, 0.15]
+    }
+  ],
+  "presentation_modes": [
+    {
+      "presentation_mode": "sequential_trial",
+      "label": "Sequential trial-by-trial",
+      "description": "One continuous conversation; the model decides, receives feedback, and continues."
+    },
+    {
+      "presentation_mode": "evidence_only",
+      "label": "Evidence-only independent trial",
+      "description": "Each trial is an independent API call with compressed objective summaries only."
+    }
+  ],
+  "blocks": [
+    {
+      "block": "main_partner_honesty",
+      "label": "Main: partner factual honesty",
+      "statement_mode": "partner_private_card",
+      "honesty_levels": ["high", "low"],
+      "return_policies": ["fair_high", "unfair_low"],
+      "presentation_modes": ["sequential_trial", "evidence_only"],
+      "orthogonality_levels": ["standard", "explicit_orthogonality"],
+      "purpose": "Core 2 x 2 x presentation test: factual honesty is crossed with actual return policy."
+    },
+    {
+      "block": "no_statement_control",
+      "label": "Control: no statement",
+      "statement_mode": "no_statement",
+      "honesty_levels": ["none"],
+      "return_policies": ["fair_high", "unfair_low"],
+      "presentation_modes": ["sequential_trial", "evidence_only"],
+      "orthogonality_levels": ["standard"],
+      "purpose": "Baseline investment when no verifiable statement is available."
+    },
+    {
+      "block": "irrelevant_truth_control",
+      "label": "Control: irrelevant truth",
+      "statement_mode": "irrelevant_public_fact",
+      "honesty_levels": ["high", "low"],
+      "return_policies": ["fair_high", "unfair_low"],
+      "presentation_modes": ["sequential_trial", "evidence_only"],
+      "orthogonality_levels": ["explicit_orthogonality"],
+      "purpose": "Tests whether truthfulness about task-irrelevant facts is overgeneralized to investment."
+    },
+    {
+      "block": "cheap_talk_only_control",
+      "label": "Control: cheap talk only",
+      "statement_mode": "cheap_talk_only",
+      "honesty_levels": ["none"],
+      "return_policies": ["fair_high", "unfair_low"],
+      "presentation_modes": ["sequential_trial", "evidence_only"],
+      "orthogonality_levels": ["standard"],
+      "purpose": "Tests whether supportive promises without verifiable truth feedback move investment."
+    }
+  ],
+  "analysis_plan": {
+    "primary_outcome": "investment",
+    "payoff_definition": "payoff_t = 10 - investment_t + returned_tokens_t",
+    "primary_contrasts": [
+      "Within each return policy and presentation mode, compare high vs low factual honesty in main_partner_honesty.",
+      "Compare main_partner_honesty with no_statement_control to estimate baseline shift.",
+      "Compare main_partner_honesty with irrelevant_truth_control to test whether honesty is treated as a social signal or overgeneralized factual correctness.",
+      "Compare standard vs explicit_orthogonality inside main_partner_honesty.",
+      "Compare cheap_talk_only_control with no_statement_control to estimate pure language cue effects."
+    ],
+    "trial_level_model": "investment_t ~ cumulative_truth_rate_before + cumulative_return_rate_before + previous_payoff + trial + statement_mode + return_policy + presentation_mode + orthogonality_instruction + model",
+    "future_multimodel_extension": "Add model as a fixed effect or random intercept once multiple model families are run."
+  }
+}

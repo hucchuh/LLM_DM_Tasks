@@ -1,0 +1,232 @@
+{
+  "total_planned_runs": 192,
+  "completed_runs": 96,
+  "successful_runs": 96,
+  "trial_rows": 1728,
+  "by_condition": [
+    {
+      "block": "cheap_talk_only_control",
+      "statement_mode": "cheap_talk_only",
+      "honesty_level": "none",
+      "return_policy": "fair_high",
+      "presentation_mode": "sequential_trial",
+      "orthogonality_instruction": "standard",
+      "n_trials": 108,
+      "n_runs": 6,
+      "mean_investment": 7.898,
+      "mean_return_rate": 0.6,
+      "mean_payoff": 16.454
+    },
+    {
+      "block": "cheap_talk_only_control",
+      "statement_mode": "cheap_talk_only",
+      "honesty_level": "none",
+      "return_policy": "unfair_low",
+      "presentation_mode": "sequential_trial",
+      "orthogonality_instruction": "standard",
+      "n_trials": 108,
+      "n_runs": 6,
+      "mean_investment": 2.824,
+      "mean_return_rate": 0.2,
+      "mean_payoff": 8.852
+    },
+    {
+      "block": "irrelevant_truth_control",
+      "statement_mode": "irrelevant_public_fact",
+      "honesty_level": "high",
+      "return_policy": "fair_high",
+      "presentation_mode": "sequential_trial",
+      "orthogonality_instruction": "explicit_orthogonality",
+      "n_trials": 108,
+      "n_runs": 6,
+      "mean_investment": 5.556,
+      "mean_return_rate": 0.6,
+      "mean_payoff": 14.63
+    },
+    {
+      "block": "irrelevant_truth_control",
+      "statement_mode": "irrelevant_public_fact",
+      "honesty_level": "high",
+      "return_policy": "unfair_low",
+      "presentation_mode": "sequential_trial",
+      "orthogonality_instruction": "explicit_orthogonality",
+      "n_trials": 108,
+      "n_runs": 6,
+      "mean_investment": 2.278,
+      "mean_return_rate": 0.2,
+      "mean_payoff": 9.111
+    },
+    {
+      "block": "irrelevant_truth_control",
+      "statement_mode": "irrelevant_public_fact",
+      "honesty_level": "low",
+      "return_policy": "fair_high",
+      "presentation_mode": "sequential_trial",
+      "orthogonality_instruction": "explicit_orthogonality",
+      "n_trials": 108,
+      "n_runs": 6,
+      "mean_investment": 7.361,
+      "mean_return_rate": 0.6,
+      "mean_payoff": 16.083
+    },
+    {
+      "block": "irrelevant_truth_control",
+      "statement_mode": "irrelevant_public_fact",
+      "honesty_level": "low",
+      "return_policy": "unfair_low",
+      "presentation_mode": "sequential_trial",
+      "orthogonality_instruction": "explicit_orthogonality",
+      "n_trials": 108,
+      "n_runs": 6,
+      "mean_investment": 3.083,
+      "mean_return_rate": 0.2,
+      "mean_payoff": 8.769
+    },
+    {
+      "block": "main_partner_honesty",
+      "statement_mode": "partner_private_card",
+      "honesty_level": "high",
+      "return_policy": "fair_high",
+      "presentation_mode": "sequential_trial",
+      "orthogonality_instruction": "explicit_orthogonality",
+      "n_trials": 108,
+      "n_runs": 6,
+      "mean_investment": 2.889,
+      "mean_return_rate": 0.6,
+      "mean_payoff": 12.463
+    },
+    {
+      "block": "main_partner_honesty",
+      "statement_mode": "partner_private_card",
+      "honesty_level": "high",
+      "return_policy": "fair_high",
+      "presentation_mode": "sequential_trial",
+      "orthogonality_instruction": "standard",
+      "n_trials": 108,
+      "n_runs": 6,
+      "mean_investment": 5.111,
+      "mean_return_rate": 0.6,
+      "mean_payoff": 14.185
+    },
+    {
+      "block": "main_partner_honesty",
+      "statement_mode": "partner_private_card",
+      "honesty_level": "high",
+      "return_policy": "unfair_low",
+      "presentation_mode": "sequential_trial",
+      "orthogonality_instruction": "explicit_orthogonality",
+      "n_trials": 108,
+      "n_runs": 6,
+      "mean_investment": 3.222,
+      "mean_return_rate": 0.2,
+      "mean_payoff": 8.722
+    },
+    {
+      "block": "main_partner_honesty",
+      "statement_mode": "partner_private_card",
+      "honesty_level": "high",
+      "return_policy": "unfair_low",
+      "presentation_mode": "sequential_trial",
+      "orthogonality_instruction": "standard",
+      "n_trials": 108,
+      "n_runs": 6,
+      "mean_investment": 3.083,
+      "mean_return_rate": 0.2,
+      "mean_payoff": 8.759
+    },
+    {
+      "block": "main_partner_honesty",
+      "statement_mode": "partner_private_card",
+      "honesty_level": "low",
+      "return_policy": "fair_high",
+      "presentation_mode": "sequential_trial",
+      "orthogonality_instruction": "explicit_orthogonality",
+      "n_trials": 108,
+      "n_runs": 6,
+      "mean_investment": 8.111,
+      "mean_return_rate": 0.6,
+      "mean_payoff": 16.694
+    },
+    {
+      "block": "main_partner_honesty",
+      "statement_mode": "partner_private_card",
+      "honesty_level": "low",
+      "return_policy": "fair_high",
+      "presentation_mode": "sequential_trial",
+      "orthogonality_instruction": "standard",
+      "n_trials": 108,
+      "n_runs": 6,
+      "mean_investment": 3.213,
+      "mean_return_rate": 0.6,
+      "mean_payoff": 12.491
+    },
+    {
+      "block": "main_partner_honesty",
+      "statement_mode": "partner_private_card",
+      "honesty_level": "low",
+      "return_policy": "unfair_low",
+      "presentation_mode": "sequential_trial",
+      "orthogonality_instruction": "explicit_orthogonality",
+      "n_trials": 108,
+      "n_runs": 6,
+      "mean_investment": 1.426,
+      "mean_return_rate": 0.2,
+      "mean_payoff": 9.472
+    },
+    {
+      "block": "main_partner_honesty",
+      "statement_mode": "partner_private_card",
+      "honesty_level": "low",
+      "return_policy": "unfair_low",
+      "presentation_mode": "sequential_trial",
+      "orthogonality_instruction": "standard",
+      "n_trials": 108,
+      "n_runs": 6,
+      "mean_investment": 2.176,
+      "mean_return_rate": 0.2,
+      "mean_payoff": 9.139
+    },
+    {
+      "block": "no_statement_control",
+      "statement_mode": "no_statement",
+      "honesty_level": "none",
+      "return_policy": "fair_high",
+      "presentation_mode": "sequential_trial",
+      "orthogonality_instruction": "standard",
+      "n_trials": 108,
+      "n_runs": 6,
+      "mean_investment": 5.361,
+      "mean_return_rate": 0.6,
+      "mean_payoff": 14.315
+    },
+    {
+      "block": "no_statement_control",
+      "statement_mode": "no_statement",
+      "honesty_level": "none",
+      "return_policy": "unfair_low",
+      "presentation_mode": "sequential_trial",
+      "orthogonality_instruction": "standard",
+      "n_trials": 108,
+      "n_runs": 6,
+      "mean_investment": 3.898,
+      "mean_return_rate": 0.2,
+      "mean_payoff": 8.481
+    }
+  ],
+  "diagnostic_correlations": {
+    "investment_vs_cumulative_truth": {
+      "n": 1224,
+      "r": -0.031
+    },
+    "investment_vs_cumulative_return": {
+      "n": 1632,
+      "r": 0.437
+    },
+    "investment_vs_previous_payoff": {
+      "n": 1632,
+      "r": 0.612
+    }
+  },
+  "analysis_formula": "investment_t ~ cumulative_truth_rate_before + cumulative_return_rate_before + previous_payoff + trial + statement_mode + return_policy + presentation_mode + orthogonality_instruction + model",
+  "payoff_definition": "payoff_t = 10 - investment_t + returned_tokens_t"
+}

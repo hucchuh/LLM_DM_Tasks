@@ -1,0 +1,147 @@
+{
+  "n_trials": 648,
+  "n_runs": 36,
+  "condition_summary": [
+    {
+      "instruction_type": "attention_control",
+      "honesty_level": "high",
+      "n_runs": 6,
+      "n_trials": 108,
+      "mean_investment": 3.333,
+      "mean_payoff": 12.769
+    },
+    {
+      "instruction_type": "attention_control",
+      "honesty_level": "low",
+      "n_runs": 6,
+      "n_trials": 108,
+      "mean_investment": 2.065,
+      "mean_payoff": 11.667
+    },
+    {
+      "instruction_type": "explicit_orthogonality",
+      "honesty_level": "high",
+      "n_runs": 6,
+      "n_trials": 108,
+      "mean_investment": 2.889,
+      "mean_payoff": 12.463
+    },
+    {
+      "instruction_type": "explicit_orthogonality",
+      "honesty_level": "low",
+      "n_runs": 6,
+      "n_trials": 108,
+      "mean_investment": 8.111,
+      "mean_payoff": 16.694
+    },
+    {
+      "instruction_type": "natural",
+      "honesty_level": "high",
+      "n_runs": 6,
+      "n_trials": 108,
+      "mean_investment": 5.111,
+      "mean_payoff": 14.185
+    },
+    {
+      "instruction_type": "natural",
+      "honesty_level": "low",
+      "n_runs": 6,
+      "n_trials": 108,
+      "mean_investment": 3.213,
+      "mean_payoff": 12.491
+    }
+  ],
+  "high_low_gaps": [
+    {
+      "instruction_type": "attention_control",
+      "high_investment": 3.333,
+      "low_investment": 2.065,
+      "high_minus_low": 1.268,
+      "high_payoff": 12.769,
+      "low_payoff": 11.667,
+      "payoff_gap": 1.102
+    },
+    {
+      "instruction_type": "explicit_orthogonality",
+      "high_investment": 2.889,
+      "low_investment": 8.111,
+      "high_minus_low": -5.222,
+      "high_payoff": 12.463,
+      "low_payoff": 16.694,
+      "payoff_gap": -4.231
+    },
+    {
+      "instruction_type": "natural",
+      "high_investment": 5.111,
+      "low_investment": 3.213,
+      "high_minus_low": 1.898,
+      "high_payoff": 14.185,
+      "low_payoff": 12.491,
+      "payoff_gap": 1.694
+    }
+  ],
+  "model": {
+    "n": 612,
+    "clusters": 36,
+    "r2": 0.6224,
+    "terms": [
+      {
+        "term": "Intercept",
+        "coef": 4.6465,
+        "cluster_se": 0.2644,
+        "t": 17.573,
+        "p_normal_approx": 0.0
+      },
+      {
+        "term": "previous_payoff_z",
+        "coef": 2.2204,
+        "cluster_se": 0.2444,
+        "t": 9.086,
+        "p_normal_approx": 0.0
+      },
+      {
+        "term": "trial_z",
+        "coef": 0.0795,
+        "cluster_se": 0.1321,
+        "t": 0.602,
+        "p_normal_approx": 0.5473
+      },
+      {
+        "term": "low_honesty",
+        "coef": -0.8723,
+        "cluster_se": 0.5379,
+        "t": -1.622,
+        "p_normal_approx": 0.1048
+      },
+      {
+        "term": "explicit_orthogonality",
+        "coef": -0.9407,
+        "cluster_se": 0.4337,
+        "t": -2.169,
+        "p_normal_approx": 0.0301
+      },
+      {
+        "term": "attention_control",
+        "coef": -0.8663,
+        "cluster_se": 0.7247,
+        "t": -1.195,
+        "p_normal_approx": 0.2319
+      },
+      {
+        "term": "low_honesty × explicit_orthogonality",
+        "coef": 3.409,
+        "cluster_se": 0.7029,
+        "t": 4.85,
+        "p_normal_approx": 0.0
+      },
+      {
+        "term": "low_honesty × attention_control",
+        "coef": 0.2373,
+        "cluster_se": 0.996,
+        "t": 0.238,
+        "p_normal_approx": 0.8116
+      }
+    ]
+  },
+  "figure": "figures/honesty_gap_by_instruction.png"
+}

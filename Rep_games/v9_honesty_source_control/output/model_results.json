@@ -1,0 +1,274 @@
+{
+  "data_file": "C:\\Users\\hp\\Documents\\New project\\Rep_games\\v9_honesty_source_control\\output\\trial_level_data.csv",
+  "explicit_gap_diagnostics": {
+    "paired_seed_differences": [
+      {
+        "seed": 1,
+        "high_mean": 0.0,
+        "low_mean": 7.833,
+        "low_minus_high": 7.833,
+        "early_low_minus_high": 3.5,
+        "late_low_minus_high": 10.0,
+        "high_zero_trials": 18,
+        "low_zero_trials": 3
+      },
+      {
+        "seed": 2,
+        "high_mean": 3.111,
+        "low_mean": 7.667,
+        "low_minus_high": 4.556,
+        "early_low_minus_high": 6.833,
+        "late_low_minus_high": 0.833,
+        "high_zero_trials": 8,
+        "low_zero_trials": 0
+      },
+      {
+        "seed": 3,
+        "high_mean": 3.611,
+        "low_mean": 7.556,
+        "low_minus_high": 3.944,
+        "early_low_minus_high": 5.5,
+        "late_low_minus_high": 3.667,
+        "high_zero_trials": 5,
+        "low_zero_trials": 1
+      },
+      {
+        "seed": 4,
+        "high_mean": 5.222,
+        "low_mean": 10.0,
+        "low_minus_high": 4.778,
+        "early_low_minus_high": 5.833,
+        "late_low_minus_high": 4.167,
+        "high_zero_trials": 2,
+        "low_zero_trials": 0
+      },
+      {
+        "seed": 5,
+        "high_mean": 2.056,
+        "low_mean": 7.0,
+        "low_minus_high": 4.944,
+        "early_low_minus_high": 1.0,
+        "late_low_minus_high": 7.0,
+        "high_zero_trials": 3,
+        "low_zero_trials": 3
+      },
+      {
+        "seed": 6,
+        "high_mean": 3.333,
+        "low_mean": 8.611,
+        "low_minus_high": 5.278,
+        "early_low_minus_high": 5.833,
+        "late_low_minus_high": 4.167,
+        "high_zero_trials": 11,
+        "low_zero_trials": 2
+      }
+    ],
+    "mean_low_minus_high": 5.222,
+    "sign_test_p_two_sided": 0.03125
+  },
+  "models": {
+    "main_tracker": {
+      "n": 816,
+      "clusters": 48,
+      "r2": 0.3239,
+      "terms": [
+        {
+          "term": "Intercept",
+          "coef": 2.9157,
+          "cluster_se": 1.4407,
+          "t": 2.024,
+          "p_normal_approx": 0.043
+        },
+        {
+          "term": "previous_payoff_z",
+          "coef": 2.0982,
+          "cluster_se": 0.3992,
+          "t": 5.257,
+          "p_normal_approx": 0.0
+        },
+        {
+          "term": "cumulative_return_rate_before_z",
+          "coef": 0.6224,
+          "cluster_se": 1.309,
+          "t": 0.476,
+          "p_normal_approx": 0.6344
+        },
+        {
+          "term": "cumulative_truth_rate_before_z",
+          "coef": 0.3748,
+          "cluster_se": 0.4303,
+          "t": 0.871,
+          "p_normal_approx": 0.3837
+        },
+        {
+          "term": "trial_z",
+          "coef": 0.104,
+          "cluster_se": 0.1807,
+          "t": 0.575,
+          "p_normal_approx": 0.5651
+        },
+        {
+          "term": "low_honesty",
+          "coef": 0.3253,
+          "cluster_se": 0.9447,
+          "t": 0.344,
+          "p_normal_approx": 0.7306
+        },
+        {
+          "term": "unfair_low",
+          "coef": 1.2943,
+          "cluster_se": 2.7943,
+          "t": 0.463,
+          "p_normal_approx": 0.6432
+        },
+        {
+          "term": "explicit_orthogonality",
+          "coef": 0.3053,
+          "cluster_se": 0.5707,
+          "t": 0.535,
+          "p_normal_approx": 0.5927
+        }
+      ]
+    },
+    "main_instruction_categorical": {
+      "n": 816,
+      "clusters": 48,
+      "r2": 0.4114,
+      "terms": [
+        {
+          "term": "Intercept",
+          "coef": 5.1125,
+          "cluster_se": 0.4949,
+          "t": 10.331,
+          "p_normal_approx": 0.0
+        },
+        {
+          "term": "trial_z",
+          "coef": 0.5621,
+          "cluster_se": 0.1543,
+          "t": 3.643,
+          "p_normal_approx": 0.0003
+        },
+        {
+          "term": "low_honesty",
+          "coef": -1.9608,
+          "cluster_se": 1.097,
+          "t": -1.787,
+          "p_normal_approx": 0.0739
+        },
+        {
+          "term": "unfair_low",
+          "coef": -2.0294,
+          "cluster_se": 0.6644,
+          "t": -3.055,
+          "p_normal_approx": 0.0023
+        },
+        {
+          "term": "explicit_orthogonality",
+          "coef": -2.1078,
+          "cluster_se": 0.8578,
+          "t": -2.457,
+          "p_normal_approx": 0.014
+        },
+        {
+          "term": "low_honesty × explicit_orthogonality",
+          "coef": 7.3431,
+          "cluster_se": 1.3504,
+          "t": 5.438,
+          "p_normal_approx": 0.0
+        },
+        {
+          "term": "low_honesty × unfair_low",
+          "coef": 0.9118,
+          "cluster_se": 1.4343,
+          "t": 0.636,
+          "p_normal_approx": 0.525
+        },
+        {
+          "term": "explicit_orthogonality × unfair_low",
+          "coef": 2.2353,
+          "cluster_se": 1.2591,
+          "t": 1.775,
+          "p_normal_approx": 0.0758
+        },
+        {
+          "term": "low_honesty × explicit_orthogonality × unfair_low",
+          "coef": -8.098,
+          "cluster_se": 1.9783,
+          "t": -4.093,
+          "p_normal_approx": 0.0
+        }
+      ]
+    },
+    "all_conditions_tracker": {
+      "n": 1632,
+      "clusters": 96,
+      "r2": 0.391,
+      "terms": [
+        {
+          "term": "Intercept",
+          "coef": 4.2337,
+          "cluster_se": 1.1966,
+          "t": 3.538,
+          "p_normal_approx": 0.0004
+        },
+        {
+          "term": "previous_payoff_z",
+          "coef": 2.1809,
+          "cluster_se": 0.2751,
+          "t": 7.927,
+          "p_normal_approx": 0.0
+        },
+        {
+          "term": "cumulative_return_rate_before_z",
+          "coef": 0.7252,
+          "cluster_se": 0.9041,
+          "t": 0.802,
+          "p_normal_approx": 0.4224
+        },
+        {
+          "term": "trial_z",
+          "coef": 0.0561,
+          "cluster_se": 0.1096,
+          "t": 0.512,
+          "p_normal_approx": 0.6087
+        },
+        {
+          "term": "unfair_low",
+          "coef": 1.4215,
+          "cluster_se": 1.922,
+          "t": 0.74,
+          "p_normal_approx": 0.4596
+        },
+        {
+          "term": "main_partner_honesty",
+          "coef": -1.2011,
+          "cluster_se": 0.6922,
+          "t": -1.735,
+          "p_normal_approx": 0.0827
+        },
+        {
+          "term": "irrelevant_truth_control",
+          "coef": -0.7139,
+          "cluster_se": 0.9232,
+          "t": -0.773,
+          "p_normal_approx": 0.4393
+        },
+        {
+          "term": "cheap_talk_only_control",
+          "coef": -0.0711,
+          "cluster_se": 0.9019,
+          "t": -0.079,
+          "p_normal_approx": 0.9371
+        },
+        {
+          "term": "explicit_orthogonality",
+          "coef": 0.2914,
+          "cluster_se": 0.5699,
+          "t": 0.511,
+          "p_normal_approx": 0.6091
+        }
+      ]
+    }
+  }
+}

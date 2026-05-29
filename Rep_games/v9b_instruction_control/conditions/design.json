@@ -1,0 +1,25 @@
+{
+  "experiment_name": "V9b instruction-control test",
+  "version": "v9b_instruction_control",
+  "source_data": "../v9_honesty_source_control/output/results.json",
+  "question": "Does explicit orthogonality behave like a causal/rule cue rather than a neutral control instruction?",
+  "design": {
+    "honesty": ["high", "low"],
+    "return_policy": ["fair_high"],
+    "presentation": ["sequential_trial"],
+    "instruction_type": ["natural", "explicit_orthogonality", "attention_control"],
+    "seeds_per_cell": 6,
+    "trials_per_run": 18
+  },
+  "reuse": {
+    "natural": "Use V9 main_partner_honesty / fair_high / sequential_trial / standard.",
+    "explicit_orthogonality": "Use V9 main_partner_honesty / fair_high / sequential_trial / explicit_orthogonality.",
+    "attention_control": "Run new trials using the same V9 seed-level trial schedules, but add an equally formal note that does not mention truth-return causality."
+  },
+  "primary_contrast": "Compare high-low honesty gap across natural, explicit_orthogonality, and attention_control.",
+  "interpretation_rule": {
+    "attention_like_natural": "If attention_control resembles natural, the explicit effect is likely caused by the causal orthogonality content.",
+    "attention_like_explicit": "If attention_control resembles explicit, extra formal instruction or task framing may be sufficient to shift strategy.",
+    "all_different": "If all three differ, instruction wording is actively shaping the local task representation and should be treated as a manipulated factor."
+  }
+}

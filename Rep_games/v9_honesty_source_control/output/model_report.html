@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>V9 Trial-Level Model</title>
+  <style>
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #172033; background: #f7f8fa; }
+    header { background: #17375e; color: white; padding: 48px 6vw; }
+    h1 { font-size: 48px; margin: 0 0 14px; letter-spacing: 0; }
+    h2 { font-size: 28px; margin-top: 0; }
+    p, li { font-size: 18px; line-height: 1.75; }
+    section { max-width: 1120px; margin: 0 auto; padding: 38px 6vw; background: white; border-bottom: 1px solid #e6ebf0; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0 28px; font-size: 15px; }
+    th, td { border: 1px solid #d9e1ea; padding: 9px 10px; text-align: left; }
+    th { background: #eef3f8; }
+    code { background: #eef2f6; padding: 2px 6px; border-radius: 5px; }
+    .note { color: #5c6c7d; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>V9 trial-level model</h1>
+    <p>用现有 sequential 数据检验：模型投资主要由 payoff、return history、truth history，还是 instruction 驱动。</p>
+  </header>
+
+  <section>
+    <h2>结论先行</h2>
+    <ul>
+      <li><strong>previous payoff 是最稳的 trial-level predictor。</strong> 在 main partner 条件中，标准化系数 2.0982，cluster SE 0.3992。</li>
+      <li><strong>cumulative return 也有正向作用。</strong> 标准化系数 0.6224，cluster SE 1.309。</li>
+      <li><strong>cumulative truth 本身不稳定。</strong> 标准化系数 0.3748，接近 0。这和总相关 <code>r=-0.031</code> 一致。</li>
+      <li><strong>instruction 会重写 honesty effect。</strong> categorical model 里，<code>low_honesty</code> 系数 -1.9608；<code>low_honesty × explicit_orthogonality</code> 系数 7.3431。这说明 explicit orthogonality 不是中性说明，更像一种 causal-rule cue。</li>
+    </ul>
+    <p class="note">p 值为正态近似，标准误按 run_id 聚类。这个报告用于快速机制判断，不替代之后更正式的混合效应模型。</p>
+  </section>
+
+  <section>
+    <h2>如何理解 explicit 反转</h2>
+    <p>这里的关键不是“低诚实更可信”，而是 explicit orthogonality instruction 改变了模型的任务表征。原始提示词中的关键句是：</p>
+    <p><code>Important rule: the truth or falsehood of the pre-decision statement has no causal relation to the partner's return policy. Return behavior is generated independently of statement truth.</code></p>
+    <p>这句话可能起到类似 causal / de-biasing cue 的作用：它让模型停止把陈述真假当作合作性的社会证据，转而把任务看成一个需要通过投资来学习的收益过程。</p>
+    <p>需要特别区分两个概念：V9 控制的是 <code>return_rate_t</code> 或 return policy，而不是 realized payoff。真正拿到的 <code>payoff_t = 10 - investment_t + returned_tokens_t</code> 会被模型自己的投资额影响。因此早期投资差异会产生反馈回路：早投一点并赚钱，就更容易继续投；一直投 0，就永远看不到正收益证据。</p>
+    <p>在 <code>fair/high + explicit</code> 里，low-honesty 相比 high-honesty 的平均投资差为 5.222；6 个 paired seeds 全部同方向，简单 sign test 双侧 p = 0.03125。所以它不像单个 outlier，但仍可能是 early exploration / no-learning trap 被放大的路径效应。</p>
+    <table><thead><tr><th>seed</th><th>high_mean</th><th>low_mean</th><th>low_minus_high</th><th>early_low_minus_high</th><th>late_low_minus_high</th><th>high_zero_trials</th><th>low_zero_trials</th></tr></thead><tbody><tr><td>1</td><td>0.0</td><td>7.833</td><td>7.833</td><td>3.5</td><td>10.0</td><td>18</td><td>3</td></tr><tr><td>2</td><td>3.111</td><td>7.667</td><td>4.556</td><td>6.833</td><td>0.833</td><td>8</td><td>0</td></tr><tr><td>3</td><td>3.611</td><td>7.556</td><td>3.944</td><td>5.5</td><td>3.667</td><td>5</td><td>1</td></tr><tr><td>4</td><td>5.222</td><td>10.0</td><td>4.778</td><td>5.833</td><td>4.167</td><td>2</td><td>0</td></tr><tr><td>5</td><td>2.056</td><td>7.0</td><td>4.944</td><td>1.0</td><td>7.0</td><td>3</td><td>3</td></tr><tr><td>6</td><td>3.333</td><td>8.611</td><td>5.278</td><td>5.833</td><td>4.167</td><td>11</td><td>2</td></tr></tbody></table>
+  </section>
+
+  <section>
+    <h2>V9b instruction-control</h2>
+    <p>为了检验 explicit 反转是不是“多了一段正式说明”造成的，我们补了 attention-control：它同样增加一段正式说明，但不提 truth 与 return 的因果无关。结果显示 natural 和 attention-control 都是正向 high-low gap，而 explicit orthogonality 是强反向 gap。</p>
+    <table><thead><tr><th>instruction_type</th><th>high_investment</th><th>low_investment</th><th>high_minus_low</th><th>high_payoff</th><th>low_payoff</th><th>payoff_gap</th></tr></thead><tbody><tr><td>attention_control</td><td>3.333</td><td>2.065</td><td>1.268</td><td>12.769</td><td>11.667</td><td>1.102</td></tr><tr><td>explicit_orthogonality</td><td>2.889</td><td>8.111</td><td>-5.222</td><td>12.463</td><td>16.694</td><td>-4.231</td></tr><tr><td>natural</td><td>5.111</td><td>3.213</td><td>1.898</td><td>14.185</td><td>12.491</td><td>1.694</td></tr></tbody></table>
+    <p>这支持一个更精确的解释：反转主要来自 instruction 的因果内容，而不是 prompt 长度或正式语气本身。</p>
+  </section>
+
+  <section>
+    <h2>讨论沉淀与 next step</h2>
+    <p>Forced exploration 不是直接证明 risk-seeking 的工具。它更像一个必要的清洁步骤：先排除“早期不投资导致没有收益证据，从而形成 no-learning trap”这个朴素解释。</p>
+    <p>更干净的下一版可以让前 3 轮固定投资 5，或者给两组同样的外生 payoff observation，然后只分析第 4 轮之后的自由投资。如果 forced phase 后 explicit 低诚实优势消失，说明 V9 的反转主要是早期探索差异被 payoff feedback 放大；如果优势仍然存在，才更支持“low honesty + explicit orthogonality 改变了模型的 exploration / risk attitude”。</p>
+    <p>更严格的参数模型可以写成 causal-gated reinforcement learning：投资由预期返还 <code>μ_t</code>、诚实信念 <code>h_t</code>、honesty 的因果诊断权重 <code>d_t</code>、探索 bonus 和风险厌恶共同决定。最关键的待检验参数是 <code>β_X</code>：在 explicit 条件下，低诚实是否额外提高探索倾向。</p>
+  </section>
+
+  <section>
+    <h2>Model 1: main partner tracker</h2>
+    <p>只看 <code>main_partner_honesty</code>，并排除没有 lag history 的第 1 轮。连续变量做 z-score。</p>
+    <p><code>investment ~ previous_payoff + cumulative_return + cumulative_truth + trial + low_honesty + unfair_low + explicit_orthogonality</code></p>
+    <p>n=816, clusters=48, R2=0.3239</p>
+    <table><thead><tr><th>term</th><th>coef</th><th>cluster_se</th><th>t</th><th>p_normal_approx</th></tr></thead><tbody><tr><td>Intercept</td><td>2.9157</td><td>1.4407</td><td>2.024</td><td>0.043</td></tr><tr><td>previous_payoff_z</td><td>2.0982</td><td>0.3992</td><td>5.257</td><td>0.0</td></tr><tr><td>cumulative_return_rate_before_z</td><td>0.6224</td><td>1.309</td><td>0.476</td><td>0.6344</td></tr><tr><td>cumulative_truth_rate_before_z</td><td>0.3748</td><td>0.4303</td><td>0.871</td><td>0.3837</td></tr><tr><td>trial_z</td><td>0.104</td><td>0.1807</td><td>0.575</td><td>0.5651</td></tr><tr><td>low_honesty</td><td>0.3253</td><td>0.9447</td><td>0.344</td><td>0.7306</td></tr><tr><td>unfair_low</td><td>1.2943</td><td>2.7943</td><td>0.463</td><td>0.6432</td></tr><tr><td>explicit_orthogonality</td><td>0.3053</td><td>0.5707</td><td>0.535</td><td>0.5927</td></tr></tbody></table>
+  </section>
+
+  <section>
+    <h2>Model 2: instruction contrast</h2>
+    <p>这个模型专门看做不做 explicit orthogonality instruction 是否改变 high/low honesty contrast。</p>
+    <p><code>investment ~ low_honesty × explicit_orthogonality + low_honesty × unfair_low + explicit_orthogonality × unfair_low + trial</code></p>
+    <p>n=816, clusters=48, R2=0.4114</p>
+    <table><thead><tr><th>term</th><th>coef</th><th>cluster_se</th><th>t</th><th>p_normal_approx</th></tr></thead><tbody><tr><td>Intercept</td><td>5.1125</td><td>0.4949</td><td>10.331</td><td>0.0</td></tr><tr><td>trial_z</td><td>0.5621</td><td>0.1543</td><td>3.643</td><td>0.0003</td></tr><tr><td>low_honesty</td><td>-1.9608</td><td>1.097</td><td>-1.787</td><td>0.0739</td></tr><tr><td>unfair_low</td><td>-2.0294</td><td>0.6644</td><td>-3.055</td><td>0.0023</td></tr><tr><td>explicit_orthogonality</td><td>-2.1078</td><td>0.8578</td><td>-2.457</td><td>0.014</td></tr><tr><td>low_honesty × explicit_orthogonality</td><td>7.3431</td><td>1.3504</td><td>5.438</td><td>0.0</td></tr><tr><td>low_honesty × unfair_low</td><td>0.9118</td><td>1.4343</td><td>0.636</td><td>0.525</td></tr><tr><td>explicit_orthogonality × unfair_low</td><td>2.2353</td><td>1.2591</td><td>1.775</td><td>0.0758</td></tr><tr><td>low_honesty × explicit_orthogonality × unfair_low</td><td>-8.098</td><td>1.9783</td><td>-4.093</td><td>0.0</td></tr></tbody></table>
+  </section>
+
+  <section>
+    <h2>Model 3: all-condition tracker</h2>
+    <p>把 no-statement、irrelevant-truth、cheap-talk-only 也放进来，检验 overall tracking。truth history 对没有可核验陈述的条件不适用，因此这个模型不放 cumulative truth。</p>
+    <p>n=1632, clusters=96, R2=0.391</p>
+    <table><thead><tr><th>term</th><th>coef</th><th>cluster_se</th><th>t</th><th>p_normal_approx</th></tr></thead><tbody><tr><td>Intercept</td><td>4.2337</td><td>1.1966</td><td>3.538</td><td>0.0004</td></tr><tr><td>previous_payoff_z</td><td>2.1809</td><td>0.2751</td><td>7.927</td><td>0.0</td></tr><tr><td>cumulative_return_rate_before_z</td><td>0.7252</td><td>0.9041</td><td>0.802</td><td>0.4224</td></tr><tr><td>trial_z</td><td>0.0561</td><td>0.1096</td><td>0.512</td><td>0.6087</td></tr><tr><td>unfair_low</td><td>1.4215</td><td>1.922</td><td>0.74</td><td>0.4596</td></tr><tr><td>main_partner_honesty</td><td>-1.2011</td><td>0.6922</td><td>-1.735</td><td>0.0827</td></tr><tr><td>irrelevant_truth_control</td><td>-0.7139</td><td>0.9232</td><td>-0.773</td><td>0.4393</td></tr><tr><td>cheap_talk_only_control</td><td>-0.0711</td><td>0.9019</td><td>-0.079</td><td>0.9371</td></tr><tr><td>explicit_orthogonality</td><td>0.2914</td><td>0.5699</td><td>0.511</td><td>0.6091</td></tr></tbody></table>
+  </section>
+</body>
+</html>
