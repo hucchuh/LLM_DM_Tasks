@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import html
 import json
-from datetime import datetime
 from pathlib import Path
 
 
@@ -328,7 +327,7 @@ def build_report() -> str:
 <body>
 <header>
   <div class="wrap">
-    <div class="kicker">Rep Games living report · MiniMax API pilot series · updated {datetime.now().strftime("%Y-%m-%d %H:%M")}</div>
+    <div class="kicker">Rep Games living report · MiniMax API pilot series · generated from version summaries</div>
     <h1>{esc(manifest["living_report"]["title"])}</h1>
     <p class="lead">这份报告不是各版本实验的流水账，而是把 V1-V10 串成一个正在成形的研究故事：大语言模型在重复社会互动中并不只是被好听的话影响；它们非常擅长追踪实际收益，但在面对可核验的诚实性信号时，又会把 honesty 当成合作价值的代理线索。这种代理线索什么时候影响 costly choice，什么时候会被规则说明纠偏，是当前最值得继续深挖的问题。</p>
   </div>
