@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>V10 seed-level power analysis</title>
+  <style>
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif; color: #172033; background: #f5f7fa; }
+    header { background: #17375e; color: white; padding: 44px 6vw; }
+    section { max-width: 1100px; margin: 0 auto; padding: 34px 6vw; background: white; border-bottom: 1px solid #dfe6ef; }
+    h1 { font-size: 44px; margin: 0 0 12px; }
+    h2 { font-size: 28px; margin: 0 0 12px; }
+    p, li { font-size: 18px; line-height: 1.75; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0 28px; font-size: 15px; }
+    th, td { border: 1px solid #dfe6ef; padding: 9px 10px; text-align: left; }
+    th { background: #eef3f8; }
+    code { background: #edf1f5; padding: 2px 6px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>V10 seed-level power analysis</h1>
+    <p>分析单位是 seed/run，而不是单个 trial。核心效应是 V10 的 difference-in-differences。</p>
+  </header>
+  <section>
+    <h2>当前效应</h2>
+    <p>当前完整 paired seeds: <strong>30</strong>。DID 均值为 <strong>1.1167</strong>，seed-level SD 为 <strong>2.805</strong>，dz 为 <strong>0.3981</strong>。</p>
+    <table><thead><tr><th>n_seeds</th><th>mean</th><th>sd</th><th>cohens_dz</th><th>z_or_large_sample_t</th><th>normal_p_two_sided</th><th>signflip_p_two_sided</th><th>signflip_method</th><th>bootstrap_95ci</th></tr></thead><tbody><tr><td>30</td><td>1.1167</td><td>2.805</td><td>0.3981</td><td>2.1805</td><td>0.0292</td><td>0.035</td><td>monte_carlo_200000</td><td>[0.1333, 2.1111]</td></tr></tbody></table>
+  </section>
+  <section>
+    <h2>样本量估计</h2>
+    <p>这是基于当前 seed-level DID 效应大小的近似 power analysis。它用于规划下一轮 API 预算，不应被当成最终功效结论。</p>
+    <table><thead><tr><th>target_power</th><th>required_seeds</th></tr></thead><tbody><tr><td>80%</td><td>50</td></tr><tr><td>90%</td><td>67</td></tr><tr><td>95%</td><td>83</td></tr></tbody></table>
+  </section>
+  <section>
+    <h2>Bootstrap power curve</h2>
+    <table><thead><tr><th>n_seeds</th><th>estimated_power</th></tr></thead><tbody><tr><td>30</td><td>0.609</td></tr><tr><td>40</td><td>0.732</td></tr><tr><td>50</td><td>0.828</td></tr><tr><td>60</td><td>0.881</td></tr><tr><td>80</td><td>0.952</td></tr><tr><td>100</td><td>0.982</td></tr><tr><td>120</td><td>0.994</td></tr></tbody></table>
+  </section>
+  <section>
+    <h2>解释</h2>
+    <p>如果当前效应大小稳定，V10 的 DID 需要的 seed 数会比较多。原因是每个 seed 的 DID 方差很大：有些 seed 显示 disclosure 释放低诚实惩罚，有些 seed 则反方向。因此，增加同一 run 内 trial 不能替代增加独立 seed。</p>
+  </section>
+</body>
+</html>

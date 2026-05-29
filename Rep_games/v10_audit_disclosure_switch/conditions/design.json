@@ -1,0 +1,51 @@
+{
+  "experiment_name": "V10 audit-learning disclosure-switch experiment",
+  "version": "v10_audit_disclosure_switch",
+  "partner_name": "Alex",
+  "audit_trials": 8,
+  "pre_choice_trials": 6,
+  "post_choice_trials": 6,
+  "seeds_per_cell": 8,
+  "fixed_audit_investment": 5,
+  "honesty_levels": [
+    {
+      "honesty_level": "high",
+      "label": "High factual honesty",
+      "truth_counts": {
+        "audit": 6,
+        "pre": 5,
+        "post": 5
+      }
+    },
+    {
+      "honesty_level": "low",
+      "label": "Low factual honesty",
+      "truth_counts": {
+        "audit": 2,
+        "pre": 1,
+        "post": 1
+      }
+    }
+  ],
+  "midpoint_messages": [
+    {
+      "midpoint_message": "neutral_reminder",
+      "label": "Neutral midpoint reminder",
+      "message": "Midpoint reminder: continue making each investment decision from the information available so far. The payoff rule remains the same."
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "label": "Orthogonality disclosure",
+      "message": "Important rule update: in this task, whether Alex's card statements are true or false is generated independently of Alex's return behavior. Statement truth is evidence about factual honesty, but it does not causally determine how many tokens Alex returns."
+    }
+  ],
+  "audit_return_rates": [0.55, 0.65, 0.50, 0.60, 0.70, 0.45, 0.65, 0.55],
+  "choice_return_rates": [0.55, 0.50, 0.65, 0.60, 0.45, 0.70, 0.50, 0.65, 0.55, 0.60, 0.45, 0.70],
+  "analysis_plan": {
+    "primary_outcome": "investment",
+    "payoff_definition": "payoff_t = 10 - investment_t + returned_tokens_t",
+    "primary_contrast": "Compare low-minus-high honesty investment gaps before and after the midpoint message, then compare that pre-post change between orthogonality disclosure and neutral reminder.",
+    "core_difference_in_differences": "[(low - high)_post - (low - high)_pre]_orthogonality - [(low - high)_post - (low - high)_pre]_neutral",
+    "modeling_plan": "Fit a trial-level observer-style regression with return belief, truth belief, previous payoff, phase, midpoint message, and low-honesty x post-disclosure interaction."
+  }
+}

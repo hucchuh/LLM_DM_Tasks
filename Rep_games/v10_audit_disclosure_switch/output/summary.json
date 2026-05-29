@@ -1,0 +1,813 @@
+{
+  "total_runs": 32,
+  "successful_runs": 32,
+  "failed_runs": 0,
+  "n_trial_rows": 384,
+  "n_probe_rows": 31,
+  "by_phase": [
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "high",
+      "phase": "post",
+      "n_trials": 48,
+      "n_runs": 8,
+      "mean_investment": 4.729,
+      "mean_payoff": 13.562,
+      "mean_return_rate": 0.575,
+      "truth_rate": 0.833
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "high",
+      "phase": "pre",
+      "n_trials": 48,
+      "n_runs": 8,
+      "mean_investment": 4.042,
+      "mean_payoff": 12.938,
+      "mean_return_rate": 0.575,
+      "truth_rate": 0.833
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "low",
+      "phase": "post",
+      "n_trials": 48,
+      "n_runs": 8,
+      "mean_investment": 1.979,
+      "mean_payoff": 11.396,
+      "mean_return_rate": 0.575,
+      "truth_rate": 0.167
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "low",
+      "phase": "pre",
+      "n_trials": 48,
+      "n_runs": 8,
+      "mean_investment": 2.104,
+      "mean_payoff": 11.542,
+      "mean_return_rate": 0.575,
+      "truth_rate": 0.167
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "high",
+      "phase": "post",
+      "n_trials": 48,
+      "n_runs": 8,
+      "mean_investment": 5.375,
+      "mean_payoff": 13.917,
+      "mean_return_rate": 0.575,
+      "truth_rate": 0.833
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "high",
+      "phase": "pre",
+      "n_trials": 48,
+      "n_runs": 8,
+      "mean_investment": 4.021,
+      "mean_payoff": 13.0,
+      "mean_return_rate": 0.575,
+      "truth_rate": 0.833
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "low",
+      "phase": "post",
+      "n_trials": 48,
+      "n_runs": 8,
+      "mean_investment": 4.167,
+      "mean_payoff": 13.021,
+      "mean_return_rate": 0.575,
+      "truth_rate": 0.167
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "low",
+      "phase": "pre",
+      "n_trials": 48,
+      "n_runs": 8,
+      "mean_investment": 2.292,
+      "mean_payoff": 11.646,
+      "mean_return_rate": 0.575,
+      "truth_rate": 0.167
+    }
+  ],
+  "by_trial": [
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "high",
+      "choice_trial": 1,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 3.625,
+      "mean_payoff": 13.375,
+      "mean_return_rate": 0.6,
+      "truth_rate": 0.875
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "high",
+      "choice_trial": 2,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 4.25,
+      "mean_payoff": 12.75,
+      "mean_return_rate": 0.556,
+      "truth_rate": 0.75
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "high",
+      "choice_trial": 3,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 4.125,
+      "mean_payoff": 13.125,
+      "mean_return_rate": 0.575,
+      "truth_rate": 1.0
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "high",
+      "choice_trial": 4,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 3.375,
+      "mean_payoff": 12.5,
+      "mean_return_rate": 0.588,
+      "truth_rate": 0.75
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "high",
+      "choice_trial": 5,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 5.0,
+      "mean_payoff": 13.25,
+      "mean_return_rate": 0.556,
+      "truth_rate": 0.875
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "high",
+      "choice_trial": 6,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 3.875,
+      "mean_payoff": 12.625,
+      "mean_return_rate": 0.575,
+      "truth_rate": 0.75
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "high",
+      "choice_trial": 7,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 3.875,
+      "mean_payoff": 13.375,
+      "mean_return_rate": 0.588,
+      "truth_rate": 1.0
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "high",
+      "choice_trial": 8,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 4.625,
+      "mean_payoff": 13.0,
+      "mean_return_rate": 0.562,
+      "truth_rate": 0.625
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "high",
+      "choice_trial": 9,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 4.625,
+      "mean_payoff": 13.125,
+      "mean_return_rate": 0.537,
+      "truth_rate": 0.75
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "high",
+      "choice_trial": 10,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 4.375,
+      "mean_payoff": 13.625,
+      "mean_return_rate": 0.606,
+      "truth_rate": 0.75
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "high",
+      "choice_trial": 11,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 5.125,
+      "mean_payoff": 14.5,
+      "mean_return_rate": 0.613,
+      "truth_rate": 1.0
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "high",
+      "choice_trial": 12,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 5.75,
+      "mean_payoff": 13.75,
+      "mean_return_rate": 0.544,
+      "truth_rate": 0.875
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "low",
+      "choice_trial": 1,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 2.5,
+      "mean_payoff": 11.75,
+      "mean_return_rate": 0.6,
+      "truth_rate": 0.25
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "low",
+      "choice_trial": 2,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 2.25,
+      "mean_payoff": 11.375,
+      "mean_return_rate": 0.556,
+      "truth_rate": 0.25
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "low",
+      "choice_trial": 3,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 2.625,
+      "mean_payoff": 12.0,
+      "mean_return_rate": 0.575,
+      "truth_rate": 0.125
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "low",
+      "choice_trial": 4,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 1.25,
+      "mean_payoff": 11.0,
+      "mean_return_rate": 0.588,
+      "truth_rate": 0.125
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "low",
+      "choice_trial": 5,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 2.25,
+      "mean_payoff": 11.625,
+      "mean_return_rate": 0.556,
+      "truth_rate": 0.0
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "low",
+      "choice_trial": 6,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 1.75,
+      "mean_payoff": 11.5,
+      "mean_return_rate": 0.575,
+      "truth_rate": 0.25
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "low",
+      "choice_trial": 7,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 1.5,
+      "mean_payoff": 11.125,
+      "mean_return_rate": 0.588,
+      "truth_rate": 0.125
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "low",
+      "choice_trial": 8,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 2.25,
+      "mean_payoff": 11.75,
+      "mean_return_rate": 0.562,
+      "truth_rate": 0.125
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "low",
+      "choice_trial": 9,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 2.375,
+      "mean_payoff": 11.25,
+      "mean_return_rate": 0.537,
+      "truth_rate": 0.375
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "low",
+      "choice_trial": 10,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 2.5,
+      "mean_payoff": 11.875,
+      "mean_return_rate": 0.606,
+      "truth_rate": 0.125
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "low",
+      "choice_trial": 11,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 1.875,
+      "mean_payoff": 11.375,
+      "mean_return_rate": 0.613,
+      "truth_rate": 0.125
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "low",
+      "choice_trial": 12,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 1.375,
+      "mean_payoff": 11.0,
+      "mean_return_rate": 0.544,
+      "truth_rate": 0.125
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "high",
+      "choice_trial": 1,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 3.125,
+      "mean_payoff": 12.75,
+      "mean_return_rate": 0.6,
+      "truth_rate": 0.875
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "high",
+      "choice_trial": 2,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 4.75,
+      "mean_payoff": 13.0,
+      "mean_return_rate": 0.556,
+      "truth_rate": 0.75
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "high",
+      "choice_trial": 3,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 4.125,
+      "mean_payoff": 13.125,
+      "mean_return_rate": 0.575,
+      "truth_rate": 1.0
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "high",
+      "choice_trial": 4,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 3.5,
+      "mean_payoff": 12.75,
+      "mean_return_rate": 0.588,
+      "truth_rate": 0.75
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "high",
+      "choice_trial": 5,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 3.375,
+      "mean_payoff": 12.375,
+      "mean_return_rate": 0.556,
+      "truth_rate": 0.875
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "high",
+      "choice_trial": 6,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 5.25,
+      "mean_payoff": 14.0,
+      "mean_return_rate": 0.575,
+      "truth_rate": 0.75
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "high",
+      "choice_trial": 7,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 5.625,
+      "mean_payoff": 14.625,
+      "mean_return_rate": 0.588,
+      "truth_rate": 1.0
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "high",
+      "choice_trial": 8,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 5.375,
+      "mean_payoff": 13.625,
+      "mean_return_rate": 0.562,
+      "truth_rate": 0.625
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "high",
+      "choice_trial": 9,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 5.25,
+      "mean_payoff": 13.125,
+      "mean_return_rate": 0.537,
+      "truth_rate": 0.75
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "high",
+      "choice_trial": 10,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 5.25,
+      "mean_payoff": 14.25,
+      "mean_return_rate": 0.606,
+      "truth_rate": 0.75
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "high",
+      "choice_trial": 11,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 5.375,
+      "mean_payoff": 14.625,
+      "mean_return_rate": 0.613,
+      "truth_rate": 1.0
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "high",
+      "choice_trial": 12,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 5.375,
+      "mean_payoff": 13.25,
+      "mean_return_rate": 0.544,
+      "truth_rate": 0.875
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "low",
+      "choice_trial": 1,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 2.5,
+      "mean_payoff": 12.125,
+      "mean_return_rate": 0.6,
+      "truth_rate": 0.25
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "low",
+      "choice_trial": 2,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 2.0,
+      "mean_payoff": 11.5,
+      "mean_return_rate": 0.556,
+      "truth_rate": 0.25
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "low",
+      "choice_trial": 3,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 2.375,
+      "mean_payoff": 11.625,
+      "mean_return_rate": 0.575,
+      "truth_rate": 0.125
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "low",
+      "choice_trial": 4,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 2.5,
+      "mean_payoff": 11.75,
+      "mean_return_rate": 0.588,
+      "truth_rate": 0.125
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "low",
+      "choice_trial": 5,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 1.75,
+      "mean_payoff": 11.125,
+      "mean_return_rate": 0.556,
+      "truth_rate": 0.0
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "low",
+      "choice_trial": 6,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 2.625,
+      "mean_payoff": 11.75,
+      "mean_return_rate": 0.575,
+      "truth_rate": 0.25
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "low",
+      "choice_trial": 7,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 3.625,
+      "mean_payoff": 12.75,
+      "mean_return_rate": 0.588,
+      "truth_rate": 0.125
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "low",
+      "choice_trial": 8,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 3.625,
+      "mean_payoff": 12.375,
+      "mean_return_rate": 0.562,
+      "truth_rate": 0.125
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "low",
+      "choice_trial": 9,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 3.75,
+      "mean_payoff": 12.375,
+      "mean_return_rate": 0.537,
+      "truth_rate": 0.375
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "low",
+      "choice_trial": 10,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 4.5,
+      "mean_payoff": 13.625,
+      "mean_return_rate": 0.606,
+      "truth_rate": 0.125
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "low",
+      "choice_trial": 11,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 4.875,
+      "mean_payoff": 14.125,
+      "mean_return_rate": 0.613,
+      "truth_rate": 0.125
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "low",
+      "choice_trial": 12,
+      "n_trials": 8,
+      "n_runs": 8,
+      "mean_investment": 4.625,
+      "mean_payoff": 12.875,
+      "mean_return_rate": 0.544,
+      "truth_rate": 0.125
+    }
+  ],
+  "difference_in_differences": {
+    "gap_rows": [
+      {
+        "midpoint_message": "neutral_reminder",
+        "pre_low_minus_high": -1.938,
+        "post_low_minus_high": -2.75,
+        "post_minus_pre_change": -0.812
+      },
+      {
+        "midpoint_message": "orthogonality_disclosure",
+        "pre_low_minus_high": -1.729,
+        "post_low_minus_high": -1.208,
+        "post_minus_pre_change": 0.521
+      }
+    ],
+    "difference_in_differences": 1.333
+  },
+  "paired_seed_diagnostics": [
+    {
+      "midpoint_message": "neutral_reminder",
+      "phase": "pre",
+      "n_paired_seeds": 8,
+      "mean_low_minus_high": -1.938,
+      "positive_seed_count": 3,
+      "negative_seed_count": 5
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "phase": "post",
+      "n_paired_seeds": 8,
+      "mean_low_minus_high": -2.75,
+      "positive_seed_count": 2,
+      "negative_seed_count": 6
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "phase": "pre",
+      "n_paired_seeds": 8,
+      "mean_low_minus_high": -1.729,
+      "positive_seed_count": 2,
+      "negative_seed_count": 6
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "phase": "post",
+      "n_paired_seeds": 8,
+      "mean_low_minus_high": -1.208,
+      "positive_seed_count": 1,
+      "negative_seed_count": 4
+    }
+  ],
+  "probe_by_condition": [
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "high",
+      "n_runs": 8,
+      "moral_trust": 71.875,
+      "expected_return_rate": 0.536,
+      "truth_return_link": 33.75,
+      "controllability": 50.0
+    },
+    {
+      "midpoint_message": "neutral_reminder",
+      "honesty_level": "low",
+      "n_runs": 7,
+      "moral_trust": 22.857,
+      "expected_return_rate": 0.463,
+      "truth_return_link": 26.429,
+      "controllability": 50.0
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "high",
+      "n_runs": 8,
+      "moral_trust": 72.5,
+      "expected_return_rate": 0.551,
+      "truth_return_link": 12.5,
+      "controllability": 42.5
+    },
+    {
+      "midpoint_message": "orthogonality_disclosure",
+      "honesty_level": "low",
+      "n_runs": 8,
+      "moral_trust": 21.875,
+      "expected_return_rate": 0.544,
+      "truth_return_link": 8.125,
+      "controllability": 41.25
+    }
+  ],
+  "diagnostic_correlations": {
+    "investment_vs_previous_payoff": {
+      "n": 352,
+      "r": 0.629
+    },
+    "investment_vs_return_belief": {
+      "n": 384,
+      "r": 0.016
+    },
+    "investment_vs_truth_belief": {
+      "n": 384,
+      "r": 0.373
+    }
+  },
+  "observer_style_model": {
+    "n": 352,
+    "r2": 0.4802,
+    "terms": [
+      {
+        "term": "Intercept",
+        "coef": 4.4453,
+        "se": 0.8517,
+        "t": 5.219
+      },
+      {
+        "term": "return_belief_before_z",
+        "coef": -0.1874,
+        "se": 0.1025,
+        "t": -1.829
+      },
+      {
+        "term": "truth_belief_before_z",
+        "coef": -0.4107,
+        "se": 0.8191,
+        "t": -0.501
+      },
+      {
+        "term": "return_uncertainty_before_z",
+        "coef": -0.2199,
+        "se": 0.1473,
+        "t": -1.493
+      },
+      {
+        "term": "previous_payoff_z",
+        "coef": 1.2537,
+        "se": 0.1216,
+        "t": 10.312
+      },
+      {
+        "term": "low_honesty",
+        "coef": -2.0797,
+        "se": 1.6297,
+        "t": -1.276
+      },
+      {
+        "term": "post_midpoint",
+        "coef": 0.0578,
+        "se": 0.4284,
+        "t": 0.135
+      },
+      {
+        "term": "orthogonality_disclosure",
+        "coef": 0.2012,
+        "se": 0.4085,
+        "t": 0.493
+      },
+      {
+        "term": "low_honesty_x_post",
+        "coef": -0.2771,
+        "se": 0.5693,
+        "t": -0.487
+      },
+      {
+        "term": "low_honesty_x_orthogonality",
+        "coef": 0.0459,
+        "se": 0.5778,
+        "t": 0.079
+      },
+      {
+        "term": "post_x_orthogonality",
+        "coef": 0.0273,
+        "se": 0.5545,
+        "t": 0.049
+      },
+      {
+        "term": "low_honesty_x_post_x_orthogonality",
+        "coef": 1.0228,
+        "se": 0.7833,
+        "t": 1.306
+      }
+    ]
+  },
+  "figures": [
+    "figures/investment_trajectory.png",
+    "figures/phase_gap.png",
+    "figures/final_probe.png"
+  ]
+}

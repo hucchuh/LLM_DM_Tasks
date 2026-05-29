@@ -1,0 +1,115 @@
+run_id,seed_index,honesty_level,midpoint_message,moral_trust,expected_return_rate,truth_return_link,controllability,strategy
+1,1,high,neutral_reminder,75,0.55,35,30,Consistent investment amount regardless of statements
+2,2,high,neutral_reminder,55,0.45,20,65,Reduced investment size after observing inconsistent returns
+3,3,high,neutral_reminder,65,0.53,15,40,invested the same amount each trial regardless
+4,4,high,neutral_reminder,75,0.58,25,60,Consistent moderate investment regardless of truth
+5,5,high,neutral_reminder,60,0.54,25,80,invest when pattern seems consistent with prior returns
+7,7,high,neutral_reminder,95,0.58,5,70,invest heavily to maximize returns from consistent partner
+8,8,high,neutral_reminder,83,0.58,20,30,Consistent moderate investment regardless of statement truth
+10,10,high,neutral_reminder,65,0.58,25,40,Moderate fixed investment with occasional cautious reduction
+11,11,high,neutral_reminder,55,0.58,20,30,Consistent moderate investment regardless of statements
+12,12,high,neutral_reminder,70,0.57,10,10,"Consistent investment, passive approach"
+13,13,high,neutral_reminder,70,0.58,75,20,constant investment regardless of statement content
+15,15,high,neutral_reminder,65,0.55,25,25,Consistent moderate investment regardless of statements
+16,16,high,neutral_reminder,75,0.55,30,25,Fixed investment regardless of statement truth
+17,17,high,neutral_reminder,65,0.56,20,15,consistently invested five tokens each trial
+18,18,high,neutral_reminder,65,0.57,30,40,Fixed moderate investment to maintain cooperation while limiting risk
+19,19,high,neutral_reminder,78,0.58,55,20,"invest moderately, expecting decent returns"
+20,20,high,neutral_reminder,70,0.55,20,30,Moderate investment with some full bets when confident
+21,21,high,neutral_reminder,75,0.58,20,30,Consistently invest moderate amounts regardless
+24,24,high,neutral_reminder,75,0.57,20,45,"Invest moderately, trusting truthful statements, withholding otherwise"
+25,25,high,neutral_reminder,75,0.58,35,15,Consistently invested 5 tokens each trial
+26,26,high,neutral_reminder,75,0.58,25,30,Consistent moderate investment regardless of statements
+27,27,high,neutral_reminder,78,0.56,15,20,consistent medium investment regardless of truth
+28,28,high,neutral_reminder,65,0.53,20,75,Conservative moderate investment to build trust and observe returns
+29,29,high,neutral_reminder,78,0.58,62,55,Consistently invest medium amounts to balance trust and safety
+30,30,high,neutral_reminder,80,0.53,20,30,conservative fixed investment
+31,1,low,neutral_reminder,40,0.55,10,20,Fixed investment regardless of statements
+32,2,low,neutral_reminder,30,0.55,30,80,Zero investment to avoid losses and gather information
+33,3,low,neutral_reminder,20,0.6,25,60,Cautious investing only when statement seems plausible
+34,4,low,neutral_reminder,35,0.58,25,45,Moderate consistent investment regardless of statement accuracy
+35,5,low,neutral_reminder,15,0.55,20,25,Reduced investment after observing low truth accuracy
+36,6,low,neutral_reminder,5,0.0,0,100,invest nothing to guarantee maximum payoff
+37,7,low,neutral_reminder,30,0.52,20,40,Consistent investment regardless of statement accuracy
+38,8,low,neutral_reminder,40,0.45,50,30,varied investment based on truth assessment
+39,9,low,neutral_reminder,5,0.0,20,90,Invest zero to guarantee safe payoff
+40,10,low,neutral_reminder,10,0.55,25,15,Invest minimally or not at all
+41,11,low,neutral_reminder,10,0.3,20,100,Never invest because Alex is untrustworthy
+42,12,low,neutral_reminder,0,0.0,0,100,Zero investment to avoid losses from untrustworthy partner
+43,13,low,neutral_reminder,15,0.55,10,25,Minimal investment with low trust in partner
+44,14,low,neutral_reminder,25,0.55,20,30,Conservative low investment regardless of statements
+45,15,low,neutral_reminder,30,0.33,10,20,investing minimally and cautiously to limit exposure
+46,16,low,neutral_reminder,15,0.0,5,0,No investment due to consistent dishonesty
+47,17,low,neutral_reminder,35,0.6,30,40,Stop investing after learning Alex rarely tells truth
+48,18,low,neutral_reminder,20,0.55,60,40,"invest medium when uncertain, zero when skeptical"
+49,19,low,neutral_reminder,25,0.57,15,40,Consistent moderate investment regardless of statements
+50,20,low,neutral_reminder,5,0.0,0,100,Invest zero to guarantee ten tokens
+51,21,low,neutral_reminder,35,0.55,15,40,Conservative investment around 3-5 tokens
+52,22,low,neutral_reminder,10,0.58,20,95,invest zero until trust is established
+53,23,low,neutral_reminder,35,0.58,10,5,Consistent modest investment regardless of statements
+54,24,low,neutral_reminder,30,0.55,85,45,invest small regardless of truth claims
+55,25,low,neutral_reminder,20,0.65,30,15,invest zero to guarantee safe payoff
+56,26,low,neutral_reminder,20,0.55,30,40,fixed moderate investment regardless of statements
+57,27,low,neutral_reminder,30,0.58,20,25,Moderate consistent investment despite unreliable partner
+58,28,low,neutral_reminder,15,0.58,20,40,Consistent moderate investment despite low accuracy
+59,29,low,neutral_reminder,15,0.5,30,70,Start cautious reduce investment after many lies
+60,30,low,neutral_reminder,25,0.5,25,45,minimal investment with occasional试探 based on perceived trustworthiness
+61,1,high,orthogonality_disclosure,75,0.56,0,60,Invest selectively based on perceived honesty and return likelihood
+62,2,high,orthogonality_disclosure,70,0.56,15,30,fixed investment regardless of statement truth
+63,3,high,orthogonality_disclosure,75,0.58,20,15,Consistent medium investment regardless of statements
+64,4,high,orthogonality_disclosure,70,0.56,10,35,consistent moderate investment based on trust
+65,5,high,orthogonality_disclosure,65,0.59,30,70,increase investment after consistent truthfulness
+66,6,high,orthogonality_disclosure,70,0.58,10,25,Consistently invest moderate amount and observe returns
+67,7,high,orthogonality_disclosure,75,0.6,10,40,Invest zero unless prior shows good return potential
+68,8,high,orthogonality_disclosure,70,0.56,20,40,Fixed moderate investment to balance risk and reward
+69,9,high,orthogonality_disclosure,60,0.6,0,20,Invest 5 consistently to maintain baseline returns
+70,10,high,orthogonality_disclosure,50,0.58,25,25,"Consistent moderate investment, monitoring returns"
+71,11,high,orthogonality_disclosure,80,0.55,10,40,Consistent medium investment to maintain partnership
+72,12,high,orthogonality_disclosure,75,0.57,10,70,"Start cautious, then invest moderately when seeing returns"
+73,13,high,orthogonality_disclosure,65,0.58,10,45,Consistent investment based on prior audit performance
+74,14,high,orthogonality_disclosure,72,0.58,10,25,Consistently invest high despite variable returns
+75,15,high,orthogonality_disclosure,70,0.58,10,20,Consistent investment regardless of statement truth
+76,16,high,orthogonality_disclosure,50,0.52,5,10,conservative fixed investment
+77,17,high,orthogonality_disclosure,70,0.57,10,20,Consistent medium investment to test partner reliability
+78,18,high,orthogonality_disclosure,75,0.55,5,30,Consistent moderate investment regardless of statements
+79,19,high,orthogonality_disclosure,75,0.58,15,35,Consistent moderate investment regardless of statements
+80,20,high,orthogonality_disclosure,75,0.53,10,20,Consistent fixed investment regardless of statements
+81,21,high,orthogonality_disclosure,65,0.57,10,70,invest when statement matches
+82,22,high,orthogonality_disclosure,75,0.55,15,25,Steady moderate investment regardless of statements
+83,23,high,orthogonality_disclosure,65,0.55,15,55,invest moderately when statement seems plausible
+84,24,high,orthogonality_disclosure,75,0.58,20,30,fixed five token investment
+85,25,high,orthogonality_disclosure,85,0.57,65,70,Consistent medium investment regardless of statement truth
+86,26,high,orthogonality_disclosure,75,0.53,15,25,invest moderate fixed amount each trial
+87,27,high,orthogonality_disclosure,75,0.58,5,88,high investment to maximize absolute returns
+88,28,high,orthogonality_disclosure,75,0.58,10,30,Consistent moderate investment with slight variation
+89,29,high,orthogonality_disclosure,80,0.53,10,20,fixed medium investment regardless of statements
+90,30,high,orthogonality_disclosure,70,0.56,10,20,Consistent moderate investment regardless of statements
+91,1,low,orthogonality_disclosure,25,0.58,15,20,consistent moderate investment regardless of statements
+92,2,low,orthogonality_disclosure,25,0.55,0,45,"Start cautious, invest moderately, adapt to observed returns"
+93,3,low,orthogonality_disclosure,10,0.5,0,90,Zero investment to preserve tokens safely
+94,4,low,orthogonality_disclosure,35,0.46,15,10,Fixed investment regardless of statements
+95,5,low,orthogonality_disclosure,35,0.57,15,55,moderate consistent investments regardless of statements
+96,6,low,orthogonality_disclosure,35,0.58,5,55,invest 5 when pattern suggests positive returns
+97,7,low,orthogonality_disclosure,5,0.5,10,100,invest zero to guarantee safe payoff
+98,8,low,orthogonality_disclosure,25,0.57,5,20,constant investment regardless of statements
+99,9,low,orthogonality_disclosure,20,0.55,10,95,"invest only when statement matches, otherwise avoid"
+100,10,low,orthogonality_disclosure,25,0.55,10,40,low investment to limit losses with unreliable partner
+101,11,low,orthogonality_disclosure,35,0.55,15,25,Consistent investment to observe return patterns
+102,12,low,orthogonality_disclosure,15,0.0,0,90,Invest zero to guarantee maximum safe payoff
+103,13,low,orthogonality_disclosure,20,0.6,0,50,moderate fixed investment regardless of statements
+104,14,low,orthogonality_disclosure,30,0.56,15,10,consistently invest 5 regardless of statements
+105,15,low,orthogonality_disclosure,35,0.5,10,25,steady investment regardless of statements
+106,16,low,orthogonality_disclosure,35,0.55,15,70,Invest small amounts consistently to maintain positive returns
+107,17,low,orthogonality_disclosure,30,0.57,5,45,moderate fixed investments regardless of statements
+108,18,low,orthogonality_disclosure,45,0.55,10,25,Conservative consistent investment regardless of statements
+109,19,low,orthogonality_disclosure,10,0.57,15,50,small conservative investments hoping for consistent moderate returns
+110,20,low,orthogonality_disclosure,30,0.46,5,20,Consistent moderate investment regardless of statements
+111,21,low,orthogonality_disclosure,25,0.58,10,35,moderate consistent investment with low trust
+112,22,low,orthogonality_disclosure,40,0.58,20,30,Consistent moderate investment regardless of accuracy
+113,23,low,orthogonality_disclosure,40,0.6,10,80,Invest when returns consistently exceed costs
+114,24,low,orthogonality_disclosure,85,0.58,5,75,invest max since returns consistently high regardless of truth
+115,25,low,orthogonality_disclosure,5,0.55,10,100,invest zero due to unreliable partner
+116,26,low,orthogonality_disclosure,35,0.53,15,25,Consistent medium investment regardless of statements
+118,28,low,orthogonality_disclosure,25,0.58,20,20,Consistent investment to test partner reliability
+119,29,low,orthogonality_disclosure,15,0.58,0,0,invest zero to guarantee maximum payoff
+120,30,low,orthogonality_disclosure,30,0.57,10,45,Moderate investment testing trust and returns

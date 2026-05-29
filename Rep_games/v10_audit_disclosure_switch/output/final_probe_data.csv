@@ -1,0 +1,32 @@
+run_id,seed_index,honesty_level,midpoint_message,moral_trust,expected_return_rate,truth_return_link,controllability,strategy
+1,1,high,neutral_reminder,60,0.55,20,40,consistent moderate investment despite mixed returns
+2,2,high,neutral_reminder,80,0.5,30,10,Consistent investment regardless of truth patterns
+3,3,high,neutral_reminder,75,0.53,25,70,"Match statements when consistent, invest moderately"
+4,4,high,neutral_reminder,65,0.55,30,60,adjust investment based on observed accuracy and trustworthiness
+5,5,high,neutral_reminder,70,0.45,20,30,consistent investment regardless of truthfulness
+6,6,high,neutral_reminder,75,0.53,30,60,Consistent investment regardless of statement truth
+7,7,high,neutral_reminder,75,0.57,85,65,invest only when Alex's statement seems truthful
+8,8,high,neutral_reminder,75,0.61,30,65,Invest 5 cautiously when statements plausible
+10,2,low,neutral_reminder,10,0.5,45,95,Invest zero to guarantee ten tokens regardless of partner
+11,3,low,neutral_reminder,25,0.45,30,60,started cautious then stopped investing after pattern emerged
+12,4,low,neutral_reminder,5,0.0,0,50,Invest zero to avoid any potential loss
+13,5,low,neutral_reminder,35,0.59,45,50,moderate consistent investment to balance risk and reward
+14,6,low,neutral_reminder,15,0.6,30,45,invest zero to guarantee base payoff avoid losses
+15,7,low,neutral_reminder,35,0.55,25,30,Conservative minimal investment to secure baseline payoff
+16,8,low,neutral_reminder,35,0.55,10,20,Consistently invest 5 regardless of statements
+17,1,high,orthogonality_disclosure,75,0.53,15,20,"Consistently invest 5, adjust only if evidence suggests unreliability"
+18,2,high,orthogonality_disclosure,75,0.56,10,70,"Start safe, then invest when truth matches"
+19,3,high,orthogonality_disclosure,75,0.6,0,60,"invest moderately when trusting, avoid when suspicious"
+20,4,high,orthogonality_disclosure,75,0.54,20,30,Fixed moderate investment based on observed return pattern
+21,5,high,orthogonality_disclosure,70,0.57,25,65,"Invest 10 when statements seem reliable, 0 otherwise"
+22,6,high,orthogonality_disclosure,65,0.53,20,15,Consistent medium investment regardless of statement truth
+23,7,high,orthogonality_disclosure,70,0.55,0,50,moderate investment to balance safety and returns
+24,8,high,orthogonality_disclosure,75,0.53,10,30,Consistent medium investment regardless of statements
+25,1,low,orthogonality_disclosure,15,0.58,0,60,invest after observing consistent high returns
+26,2,low,orthogonality_disclosure,25,0.53,10,40,Consistent moderate investment regardless of statements
+27,3,low,orthogonality_disclosure,25,0.55,10,40,small fixed investment to test returns
+28,4,low,orthogonality_disclosure,25,0.55,5,40,Moderate fixed investment despite frequent deception
+29,5,low,orthogonality_disclosure,30,0.55,10,60,small investments regardless of statements
+30,6,low,orthogonality_disclosure,20,0.5,10,70,"Start cautious, then increase investment after observing returns"
+31,7,low,orthogonality_disclosure,15,0.55,10,5,Constant investment regardless of statement truth or card color
+32,8,low,orthogonality_disclosure,20,0.54,10,15,Consistent minimal investment regardless of statements

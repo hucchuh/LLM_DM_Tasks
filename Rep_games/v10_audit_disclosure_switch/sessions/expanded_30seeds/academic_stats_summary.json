@@ -1,0 +1,193 @@
+{
+  "did": {
+    "n": 30,
+    "mean": 1.116667,
+    "sd": 2.805014,
+    "se": 0.512123,
+    "t": 2.180465,
+    "df": 29,
+    "p": 0.037482,
+    "signflip_p": 0.03689,
+    "ci_low": 0.069257,
+    "ci_high": 2.164076,
+    "dz": 0.398097
+  },
+  "neutral_pre_low_minus_high": -1.822222,
+  "neutral_post_low_minus_high": -2.838889,
+  "orthogonality_pre_low_minus_high": -1.4,
+  "orthogonality_post_low_minus_high": -1.3,
+  "phase_table": [
+    {
+      "condition": "Neutral reminder",
+      "honesty": "High honesty",
+      "phase": "Pre",
+      "n sessions": 30,
+      "mean investment": "4.461",
+      "SEM": "0.170",
+      "mean ± SEM": "4.461 ± 0.170"
+    },
+    {
+      "condition": "Neutral reminder",
+      "honesty": "High honesty",
+      "phase": "Post",
+      "n sessions": 30,
+      "mean investment": "4.883",
+      "SEM": "0.236",
+      "mean ± SEM": "4.883 ± 0.236"
+    },
+    {
+      "condition": "Neutral reminder",
+      "honesty": "Low honesty",
+      "phase": "Pre",
+      "n sessions": 30,
+      "mean investment": "2.639",
+      "SEM": "0.403",
+      "mean ± SEM": "2.639 ± 0.403"
+    },
+    {
+      "condition": "Neutral reminder",
+      "honesty": "Low honesty",
+      "phase": "Post",
+      "n sessions": 30,
+      "mean investment": "2.044",
+      "SEM": "0.383",
+      "mean ± SEM": "2.044 ± 0.383"
+    },
+    {
+      "condition": "Orthogonality disclosure",
+      "honesty": "High honesty",
+      "phase": "Pre",
+      "n sessions": 30,
+      "mean investment": "4.311",
+      "SEM": "0.345",
+      "mean ± SEM": "4.311 ± 0.345"
+    },
+    {
+      "condition": "Orthogonality disclosure",
+      "honesty": "High honesty",
+      "phase": "Post",
+      "n sessions": 30,
+      "mean investment": "4.944",
+      "SEM": "0.212",
+      "mean ± SEM": "4.944 ± 0.212"
+    },
+    {
+      "condition": "Orthogonality disclosure",
+      "honesty": "Low honesty",
+      "phase": "Pre",
+      "n sessions": 30,
+      "mean investment": "2.911",
+      "SEM": "0.382",
+      "mean ± SEM": "2.911 ± 0.382"
+    },
+    {
+      "condition": "Orthogonality disclosure",
+      "honesty": "Low honesty",
+      "phase": "Post",
+      "n sessions": 30,
+      "mean investment": "3.644",
+      "SEM": "0.395",
+      "mean ± SEM": "3.644 ± 0.395"
+    }
+  ],
+  "gap_table": [
+    {
+      "condition": "Neutral reminder",
+      "pre low-high": "-1.822",
+      "post low-high": "-2.839",
+      "post-pre change": "-1.017",
+      "SEM for change": "0.351",
+      "change ± SEM": "-1.017 ± 0.351"
+    },
+    {
+      "condition": "Orthogonality disclosure",
+      "pre low-high": "-1.400",
+      "post low-high": "-1.300",
+      "post-pre change": "0.100",
+      "SEM for change": "0.427",
+      "change ± SEM": "0.100 ± 0.427"
+    }
+  ],
+  "probe_table": [
+    {
+      "condition": "Neutral reminder",
+      "honesty": "High honesty",
+      "n complete probes": 25,
+      "Moral trust": "71.480",
+      "Expected return rate": "0.560",
+      "Perceived truth-return link": "26.880",
+      "Perceived controllability": "37.200"
+    },
+    {
+      "condition": "Neutral reminder",
+      "honesty": "Low honesty",
+      "n complete probes": 30,
+      "Moral trust": "21.500",
+      "Expected return rate": "0.447",
+      "Perceived truth-return link": "22.667",
+      "Perceived controllability": "47.333"
+    },
+    {
+      "condition": "Orthogonality disclosure",
+      "honesty": "High honesty",
+      "n complete probes": 30,
+      "Moral trust": "70.900",
+      "Expected return rate": "0.566",
+      "Perceived truth-return link": "13.667",
+      "Perceived controllability": "36.933"
+    },
+    {
+      "condition": "Orthogonality disclosure",
+      "honesty": "Low honesty",
+      "n complete probes": 29,
+      "Moral trust": "28.448",
+      "Expected return rate": "0.533",
+      "Perceived truth-return link": "9.483",
+      "Perceived controllability": "46.552"
+    }
+  ],
+  "required_n": [
+    {
+      "target_power": "80%",
+      "required_seeds": 50
+    },
+    {
+      "target_power": "90%",
+      "required_seeds": 67
+    },
+    {
+      "target_power": "95%",
+      "required_seeds": 83
+    }
+  ],
+  "power_curve": [
+    {
+      "n_seeds": 30,
+      "estimated_power": 0.609
+    },
+    {
+      "n_seeds": 40,
+      "estimated_power": 0.732
+    },
+    {
+      "n_seeds": 50,
+      "estimated_power": 0.828
+    },
+    {
+      "n_seeds": 60,
+      "estimated_power": 0.881
+    },
+    {
+      "n_seeds": 80,
+      "estimated_power": 0.952
+    },
+    {
+      "n_seeds": 100,
+      "estimated_power": 0.982
+    },
+    {
+      "n_seeds": 120,
+      "estimated_power": 0.994
+    }
+  ]
+}
